@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: bental82/LandingPage
+  name: git-gateway
   branch: claude/improve-landing-page-l9ViH
 
 media_folder: "assets/uploads"
