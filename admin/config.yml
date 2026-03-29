@@ -1,0 +1,145 @@
+backend:
+  name: github
+  repo: bental82/LandingPage
+  branch: claude/improve-landing-page-l9ViH
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+locale: "he"
+
+collections:
+  - name: "settings"
+    label: "הגדרות כלליות"
+    files:
+      - name: "content"
+        label: "תוכן העמוד"
+        file: "content.json"
+        format: "json"
+        fields:
+
+          # --- Site ---
+          - label: "הגדרות אתר"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "טלפון", name: "phone", widget: "string" }
+              - { label: "שם המוסד", name: "institution", widget: "string" }
+              - { label: "כתובת", name: "address", widget: "string" }
+              - { label: "סוג תואר", name: "degree_type", widget: "string" }
+              - { label: "שם התואר", name: "degree_name", widget: "string" }
+              - { label: "כיתוב משפטי (דיסקליימר)", name: "disclaimer", widget: "text" }
+
+          # --- Trust Bar ---
+          - label: "שורת אמון (Trust Bar)"
+            name: "trust_bar"
+            widget: "list"
+            fields:
+              - { label: "אייקון", name: "icon", widget: "select", options: ["shield", "award", "phone", "check"] }
+              - { label: "טקסט", name: "text", widget: "string" }
+
+          # --- Hero ---
+          - label: "אזור גיבור (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "תגית עליונה", name: "tag", widget: "string" }
+              - { label: "כותרת - קידומת", name: "title_prefix", widget: "string" }
+              - { label: "כותרת - מודגש (צהוב)", name: "title_highlight", widget: "string" }
+              - { label: "כותרת - סיומת", name: "title_suffix", widget: "string" }
+              - { label: "תת-כותרת", name: "subtitle", widget: "text" }
+              - { label: "טקסט כפתור CTA", name: "cta_text", widget: "string" }
+              - label: "משפטי אמון קטנים"
+                name: "micro_trust"
+                widget: "list"
+                field: { label: "טקסט", name: "text", widget: "string" }
+
+          # --- Form ---
+          - label: "טופס"
+            name: "form"
+            widget: "object"
+            fields:
+              - { label: "כותרת", name: "title", widget: "string" }
+              - { label: "תת-כותרת", name: "subtitle", widget: "string" }
+              - { label: "הטבה (HTML מותר)", name: "incentive", widget: "string" }
+              - { label: "טקסט כפתור שליחה", name: "submit_text", widget: "string" }
+              - { label: "טקסט משני כפתור", name: "submit_sub", widget: "string" }
+              - { label: "כותרת תודה", name: "thankyou_title", widget: "string" }
+              - { label: "טקסט תודה", name: "thankyou_text", widget: "string" }
+
+          # --- Value Props ---
+          - label: "יתרונות"
+            name: "value_props"
+            widget: "object"
+            fields:
+              - { label: "כותרת סקשן", name: "title", widget: "string" }
+              - label: "פריטים"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "אייקון", name: "icon", widget: "select", options: ["graduation", "ai", "placement", "hybrid", "military", "infinity", "shield", "code", "monitor", "data"] }
+                  - { label: "כותרת", name: "title", widget: "string" }
+                  - { label: "תיאור", name: "text", widget: "text" }
+
+          # --- Certifications ---
+          - label: "תעודות הסמכה"
+            name: "certifications"
+            widget: "object"
+            fields:
+              - { label: "כותרת", name: "title", widget: "string" }
+              - { label: "תת-כותרת", name: "subtitle", widget: "string" }
+              - label: "תעודות"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "אייקון", name: "icon", widget: "select", options: ["shield", "data", "code", "monitor", "graduation", "ai"] }
+                  - { label: "שם התעודה", name: "text", widget: "string" }
+
+          # --- Accordion ---
+          - label: "שאלות ותשובות (אקורדיון)"
+            name: "accordion"
+            widget: "object"
+            fields:
+              - { label: "כותרת סקשן", name: "title", widget: "string" }
+              - label: "פריטים"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "שאלה", name: "question", widget: "string" }
+                  - { label: "תשובה (HTML מותר)", name: "answer", widget: "markdown" }
+
+          # --- Stats ---
+          - label: "סטטיסטיקות"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "ערך מספרי (ריק = טקסט סטטי)", name: "value", widget: "number", required: false }
+              - { label: "תצוגה סטטית (למשל #1)", name: "display", widget: "string", required: false }
+              - { label: "סיומת (%, ₪ וכו')", name: "suffix", widget: "string", required: false }
+              - { label: "תווית", name: "label", widget: "string" }
+              - { label: "תת-תווית", name: "sublabel", widget: "string", required: false }
+
+          # --- Graduates ---
+          - label: "בוגרים"
+            name: "graduates"
+            widget: "object"
+            fields:
+              - { label: "כותרת סקשן", name: "title", widget: "string" }
+              - label: "בוגרים"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "שם מלא", name: "name", widget: "string" }
+                  - { label: "ראשי תיבות", name: "initials", widget: "string" }
+                  - { label: "תפקיד", name: "role", widget: "string" }
+                  - { label: "חברה", name: "company", widget: "string" }
+                  - { label: "ציטוט", name: "quote", widget: "text" }
+
+          # --- Final CTA ---
+          - label: "קריאה לפעולה סופית"
+            name: "final_cta"
+            widget: "object"
+            fields:
+              - { label: "כותרת", name: "title", widget: "string" }
+              - { label: "טקסט", name: "text", widget: "text" }
+              - { label: "טקסט כפתור", name: "button_text", widget: "string" }

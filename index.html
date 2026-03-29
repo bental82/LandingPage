@@ -15,306 +15,46 @@
   <!-- Trust Bar -->
   <div class="trust-bar">
     <div class="container trust-bar-inner">
-      <div class="trust-strip">
-        <span class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          מוסד מוכר ע״י המל״ג
-        </span>
-        <span class="trust-divider"></span>
-        <span class="trust-item">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/><circle cx="12" cy="12" r="10"/></svg>
-          מקום ראשון בישראל בשביעות רצון סטודנטים
-        </span>
-        <span class="trust-divider"></span>
-        <span class="trust-item trust-phone">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          ייעוץ לימודים: <a href="tel:08-3006090">08-3006090</a>
-        </span>
-      </div>
+      <div class="trust-strip" id="trust-bar-content"></div>
     </div>
   </div>
 
-  <!-- ========== HERO - Clean & Focused (Above the Fold Fix) ========== -->
+  <!-- Hero -->
   <header class="hero" id="hero">
     <div class="hero-bg"></div>
     <div class="container hero-inner">
-      <div class="hero-content">
-        <span class="hero-tag">המרכז האקדמי פרס</span>
-        <h1>תואר ראשון <span class="highlight">B.A.</span> במערכות מידע ניהוליות</h1>
-        <p class="hero-subtitle">בואו להתחיל את הקריירה שלכם בהיי-טק עם תכנית לימודים ייחודית וגמישה בשילוב תעודות מקצועיות</p>
-        <a href="#lead-form" class="cta-button hero-cta">השאירו פרטים וקבלו פטור מדמי רישום</a>
-        <div class="hero-micro-trust">
-          <span>ההרשמה בעיצומה</span>
-          <span class="dot"></span>
-          <span>הנחה של 4,000 &#8362; לנרשמים מוקדם</span>
-        </div>
-      </div>
+      <div class="hero-content" id="hero-content"></div>
     </div>
   </header>
 
-  <!-- ========== MAIN LAYOUT: Content + Sticky Form ========== -->
+  <!-- Main Layout -->
   <div class="page-body" id="form-section">
     <div class="container page-layout">
 
-      <!-- ===== Main Content Column ===== -->
       <main class="main-content">
+        <!-- Value Props -->
+        <section class="section value-props" id="value-props-section"></section>
 
-        <!-- Quick Value Props (cards) -->
-        <section class="section value-props">
-          <h2 class="section-title">למה ללמוד מערכות מידע ניהוליות בפרס?</h2>
-          <div class="props-grid">
-            <div class="prop-card">
-              <div class="prop-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
-              </div>
-              <h3>תואר פלוס+</h3>
-              <p>לימודי תעודה מתקדמים בשיתוף John Bryce משולבים כבר במהלך התואר ונותנים לכם יתרון משמעותי בעולם ההייטק</p>
-            </div>
-            <div class="prop-card">
-              <div class="prop-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 8l3 3 4-4 3 3"/></svg>
-              </div>
-              <h3>AI Bootcamp</h3>
-              <p>סדרת הרצאות וסדנאות מעמיקות על עולם הבינה המלאכותית עם תעודה מקצועית ב-AI</p>
-            </div>
-            <div class="prop-card">
-              <div class="prop-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg>
-              </div>
-              <h3>התחייבות להשמה</h3>
-              <p>שילוב לימודי סייבר / Data Analyst / Full Stack עם התחייבות לליווי בתהליך ההשמה בעולם ההייטק למצטיינים</p>
-            </div>
-            <div class="prop-card">
-              <div class="prop-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
-              </div>
-              <h3>למידה היברידית</h3>
-              <p>ללמוד גם מהקמפוס וגם מהבית! שיעורים בלייב ומוקלטים לצפייה חוזרת לנוחיותכם</p>
-            </div>
-            <div class="prop-card">
-              <div class="prop-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-              </div>
-              <h3>תמיכה במילואימניקים</h3>
-              <p>מקום ראשון בישראל! למידה גמישה, מלגות, חומרי לימוד מקיפים וסיוע רגשי למשרתי מילואים</p>
-            </div>
-            <div class="prop-card">
-              <div class="prop-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              </div>
-              <h3>INFINITY</h3>
-              <p>פלטפורמת למידה דיגיטלית עם תכנים מתעדכנים בAI, שיווק דיגיטלי, אוטומציות ועוד — לנצח!</p>
-            </div>
-          </div>
-        </section>
+        <!-- Certifications -->
+        <section class="section certifications-section" id="certs-section"></section>
 
-        <!-- Certifications Strip -->
-        <section class="section certifications-section">
-          <h2 class="section-title">תעודות הסמכה משולבות בתואר</h2>
-          <p class="section-subtitle">בשיתוף John Bryce — ללא עלות נוספת וללא הארכת משך הלימודים</p>
-          <div class="cert-grid">
-            <div class="cert-item">
-              <div class="cert-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              </div>
-              <span>Cyber Security ואבטחת מידע</span>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-              </div>
-              <span>Data Analyst Expert בשילוב AI</span>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </div>
-              <span>Full Stack בטכנולוגיות WEB</span>
-            </div>
-            <div class="cert-item">
-              <div class="cert-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              </div>
-              <span>מנתח/ת מערכות מידע</span>
-            </div>
-          </div>
-        </section>
+        <!-- Accordion -->
+        <section class="section accordion-section" id="accordion-section"></section>
 
-        <!-- Accordion - More Details -->
-        <section class="section accordion-section">
-          <h2 class="section-title">כל מה שצריך לדעת</h2>
-          <div class="accordion">
+        <!-- Stats -->
+        <section class="section stats-section" id="stats-section"></section>
 
-            <div class="accordion-item">
-              <button class="accordion-header" aria-expanded="false">
-                <span>מסלול ישיר לתואר שני</span>
-                <span class="accordion-icon"></span>
-              </button>
-              <div class="accordion-body">
-                <p>אפשרות לשילוב מסלול מהיר לתואר שני M.B.A במנהל עסקים — חסכו זמן יקר בדרך לקריירה מתקדמת.</p>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <button class="accordion-header" aria-expanded="false">
-                <span>תכנית בשיתוף הלשכה לטכנולוגיות המידע בישראל</span>
-                <span class="accordion-icon"></span>
-              </button>
-              <div class="accordion-body">
-                <p><strong>הסמכות מקצועיות, נטוורקינג מקצועי ועסקי ועוד.</strong> כסטודנטים במרכז האקדמי פרס אתם נהנים מחברות בלשכה לטכנולוגיות המידע בישראל ומשלל הפעילויות, ללא עלות נוספת!</p>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <button class="accordion-header" aria-expanded="false">
-                <span>תואר ראשון דו-חוגי — אפיקי קריירה מגוונים</span>
-                <span class="accordion-icon"></span>
-              </button>
-              <div class="accordion-body">
-                <p><strong>מסלול מיוחד המאפשר לשלב תואר ראשון במערכות מידע ניהוליות עם תואר ראשון במנהל עסקים</strong>, שיפתח לכם דלתות למגוון אפיקי קריירה — מניתוח נתונים ועד ניהול מערכות מידע בארגונים גדולים.</p>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <button class="accordion-header" aria-expanded="false">
-                <span>המרכז לפיתוח קריירה</span>
-                <span class="accordion-icon"></span>
-              </button>
-              <div class="accordion-body">
-                <p>מעטפת שירות ייחודית לפיתוח קריירה הניתנת לסטודנטים ולבוגרים. <strong>המרכז מתמקד בחמישה תחומי פעילות:</strong> סדנאות, ייעוץ תעסוקתי אישי, מפגשי זרקור, ליווי התמחות ומאגר משרות איכותי.</p>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <button class="accordion-header" aria-expanded="false">
-                <span>מעונות סטודנטים — WEME</span>
-                <span class="accordion-icon"></span>
-              </button>
-              <div class="accordion-body">
-                <p>עשרה צעדים מהקמפוס ואתם ב-WEME — מתחם מגורים חדשני ומפואר לסטודנטים! במתחם: חדר כושר, מרפסת לאירועים, מסעדות, חניון תת-קרקעי, שירותי אבטחה ועוד.</p>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <button class="accordion-header" aria-expanded="false">
-                <span>מלגות והטבות כספיות</span>
-                <span class="accordion-icon"></span>
-              </button>
-              <div class="accordion-body">
-                <p>המרכז האקדמי פרס מציע מגוון מלגות והטבות:</p>
-                <ul>
-                  <li><strong>מלגת הצטיינות</strong> — לסטודנטים מצטיינים</li>
-                  <li><strong>מלגת מילואימניקים</strong> — תמיכה ייחודית למשרתי מילואים</li>
-                  <li><strong>מלגת פריפריה</strong> — לתושבי אזורי עדיפות</li>
-                  <li><strong>הנחה של 4,000 &#8362;</strong> — לנרשמים מוקדם (2,000 &#8362; לכל שנת לימוד)</li>
-                </ul>
-                <p>השאירו פרטים ונציג ייעוץ יפרט לכם על כל ההטבות הרלוונטיות.</p>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- Stats Bar -->
-        <section class="section stats-section">
-          <div class="stats-grid">
-            <div class="stat-item">
-              <span class="stat-number" data-target="93">0</span><span class="stat-suffix">%</span>
-              <span class="stat-label">מהבוגרים מועסקים בתחום</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number-static">#1</span>
-              <span class="stat-label">בשביעות רצון סטודנטים<br><small>שנה רביעית ברציפות</small></span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number" data-target="4000">0</span><span class="stat-suffix">&#8362;</span>
-              <span class="stat-label">הנחה לנרשמים מוקדם</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- Social Proof - Graduates -->
-        <section class="section graduates-section">
-          <h2 class="section-title">הבוגרים שלנו בתעשייה</h2>
-          <div class="graduates-grid">
-
-            <div class="graduate-card">
-              <div class="graduate-top">
-                <div class="graduate-avatar">ק.ק</div>
-                <div class="graduate-info">
-                  <h4>קובי קנטי</h4>
-                  <p class="graduate-role">Product Manager</p>
-                  <p class="graduate-company">Commit</p>
-                </div>
-              </div>
-              <blockquote class="graduate-quote">
-                "הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד בהמשך הקריירה"
-              </blockquote>
-            </div>
-
-            <div class="graduate-card">
-              <div class="graduate-top">
-                <div class="graduate-avatar">ל.א</div>
-                <div class="graduate-info">
-                  <h4>ליאל אמסלם</h4>
-                  <p class="graduate-role">Customer Success Engineer</p>
-                  <p class="graduate-company">Infinigrow</p>
-                </div>
-              </div>
-              <blockquote class="graduate-quote">
-                "התואר מרתק! לומדים נושאים פרקטיים מעולמות המחשוב וגם קורסים בעולם ניהול התהליכים שנותנים יתרון לכל תפקיד ראשון בהייטק"
-              </blockquote>
-            </div>
-
-            <div class="graduate-card">
-              <div class="graduate-top">
-                <div class="graduate-avatar">ג.מ</div>
-                <div class="graduate-info">
-                  <h4>ג'סיקה מרצין</h4>
-                  <p class="graduate-role">מנהלת פרויקטים</p>
-                  <p class="graduate-company">E-Shop</p>
-                </div>
-              </div>
-              <blockquote class="graduate-quote">
-                "רמת הלימוד בתואר גבוהה מאד. עם הידע שרכשתי, יכולתי להתחיל כבר עכשיו לעבוד בתחום, ולצבור יתרון משמעותי להמשך הקריירה"
-              </blockquote>
-            </div>
-
-            <div class="graduate-card">
-              <div class="graduate-top">
-                <div class="graduate-avatar">א.ג</div>
-                <div class="graduate-info">
-                  <h4>איציק גלנץ</h4>
-                  <p class="graduate-role">יועץ תשתיות תקשורת</p>
-                  <p class="graduate-company">Aman מחשבים</p>
-                </div>
-              </div>
-              <blockquote class="graduate-quote">
-                "הכלים שקיבלתי במהלך התואר עזרו לי להגיע למקום שרציתי: תפקיד ניהולי וטכנולוגי"
-              </blockquote>
-            </div>
-
-          </div>
-        </section>
+        <!-- Graduates -->
+        <section class="section graduates-section" id="graduates-section"></section>
 
         <!-- Final CTA -->
-        <section class="section final-cta-section">
-          <h2>מוכנים להתחיל את הקריירה בהייטק?</h2>
-          <p>השאירו פרטים עכשיו וקבלו פטור מדמי רישום + ייעוץ לימודים אישי ללא התחייבות</p>
-          <a href="#lead-form" class="cta-button">דברו איתי</a>
-          <p class="final-cta-phone">או חייגו: <a href="tel:08-3006090">08-3006090</a></p>
-        </section>
-
+        <section class="section final-cta-section" id="final-cta-section"></section>
       </main>
 
-      <!-- ===== Sticky Form Sidebar ===== -->
+      <!-- Sticky Form Sidebar -->
       <aside class="form-sidebar" id="sticky-form">
         <div class="form-card" id="lead-form">
-          <div class="form-header">
-            <h3>ההרשמה בעיצומה!</h3>
-            <p class="form-subtitle">רוצים לדעת על תנאי הקבלה, ימי הלימוד ועוד?</p>
-            <p class="form-incentive">השאירו פרטים וקבלו <strong>פטור מדמי רישום</strong></p>
-          </div>
+          <div class="form-header" id="form-header"></div>
           <form id="contact-form" novalidate>
             <div class="form-group">
               <label for="fullname">שם מלא</label>
@@ -329,22 +69,21 @@
               <input type="email" id="email" name="email" placeholder="email@example.com" required autocomplete="email">
             </div>
             <button type="submit" class="form-submit-btn">
-              <span class="btn-text">דברו איתי</span>
-              <span class="btn-sub">נחזור אליכם בהקדם</span>
+              <span class="btn-text" id="form-btn-text"></span>
+              <span class="btn-sub" id="form-btn-sub"></span>
             </button>
             <p class="form-disclaimer">בשליחת הטופס אני מאשר/ת קבלת מידע מהמרכז האקדמי פרס. <a href="#">מדיניות פרטיות</a></p>
           </form>
           <div class="form-phone-alt">
             <span>אנחנו זמינים גם כאן:</span>
-            <a href="tel:08-3006090" class="phone-link">08-3006090</a>
+            <a href="" class="phone-link" id="form-phone-link"></a>
           </div>
-          <!-- Thank You State (hidden by default) -->
           <div class="form-thankyou" id="form-thankyou" hidden>
             <div class="thankyou-icon">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#27ae60" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
-            <h3>תהיו זמינים!</h3>
-            <p>חוזרים אליכם ממש בקרוב...</p>
+            <h3 id="thankyou-title"></h3>
+            <p id="thankyou-text"></p>
           </div>
         </div>
       </aside>
@@ -358,27 +97,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <strong>המרכז האקדמי פרס</strong>
-        <p>רחוב המעפיל 10, רחובות</p>
-      </div>
-      <div class="footer-trust">
-        <span>מוסד מוכר ע״י המועצה להשכלה גבוהה (מל״ג)</span>
-        <span class="footer-sep">|</span>
-        <span>תואר מוכר B.A.</span>
-      </div>
-      <div class="footer-terms">
-        <p>* הטבה לתואר ראשון תיפרס באופן שווה על-פני מספר שנות הלימוד (2,000 &#8362; לכל שנת לימוד). אין כפל הנחות. ט.ל.ח.</p>
-      </div>
-      <div class="footer-links">
-        <a href="#hero">חזרה למעלה</a>
-        <a href="tel:08-3006090">08-3006090</a>
-        <a href="#">נגישות</a>
-      </div>
-    </div>
-  </footer>
+  <footer class="footer" id="footer"></footer>
 
   <script src="script.js"></script>
 </body>
