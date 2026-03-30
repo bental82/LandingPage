@@ -26,10 +26,13 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- #6 Cookie Banner - Minimal, non-blocking -->
+  <!-- #6 Cookie Banner - GDPR compliant with decline option -->
   <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="הודעת עוגיות">
     <p>אתר זה משתמש בעוגיות לשיפור החוויה.</p>
-    <button id="cookie-accept" class="cookie-btn" aria-label="אישור עוגיות">אישור</button>
+    <div class="cookie-buttons">
+      <button id="cookie-accept" class="cookie-btn cookie-accept" aria-label="אישור עוגיות">אישור</button>
+      <button id="cookie-decline" class="cookie-btn cookie-decline" aria-label="דחיית עוגיות">דחייה</button>
+    </div>
   </div>
 
   <!-- Header / Nav - #2 Simplified mobile nav -->
@@ -203,8 +206,10 @@
   <section class="certificates" id="certificates">
     <h2 class="section-title">לימודי תעודה במהלך התואר</h2>
     <p class="section-subtitle">עם תכנית ״תואר פלוס+״ תוכלו לקבל תעודות מקצועיות מתקדמות כבר תוך כדי הלימודים</p>
-    <div class="certificates-track">
-      <div class="cert-card">
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow carousel-arrow-right" id="cert-arrow-right" aria-label="הקודם">&#8250;</button>
+      <div class="certificates-track" id="certificates-track">
+        <div class="cert-card">
         <img src="images/certificates/cyber-security.svg" alt="תעודת סייבר ואבטחת מידע" loading="lazy">
         <span>סייבר ואבטחת מידע</span>
       </div>
@@ -268,6 +273,8 @@
         <img src="images/certificates/human-capital.svg" alt="תעודת תכנון הון אנושי" loading="lazy">
         <span>תכנון הון אנושי</span>
       </div>
+      </div>
+      <button class="carousel-arrow carousel-arrow-left" id="cert-arrow-left" aria-label="הבא">&#8249;</button>
     </div>
   </section>
 
@@ -285,7 +292,9 @@
   <!-- #12 Testimonials moved UP — with real photos -->
   <section class="testimonials" id="testimonials">
     <h2 class="section-title">הבוגרים שלנו מספרים</h2>
-    <div class="testimonials-track" id="testimonials-track">
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow carousel-arrow-right" id="test-arrow-right" aria-label="הקודם">&#8250;</button>
+      <div class="testimonials-track" id="testimonials-track">
       <div class="testimonial-card">
         <img src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" class="testimonial-photo" loading="lazy">
         <blockquote>
@@ -346,6 +355,8 @@
           <span>מנכ"לית משותפת, E.D.I Energy</span>
         </cite>
       </div>
+    </div>
+      <button class="carousel-arrow carousel-arrow-left" id="test-arrow-left" aria-label="הבא">&#8249;</button>
     </div>
     <div class="testimonials-dots" id="testimonials-dots" aria-label="ניווט ביקורות"></div>
   </section>
