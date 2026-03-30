@@ -77,15 +77,39 @@
     </nav>
   </header>
 
-  <!-- #1,#2,#3 HERO — Clickable, mobile-first, clear message -->
+  <!-- HERO — Video background + strong branding -->
   <section class="hero" id="hero">
+    <!-- Video background -->
+    <div class="hero-video-bg">
+      <video autoplay muted loop playsinline poster="images/hero/hero-poster.jpg" id="hero-video">
+        <source src="https://peres-pac.co.il/wp-content/themes/peres-theme/images/peres-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
     <div class="hero-inner">
       <div class="hero-content">
-        <!-- #3 Clear, practical hero message -->
-        <h1 class="hero-title">תואר ראשון בשנתיים.<br>תואר שני בשנה.</h1>
-        <p class="hero-subtitle">למידה היברידית גמישה עם מגוון מסלולים ללימוד תואר ראשון ושני!</p>
+        <!-- Strong branding -->
+        <img src="images/logos/logo-white.svg" alt="המרכז האקדמי פרס" class="hero-logo">
+        <h1 class="hero-title">בואו ליהנות מהיתרונות<br>של <span class="hero-highlight">המרכז האקדמי פרס</span></h1>
 
-        <!-- #7 Social Proof Above the Fold -->
+        <!-- Benefits as equal-weight pills -->
+        <div class="hero-benefits">
+          <div class="hero-benefit-pill">
+            <img src="https://peres-pac.co.il/wp-content/themes/peres-theme/images/sign.svg" alt="" class="pill-icon">
+            <span>תואר ראשון בשנתיים</span>
+          </div>
+          <div class="hero-benefit-pill">
+            <img src="https://peres-pac.co.il/wp-content/themes/peres-theme/images/sign.svg" alt="" class="pill-icon">
+            <span>תואר שני בשנה</span>
+          </div>
+          <div class="hero-benefit-pill">
+            <img src="https://peres-pac.co.il/wp-content/themes/peres-theme/images/sign.svg" alt="" class="pill-icon">
+            <span>למידה היברידית גמישה</span>
+          </div>
+        </div>
+
+        <!-- Social proof — separate category -->
         <div class="hero-social-proof">
           <div class="proof-item">
             <span class="proof-number">15,000+</span>
@@ -103,14 +127,14 @@
           </div>
         </div>
 
-        <!-- #1 CTA Button in Hero - fixes dead clicks -->
+        <!-- CTA -->
         <div class="hero-cta-group">
           <a href="#form-section" class="btn-primary hero-cta">השאירו פרטים וקבלו פטור מדמי רישום</a>
           <a href="tel:08-3006090" class="btn-secondary hero-phone">&#9742; או חייגו 08-3006090</a>
         </div>
       </div>
 
-      <!-- #5 Shortened form - only 2 fields initially -->
+      <!-- Form -->
       <div class="hero-form-wrapper" id="form-section">
         <form class="lead-form" id="lead-form" novalidate>
           <div class="form-badge">ההרשמה בעיצומה! פטור מדמי רישום</div>
@@ -171,29 +195,29 @@
     </div>
   </section>
 
-  <!-- #4 Replace 13 accordions with 4 visual benefit cards -->
+  <!-- Benefits — Brand product logos -->
   <section class="benefits" id="benefits">
-    <h2 class="section-title">למה פרס?</h2>
+    <h2 class="section-title">בואו ליהנות מהיתרונות של המרכז האקדמי פרס</h2>
     <div class="benefits-grid">
       <div class="benefit-card">
-        <div class="benefit-icon">&#9201;</div>
-        <h3>תואר ראשון בשנתיים</h3>
-        <p>מסלול מואץ שמאפשר לסיים תואר מלא בשנתיים בלבד ולהתחיל לעבוד מהר יותר.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">&#127968;</div>
-        <h3>למידה היברידית גמישה</h3>
-        <p>שילוב של הרצאות פרונטליות ולמידה מקוונת — לומדים מתי ואיפה שנוח לכם.</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">&#8734;</div>
+        <img src="https://peres-pac.co.il/wp-content/themes/peres-theme/images/infiniti.svg" alt="INFINITY" class="benefit-brand-logo" loading="lazy">
         <h3>INFINITY — תואר שמתעדכן</h3>
         <p>גישה לקורסים חדשים ותכנים מעודכנים גם אחרי סיום התואר, לנצח וללא תשלום.</p>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon">&#128640;</div>
+        <img src="https://peres-pac.co.il/wp-content/uploads/2022/03/icons-01.svg" alt="תואר פלוס+" class="benefit-brand-logo" loading="lazy">
         <h3>תואר פלוס+ ולימודי תעודה</h3>
         <p>לימודי תעודה מתקדמים כבר במהלך התואר — סייבר, AI, ניהול פרויקטים ועוד.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="https://peres-pac.co.il/wp-content/uploads/2022/03/icons-02.svg" alt="תואר ראשון בשנתיים" class="benefit-brand-logo" loading="lazy">
+        <h3>תואר ראשון בשנתיים</h3>
+        <p>מסלול מואץ שמאפשר לסיים תואר מלא בשנתיים בלבד ולהתחיל לעבוד מהר יותר.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="https://peres-pac.co.il/wp-content/uploads/2022/03/icons-03.svg" alt="למידה היברידית" class="benefit-brand-logo" loading="lazy">
+        <h3>למידה היברידית גמישה</h3>
+        <p>שילוב של הרצאות פרונטליות ולמידה מקוונת — לומדים מתי ואיפה שנוח לכם.</p>
       </div>
     </div>
     <div class="benefits-more">
