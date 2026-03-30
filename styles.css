@@ -293,25 +293,6 @@ input, select {
   height: 420px;
   width: auto;
   object-fit: contain;
-  transition: opacity 0.4s ease;
-}
-
-.hero-person-hover {
-  position: absolute;
-  inset: 0;
-  height: 420px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.hero:hover .hero-person-hover {
-  opacity: 1;
-}
-
-.hero:hover .hero-person-img {
-  opacity: 0;
 }
 
 /* Floating badges on hero */
@@ -332,31 +313,6 @@ input, select {
 .hero-badge-satisfaction img {
   width: 110px;
   height: auto;
-}
-
-.hero-badge-atava {
-  left: 160px;
-  top: 40px;
-}
-
-.hero-badge-atava img {
-  width: 70px;
-  height: auto;
-}
-
-/* Hero eyebrow text */
-.hero-eyebrow {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #e8b931;
-  margin-bottom: 0.25rem;
-}
-
-.hero-text-img {
-  height: 52px;
-  width: auto;
-  margin-bottom: 0.75rem;
-  display: block;
 }
 
 .hero-title {
@@ -1096,8 +1052,7 @@ input, select {
     margin-bottom: 1rem;
   }
 
-  .hero-person-img,
-  .hero-person-hover {
+  .hero-person-img {
     height: 220px;
     margin: 0 auto;
   }
@@ -1109,23 +1064,6 @@ input, select {
 
   .hero-badge-satisfaction img {
     width: 75px;
-  }
-
-  .hero-badge-atava {
-    left: 95px;
-    top: 15px;
-  }
-
-  .hero-badge-atava img {
-    width: 50px;
-  }
-
-  .hero-eyebrow {
-    font-size: 1.15rem;
-  }
-
-  .hero-text-img {
-    height: 32px;
   }
 
   /* Employers */

@@ -8,8 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-  <!-- Preload hero person image for LCP optimization (#11) -->
-  <link rel="preload" as="image" href="images/hero/banner.webp" type="image/webp">
   <!-- Use Ploni font like the live site -->
   <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-regular-aaa.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-bold-aaa.woff2" as="font" type="font/woff2" crossorigin>
@@ -65,29 +63,21 @@
     </nav>
   </header>
 
-  <!-- #1,#2,#3 HERO — Clickable, mobile-first, clear message, with banner image -->
+  <!-- #1,#2,#3 HERO — Clickable, mobile-first, clear message -->
   <section class="hero" id="hero">
     <!-- Person cutout image — positioned to the side -->
     <div class="hero-person">
-      <picture>
-        <img src="images/hero/banner.webp" alt="סטודנט במרכז האקדמי פרס" class="hero-person-img" loading="eager">
-      </picture>
-      <img src="images/hero/banner-hover.webp" alt="" class="hero-person-hover" loading="eager" aria-hidden="true">
+      <img src="images/hero/banner-hover.webp" alt="סטודנטית במרכז האקדמי פרס" class="hero-person-img" loading="eager">
     </div>
 
-    <!-- Badges floating on hero -->
+    <!-- Badge floating on hero -->
     <div class="hero-badge hero-badge-satisfaction">
       <img src="images/badges/stamp-satisfaction.svg" alt="מקום ראשון בישראל בשביעות רצון סטודנטים">
-    </div>
-    <div class="hero-badge hero-badge-atava">
-      <img src="images/badges/atava.svg" alt="תו אטב״א">
     </div>
 
     <div class="hero-inner">
       <div class="hero-content">
         <!-- #3 Clear, practical hero message -->
-        <p class="hero-eyebrow">בואו להשוויץ</p>
-        <img src="images/hero/main-text.webp" alt="בקריירה שלכם" class="hero-text-img">
         <h1 class="hero-title">תואר ראשון בשנתיים.<br>תואר שני בשנה.</h1>
         <p class="hero-subtitle">למידה היברידית גמישה עם מגוון מסלולים ללימוד תואר ראשון ושני!</p>
 
@@ -174,17 +164,6 @@
           <p class="form-disclaimer">בשליחת הטופס אני מאשר/ת קבלת מידע מהמרכז האקדמי פרס. ניתן לבטל בכל עת.</p>
         </form>
       </div>
-    </div>
-  </section>
-
-  <!-- Employer Logos Bar — Social proof (#7) -->
-  <section class="employers-bar">
-    <p class="employers-title">הבוגרים שלנו עובדים ב:</p>
-    <div class="employers-logos">
-      <img src="images/employers/israel-electric.webp" alt="חברת החשמל" loading="lazy">
-      <img src="images/employers/unilever.webp" alt="Unilever" loading="lazy">
-      <img src="images/employers/tnuva.webp" alt="תנובה" loading="lazy">
-      <img src="images/employers/mizrahi-tefahot.webp" alt="בנק מזרחי-טפחות" loading="lazy">
     </div>
   </section>
 
@@ -291,6 +270,17 @@
     </div>
   </section>
 
+  <!-- Employer Logos Bar — Social proof -->
+  <section class="employers-bar">
+    <p class="employers-title">הבוגרים שלנו עובדים ב:</p>
+    <div class="employers-logos">
+      <img src="images/employers/israel-electric.webp" alt="חברת החשמל" loading="lazy">
+      <img src="images/employers/unilever.webp" alt="Unilever" loading="lazy">
+      <img src="images/employers/tnuva.webp" alt="תנובה" loading="lazy">
+      <img src="images/employers/mizrahi-tefahot.webp" alt="בנק מזרחי-טפחות" loading="lazy">
+    </div>
+  </section>
+
   <!-- #12 Testimonials moved UP — with real photos -->
   <section class="testimonials" id="testimonials">
     <h2 class="section-title">הבוגרים שלנו מספרים</h2>
@@ -364,7 +354,6 @@
     <div class="badges-inner">
       <img src="images/badges/stamp-satisfaction.svg" alt="מקום ראשון בשביעות רצון סטודנטים" class="badge-stamp" loading="lazy">
       <img src="images/badges/stampa-health.svg" alt="חותמת בריאות" class="badge-stamp" loading="lazy">
-      <img src="images/badges/atava.svg" alt="תו אטב״א" class="badge-stamp" loading="lazy">
     </div>
   </section>
 
