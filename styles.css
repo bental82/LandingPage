@@ -314,12 +314,13 @@ input, select {
   display: block;
   font-size: 1.75rem;
   font-weight: 800;
-  color: #6DCFF6;
+  color: #fff;
 }
 
 .proof-label {
   font-size: 0.85rem;
-  opacity: 0.8;
+  color: #fff;
+  opacity: 0.85;
 }
 
 .proof-divider {
@@ -338,21 +339,23 @@ input, select {
 
 .btn-primary {
   display: inline-block;
-  background: #27AAE1;
+  background: #029640;
   color: #fff;
   padding: 0.9rem 2rem;
   border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 700;
   text-align: center;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(2,150,64,0.3);
 }
 
 .btn-primary:hover {
-  background: #0082D8;
-  transform: translateY(-1px);
+  background: #027a34;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2,150,64,0.4);
 }
 
 .btn-secondary {
@@ -443,7 +446,7 @@ input, select {
 
 .btn-submit {
   width: 100%;
-  background: #27AAE1;
+  background: #029640;
   color: #fff;
   padding: 0.95rem;
   border-radius: 8px;
@@ -451,13 +454,15 @@ input, select {
   font-weight: 800;
   border: none;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(2,150,64,0.3);
 }
 
 .btn-submit:hover {
-  background: #0082D8;
-  transform: translateY(-1px);
+  background: #027a34;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2,150,64,0.4);
 }
 
 .form-step2-msg {
@@ -858,7 +863,7 @@ input, select {
 }
 
 .sticky-form-btn {
-  background: #27AAE1;
+  background: #029640;
   color: #fff;
 }
 
