@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>המרכז האקדמי פרס — הרשמה לתואר</title>
+  <meta name="description" content="תואר ראשון בשנתיים, תואר שני בשנה. למידה היברידית גמישה. הרשמו עכשיו וקבלו פטור מדמי רישום!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <!-- Preload hero person image for LCP optimization (#11) -->
+  <link rel="preload" as="image" href="images/hero/banner.webp" type="image/webp">
+  <!-- Use Ploni font like the live site -->
+  <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-regular-aaa.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-bold-aaa.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- #6 Cookie Banner - Minimal, non-blocking -->
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="הודעת עוגיות">
+    <p>אתר זה משתמש בעוגיות לשיפור החוויה.</p>
+    <button id="cookie-accept" class="cookie-btn" aria-label="אישור עוגיות">אישור</button>
+  </div>
+
+  <!-- Header / Nav - #2 Simplified mobile nav -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#hero" class="logo" aria-label="המרכז האקדמי פרס — לעמוד הבית">
+        <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" class="logo-img">
+      </a>
+      <nav class="nav-desktop" aria-label="ניווט ראשי">
+        <div class="nav-dropdown">
+          <button class="nav-btn" aria-expanded="false" aria-haspopup="true">מסלולי תואר ראשון <span class="arrow-down">&#9662;</span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li role="menuitem"><a href="#form-section">מנהל עסקים</a></li>
+            <li role="menuitem"><a href="#form-section">משפטים</a></li>
+            <li role="menuitem"><a href="#form-section">מדעי ההתנהגות</a></li>
+            <li role="menuitem"><a href="#form-section">מדעי התזונה</a></li>
+            <li role="menuitem"><a href="#form-section">מערכות מידע ניהוליות</a></li>
+            <li role="menuitem"><a href="#form-section">תקשורת ומנהל עסקים</a></li>
+          </ul>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-btn" aria-expanded="false" aria-haspopup="true">מסלולי תואר שני <span class="arrow-down">&#9662;</span></button>
+          <ul class="dropdown-menu" role="menu">
+            <li role="menuitem"><a href="#form-section">MBA מנהל עסקים</a></li>
+            <li role="menuitem"><a href="#form-section">ייעוץ ופיתוח ארגוני</a></li>
+            <li role="menuitem"><a href="#form-section">ניהול משאבי אנוש</a></li>
+            <li role="menuitem"><a href="#form-section">ניהול מערכות בריאות</a></li>
+            <li role="menuitem"><a href="#form-section">משפטים ללא משפטנים</a></li>
+          </ul>
+        </div>
+        <a href="tel:08-3006090" class="nav-phone-btn">&#9742; 08-3006090</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="תפריט" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <nav class="nav-mobile" id="nav-mobile" aria-label="תפריט נייד">
+      <a href="#form-section" class="mobile-link">מסלולי תואר ראשון</a>
+      <a href="#form-section" class="mobile-link">מסלולי תואר שני</a>
+      <a href="tel:08-3006090" class="mobile-link phone-link">&#9742; התקשרו עכשיו: 08-3006090</a>
+    </nav>
+  </header>
+
+  <!-- #1,#2,#3 HERO — Clickable, mobile-first, clear message, with banner image -->
+  <section class="hero" id="hero">
+    <!-- Person cutout image — positioned to the side -->
+    <div class="hero-person">
+      <picture>
+        <img src="images/hero/banner.webp" alt="סטודנט במרכז האקדמי פרס" class="hero-person-img" loading="eager">
+      </picture>
+      <img src="images/hero/banner-hover.webp" alt="" class="hero-person-hover" loading="eager" aria-hidden="true">
+    </div>
+
+    <!-- Badges floating on hero -->
+    <div class="hero-badge hero-badge-satisfaction">
+      <img src="images/badges/stamp-satisfaction.svg" alt="מקום ראשון בישראל בשביעות רצון סטודנטים">
+    </div>
+    <div class="hero-badge hero-badge-atava">
+      <img src="images/badges/atava.svg" alt="תו אטב״א">
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-content">
+        <!-- #3 Clear, practical hero message -->
+        <p class="hero-eyebrow">בואו להשוויץ</p>
+        <img src="images/hero/main-text.webp" alt="בקריירה שלכם" class="hero-text-img">
+        <h1 class="hero-title">תואר ראשון בשנתיים.<br>תואר שני בשנה.</h1>
+        <p class="hero-subtitle">למידה היברידית גמישה עם מגוון מסלולים ללימוד תואר ראשון ושני!</p>
+
+        <!-- #7 Social Proof Above the Fold -->
+        <div class="hero-social-proof">
+          <div class="proof-item">
+            <span class="proof-number">15,000+</span>
+            <span class="proof-label">בוגרים בתעשייה</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <span class="proof-number">#1</span>
+            <span class="proof-label">בשביעות רצון סטודנטים</span>
+          </div>
+          <div class="proof-divider"></div>
+          <div class="proof-item">
+            <span class="proof-number">93%</span>
+            <span class="proof-label">השמה בתעסוקה</span>
+          </div>
+        </div>
+
+        <!-- #1 CTA Button in Hero - fixes dead clicks -->
+        <div class="hero-cta-group">
+          <a href="#form-section" class="btn-primary hero-cta">השאירו פרטים וקבלו פטור מדמי רישום</a>
+          <a href="tel:08-3006090" class="btn-secondary hero-phone">&#9742; או חייגו 08-3006090</a>
+        </div>
+      </div>
+
+      <!-- #5 Shortened form - only 2 fields initially -->
+      <div class="hero-form-wrapper" id="form-section">
+        <form class="lead-form" id="lead-form" novalidate>
+          <div class="form-badge">ההרשמה בעיצומה! פטור מדמי רישום</div>
+          <h2 class="form-title">השאירו פרטים ונחזור אליכם</h2>
+
+          <!-- Step 1: Name + Phone only -->
+          <div class="form-step" id="form-step-1">
+            <div class="form-field">
+              <label for="fullname" class="sr-only">שם מלא</label>
+              <input type="text" id="fullname" name="fullname" placeholder="שם מלא" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="phone" class="sr-only">טלפון</label>
+              <input type="tel" id="phone" name="phone" placeholder="טלפון" required autocomplete="tel" pattern="[0-9\-+\s]{9,15}">
+            </div>
+            <button type="button" class="btn-submit" id="btn-step1">תחזרו אליי &larr;</button>
+          </div>
+
+          <!-- Step 2: Email + Track (shown after step 1) -->
+          <div class="form-step hidden" id="form-step-2">
+            <p class="form-step2-msg">תודה! עוד רגע סיימנו - עזרו לנו להתאים לכם מסלול:</p>
+            <div class="form-field">
+              <label for="email" class="sr-only">מייל</label>
+              <input type="email" id="email" name="email" placeholder="מייל (לא חובה)" autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="track" class="sr-only">מסלול לימודים</label>
+              <select id="track" name="track">
+                <option value="">מה מעניין אתכם? (לא חובה)</option>
+                <option value="business">מנהל עסקים</option>
+                <option value="law">משפטים</option>
+                <option value="health">מנהל מערכות בריאות</option>
+                <option value="behavior">מדעי ההתנהגות</option>
+                <option value="nutrition">מדעי התזונה</option>
+                <option value="hr">ניהול משאבי אנוש</option>
+                <option value="mis">מערכות מידע ניהוליות</option>
+                <option value="comm">תקשורת ומנהל עסקים</option>
+                <option value="mba">תואר שני MBA</option>
+                <option value="ma-health">תואר שני מנהל מערכות בריאות</option>
+                <option value="ma-org">תואר שני ייעוץ ופיתוח ארגוני</option>
+                <option value="ma-law">תואר שני משפטים ללא משפטנים</option>
+                <option value="ma-hr">תואר שני ניהול משאבי אנוש</option>
+                <option value="undecided">עוד לא החלטתי</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-submit">שלחו ונדבר &larr;</button>
+          </div>
+
+          <!-- Success message -->
+          <div class="form-step hidden" id="form-success">
+            <div class="success-icon">&#10003;</div>
+            <p class="success-msg">תודה! ניצור איתך קשר בהקדם.</p>
+          </div>
+
+          <p class="form-disclaimer">בשליחת הטופס אני מאשר/ת קבלת מידע מהמרכז האקדמי פרס. ניתן לבטל בכל עת.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Employer Logos Bar — Social proof (#7) -->
+  <section class="employers-bar">
+    <p class="employers-title">הבוגרים שלנו עובדים ב:</p>
+    <div class="employers-logos">
+      <img src="images/employers/israel-electric.webp" alt="חברת החשמל" loading="lazy">
+      <img src="images/employers/unilever.webp" alt="Unilever" loading="lazy">
+      <img src="images/employers/tnuva.webp" alt="תנובה" loading="lazy">
+      <img src="images/employers/mizrahi-tefahot.webp" alt="בנק מזרחי-טפחות" loading="lazy">
+    </div>
+  </section>
+
+  <!-- #4 Replace 13 accordions with 4 visual benefit cards -->
+  <section class="benefits" id="benefits">
+    <h2 class="section-title">למה פרס?</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">&#9201;</div>
+        <h3>תואר ראשון בשנתיים</h3>
+        <p>מסלול מואץ שמאפשר לסיים תואר מלא בשנתיים בלבד ולהתחיל לעבוד מהר יותר.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">&#127968;</div>
+        <h3>למידה היברידית גמישה</h3>
+        <p>שילוב של הרצאות פרונטליות ולמידה מקוונת — לומדים מתי ואיפה שנוח לכם.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">&#8734;</div>
+        <h3>INFINITY — תואר שמתעדכן</h3>
+        <p>גישה לקורסים חדשים ותכנים מעודכנים גם אחרי סיום התואר, לנצח וללא תשלום.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">&#128640;</div>
+        <h3>תואר פלוס+ ולימודי תעודה</h3>
+        <p>לימודי תעודה מתקדמים כבר במהלך התואר — סייבר, AI, ניהול פרויקטים ועוד.</p>
+      </div>
+    </div>
+    <div class="benefits-more">
+      <p class="benefits-more-text">ועוד: תואר שני בשנה אחת | תכנית LEVEL UP להתמחות | AI Bootcamp | ליווי להשמה בהייטק | מעונות סטודנטים</p>
+      <a href="#form-section" class="btn-primary">רוצים לשמוע עוד? השאירו פרטים</a>
+    </div>
+  </section>
+
+  <!-- Certificates Section — "תואר פלוס+" showcase -->
+  <section class="certificates" id="certificates">
+    <h2 class="section-title">לימודי תעודה במהלך התואר</h2>
+    <p class="section-subtitle">עם תכנית ״תואר פלוס+״ תוכלו לקבל תעודות מקצועיות מתקדמות כבר תוך כדי הלימודים</p>
+    <div class="certificates-track">
+      <div class="cert-card">
+        <img src="images/certificates/cyber-security.svg" alt="תעודת סייבר ואבטחת מידע" loading="lazy">
+        <span>סייבר ואבטחת מידע</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/digital-marketing.svg" alt="תעודת שיווק דיגיטלי" loading="lazy">
+        <span>שיווק דיגיטלי</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/hr-management.svg" alt="תעודת ניהול משאבי אנוש" loading="lazy">
+        <span>ניהול משאבי אנוש</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/directors.svg" alt="תעודת דירקטורים" loading="lazy">
+        <span>דירקטורים</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/ecommerce.svg" alt="תעודת ניהול eCommerce" loading="lazy">
+        <span>ניהול eCommerce</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/tech-entrepreneurship.svg" alt="תעודת יזמות טכנולוגית" loading="lazy">
+        <span>יזמות טכנולוגית</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/business-coaching.svg" alt="תעודת אימון עסקי למנהלים" loading="lazy">
+        <span>אימון עסקי למנהלים</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/org-development.svg" alt="תעודת שינוי ופיתוח ארגוני" loading="lazy">
+        <span>שינוי ופיתוח ארגוני</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/crisis-management.svg" alt="תעודת ניהול משברים" loading="lazy">
+        <span>ניהול משברים</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/mediator.svg" alt="תעודת מגשר" loading="lazy">
+        <span>מגשר</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/real-estate.svg" alt="תעודת נדלן ויעוץ משכנתאות" loading="lazy">
+        <span>נדל״ן ויעוץ משכנתאות</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/senior-marketing.svg" alt="תעודת ניהול שיווק בכיר" loading="lazy">
+        <span>ניהול שיווק בכיר</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/sales-b2b.svg" alt="תעודת מנהלי מכירות Global B2B" loading="lazy">
+        <span>מנהלי מכירות B2B</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/group-facilitation.svg" alt="תעודת הנחיית קבוצות" loading="lazy">
+        <span>הנחיית קבוצות</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/biofeedback.svg" alt="תעודת ביופידבק" loading="lazy">
+        <span>ביופידבק</span>
+      </div>
+      <div class="cert-card">
+        <img src="images/certificates/human-capital.svg" alt="תעודת תכנון הון אנושי" loading="lazy">
+        <span>תכנון הון אנושי</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- #12 Testimonials moved UP — with real photos -->
+  <section class="testimonials" id="testimonials">
+    <h2 class="section-title">הבוגרים שלנו מספרים</h2>
+    <div class="testimonials-track" id="testimonials-track">
+      <div class="testimonial-card">
+        <img src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" class="testimonial-photo" loading="lazy">
+        <blockquote>
+          <p>המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי.</p>
+        </blockquote>
+        <cite>
+          <strong>עידו איינבינדר</strong>
+          <span>סמנכ״ל משאבי אנוש ומטה, חדשות 13</span>
+        </cite>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/testimonials/hava-atias.webp" alt="חוה אטיאס" class="testimonial-photo" loading="lazy">
+        <blockquote>
+          <p>הלימודים במרכז נתנו לי פרספקטיבה רחבה וכלים לעולם העבודה החדש שנתנו לי יתרון ממשי בקריירה.</p>
+        </blockquote>
+        <cite>
+          <strong>חוה אטיאס</strong>
+          <span>סמנכ"לית משאבי אנוש, ארגון ״מסע״</span>
+        </cite>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/testimonials/kobi-kanti.webp" alt="קובי קנטי" class="testimonial-photo" loading="lazy">
+        <blockquote>
+          <p>הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד.</p>
+        </blockquote>
+        <cite>
+          <strong>קובי קנטי</strong>
+          <span>Product Manager, Commit</span>
+        </cite>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/testimonials/ido-vafner.webp" alt="עידו ופנר" class="testimonial-photo" loading="lazy">
+        <blockquote>
+          <p>ארסנל הכלים שקיבלתי במהלך התואר הוא עצום ועזר לי להשתלב במהירות בעולם ההייטק.</p>
+        </blockquote>
+        <cite>
+          <strong>עידו ופנר</strong>
+          <span>סמנכ"ל וחבר הנהלה, Kyndryl</span>
+        </cite>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" class="testimonial-photo" loading="lazy">
+        <blockquote>
+          <p>תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים.</p>
+        </blockquote>
+        <cite>
+          <strong>ניצן לוין</strong>
+          <span>מנהלת שיווק, סומך חייקין KPMG</span>
+        </cite>
+      </div>
+      <div class="testimonial-card">
+        <img src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" class="testimonial-photo" loading="lazy">
+        <blockquote>
+          <p>תכנית הלימודים נתנה לי אפשרות לשלב לימודי תואר ראשון עם עבודה, חברים ופנאי. המרצים מדהימים.</p>
+        </blockquote>
+        <cite>
+          <strong>דניאל ביטון</strong>
+          <span>מנכ"לית משותפת, E.D.I Energy</span>
+        </cite>
+      </div>
+    </div>
+    <div class="testimonials-dots" id="testimonials-dots" aria-label="ניווט ביקורות"></div>
+  </section>
+
+  <!-- Badges bar -->
+  <section class="badges-bar">
+    <div class="badges-inner">
+      <img src="images/badges/stamp-satisfaction.svg" alt="מקום ראשון בשביעות רצון סטודנטים" class="badge-stamp" loading="lazy">
+      <img src="images/badges/stampa-health.svg" alt="חותמת בריאות" class="badge-stamp" loading="lazy">
+      <img src="images/badges/atava.svg" alt="תו אטב״א" class="badge-stamp" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Secondary CTA / Final form section -->
+  <section class="final-cta">
+    <div class="final-cta-inner">
+      <h2>מוכנים להתחיל?</h2>
+      <p>השאירו פרטים עכשיו וקבלו פטור מדמי רישום, או חייגו ישירות ליועצי הלימודים שלנו.</p>
+      <div class="final-cta-buttons">
+        <a href="#form-section" class="btn-primary">השאירו פרטים</a>
+        <a href="tel:08-3006090" class="btn-secondary">&#9742; 08-3006090</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with secondary logo -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="images/logos/logo-footer.svg" alt="המרכז האקדמי פרס" class="footer-logo" loading="lazy">
+      <p>&copy; 2026 המרכז האקדמי פרס. כל הזכויות שמורות.</p>
+      <div class="footer-links">
+        <a href="#">מדיניות פרטיות</a>
+        <a href="#">תנאי שימוש</a>
+        <a href="#">נגישות</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- #8 Sticky Click-to-Call for mobile -->
+  <div class="sticky-phone" id="sticky-phone">
+    <a href="tel:08-3006090" class="sticky-phone-btn" aria-label="התקשרו עכשיו">
+      <span class="phone-icon">&#9742;</span>
+      <span class="phone-text">התקשרו עכשיו</span>
+    </a>
+    <a href="#form-section" class="sticky-form-btn" aria-label="השאירו פרטים">
+      השאירו פרטים
+    </a>
+  </div>
+
+  <!-- #15 Exit Intent Popup (desktop) / Scroll-back trigger (mobile) -->
+  <div class="exit-popup hidden" id="exit-popup" role="dialog" aria-label="לפני שעוזבים">
+    <div class="exit-popup-overlay" id="exit-overlay"></div>
+    <div class="exit-popup-content">
+      <button class="exit-close" id="exit-close" aria-label="סגור">&times;</button>
+      <h3>רגע, לפני שעוזבים!</h3>
+      <p>השאירו טלפון ויועץ לימודים יחזור אליכם לשיחה קצרה — בלי התחייבות.</p>
+      <form class="exit-form" id="exit-form">
+        <input type="tel" placeholder="הטלפון שלכם" required pattern="[0-9\-+\s]{9,15}">
+        <button type="submit" class="btn-primary">שיחת ייעוץ חינם</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
