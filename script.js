@@ -120,24 +120,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // --- Carousel Arrow Navigation (shared helper) ---
   function setupCarouselArrows(trackId, rightBtnId, leftBtnId) {
-    var track = document.getElementById(trackId);
+    var trackEl = document.getElementById(trackId);
     var rightBtn = document.getElementById(rightBtnId);
     var leftBtn = document.getElementById(leftBtnId);
-    if (!track || !rightBtn || !leftBtn) return;
+    if (!trackEl || !rightBtn || !leftBtn) return;
 
     var scrollAmount = 320;
 
+    // RTL: right arrow (visually right) = scroll towards start = negative scrollBy
+    // Left arrow (visually left) = scroll towards end = positive scrollBy
     rightBtn.addEventListener('click', function () {
-      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      trackEl.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
 
     leftBtn.addEventListener('click', function () {
-      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      trackEl.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   }
 
-  setupCarouselArrows('certificates-track', 'cert-arrow-left', 'cert-arrow-right');
-  setupCarouselArrows('testimonials-track', 'test-arrow-left', 'test-arrow-right');
+  setupCarouselArrows('certificates-track', 'cert-arrow-right', 'cert-arrow-left');
+  setupCarouselArrows('testimonials-track', 'test-arrow-right', 'test-arrow-left');
 
   // --- Testimonials Dots ---
   var track = document.getElementById('testimonials-track');
