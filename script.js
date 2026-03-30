@@ -4,17 +4,26 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // --- Cookie Banner (#6) ---
+  // --- Cookie Banner (#6) — GDPR with accept/decline ---
   var cookieBanner = document.getElementById('cookie-banner');
   var cookieAccept = document.getElementById('cookie-accept');
+  var cookieDecline = document.getElementById('cookie-decline');
 
-  if (localStorage.getItem('cookie-accepted')) {
+  if (localStorage.getItem('cookie-choice')) {
     cookieBanner.classList.add('dismissed');
   }
 
-  cookieAccept.addEventListener('click', function () {
+  function dismissCookieBanner(choice) {
     cookieBanner.classList.add('dismissed');
-    localStorage.setItem('cookie-accepted', '1');
+    localStorage.setItem('cookie-choice', choice);
+  }
+
+  cookieAccept.addEventListener('click', function () {
+    dismissCookieBanner('accepted');
+  });
+
+  cookieDecline.addEventListener('click', function () {
+    dismissCookieBanner('declined');
   });
 
   // --- Mobile Hamburger Menu ---
@@ -27,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburger.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close mobile nav when a link is clicked
   navMobile.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       navMobile.classList.remove('open');
@@ -62,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (valid) {
-      // Track step 1 completion
       if (typeof gtag === 'function') {
         gtag('event', 'lead_form_step1', {
           event_category: 'form',
@@ -78,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Track form submission
     if (typeof gtag === 'function') {
       gtag('event', 'generate_lead', {
         event_category: 'form',
@@ -89,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function () {
     step2.classList.add('hidden');
     success.classList.remove('hidden');
 
-    // In production: send data to server here
     var formData = {
       name: fullnameInput.value.trim(),
       phone: phoneInput.value.trim(),
@@ -98,6 +103,41 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     console.log('Lead submitted:', formData);
   });
+
+  // --- Certificates: shuffle and show 5 random ---
+  var certTrack = document.getElementById('certificates-track');
+  if (certTrack) {
+    var certCards = Array.from(certTrack.querySelectorAll('.cert-card'));
+    // Fisher-Yates shuffle
+    for (var i = certCards.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      certTrack.appendChild(certCards[j]);
+      var temp = certCards[i];
+      certCards[i] = certCards[j];
+      certCards[j] = temp;
+    }
+  }
+
+  // --- Carousel Arrow Navigation (shared helper) ---
+  function setupCarouselArrows(trackId, rightBtnId, leftBtnId) {
+    var track = document.getElementById(trackId);
+    var rightBtn = document.getElementById(rightBtnId);
+    var leftBtn = document.getElementById(leftBtnId);
+    if (!track || !rightBtn || !leftBtn) return;
+
+    var scrollAmount = 320;
+
+    rightBtn.addEventListener('click', function () {
+      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    leftBtn.addEventListener('click', function () {
+      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+  }
+
+  setupCarouselArrows('certificates-track', 'cert-arrow-left', 'cert-arrow-right');
+  setupCarouselArrows('testimonials-track', 'test-arrow-left', 'test-arrow-right');
 
   // --- Testimonials Dots ---
   var track = document.getElementById('testimonials-track');
@@ -116,14 +156,12 @@ document.addEventListener('DOMContentLoaded', function () {
     dotsContainer.appendChild(dot);
   }
 
-  // Update active dot on scroll
   var scrollTimer;
   track.addEventListener('scroll', function () {
     clearTimeout(scrollTimer);
     scrollTimer = setTimeout(function () {
       var scrollLeft = track.scrollLeft;
-      var cardWidth = cards[0].offsetWidth + 24; // gap
-      // RTL: scrollLeft is negative in some browsers
+      var cardWidth = cards[0].offsetWidth + 24;
       var absScroll = Math.abs(scrollLeft);
       var activeIdx = Math.round(absScroll / cardWidth);
       activeIdx = Math.max(0, Math.min(activeIdx, dotCount - 1));
@@ -152,14 +190,12 @@ document.addEventListener('DOMContentLoaded', function () {
     exitPopup.classList.add('hidden');
   }
 
-  // Desktop: mouse leaves viewport from top
   document.addEventListener('mouseout', function (e) {
     if (e.clientY <= 0) {
       showExitPopup();
     }
   });
 
-  // Mobile: detect rapid scroll up (back intent)
   var lastScrollY = window.scrollY;
   var scrollUpDistance = 0;
 
@@ -195,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // --- Smooth scroll for all anchor links (#1 fix dead clicks) ---
+  // --- Smooth scroll for all anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
       var target = document.querySelector(this.getAttribute('href'));

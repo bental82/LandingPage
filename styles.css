@@ -82,15 +82,29 @@ input, select {
   pointer-events: none;
 }
 
+.cookie-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
 .cookie-btn {
-  background: #27AAE1;
-  color: #fff;
   padding: 0.4rem 1.5rem;
   border-radius: 4px;
   font-weight: 700;
   font-size: 0.9rem;
   min-width: 44px;
   min-height: 44px;
+}
+
+.cookie-accept {
+  background: #27AAE1;
+  color: #fff;
+}
+
+.cookie-decline {
+  background: transparent;
+  color: #AAE3FF;
+  border: 1px solid #AAE3FF;
 }
 
 /* --- Header --- */
@@ -940,6 +954,49 @@ input, select {
   font-size: 0.95rem;
 }
 
+/* --- Carousel Arrows (shared for certificates + testimonials) --- */
+.carousel-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: #0061AF;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: 2px solid #E9E9E4;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background 0.2s, box-shadow 0.2s;
+  line-height: 1;
+}
+
+.carousel-arrow:hover {
+  background: #0061AF;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,97,175,0.3);
+}
+
+.carousel-arrow-right {
+  right: -22px;
+}
+
+.carousel-arrow-left {
+  left: -22px;
+}
+
 /* =============================================
    Responsive — Mobile First (#2)
    ============================================= */
@@ -1014,6 +1071,15 @@ input, select {
 
   .benefit-icon {
     font-size: 2rem;
+  }
+
+  /* Carousel arrows on mobile */
+  .carousel-arrow-right {
+    right: 0;
+  }
+
+  .carousel-arrow-left {
+    left: 0;
   }
 
   /* Employers */
