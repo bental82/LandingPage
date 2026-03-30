@@ -8,8 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-  <!-- Preload hero banner for LCP optimization (#11) -->
+  <!-- Preload hero person image for LCP optimization (#11) -->
   <link rel="preload" as="image" href="images/hero/banner.webp" type="image/webp">
+  <!-- Use Ploni font like the live site -->
+  <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-regular-aaa.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-bold-aaa.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -64,22 +67,29 @@
 
   <!-- #1,#2,#3 HERO — Clickable, mobile-first, clear message, with banner image -->
   <section class="hero" id="hero">
+    <!-- Person cutout image — positioned to the side -->
+    <div class="hero-person">
+      <picture>
+        <img src="images/hero/banner.webp" alt="סטודנט במרכז האקדמי פרס" class="hero-person-img" loading="eager">
+      </picture>
+      <img src="images/hero/banner-hover.webp" alt="" class="hero-person-hover" loading="eager" aria-hidden="true">
+    </div>
+
+    <!-- Badges floating on hero -->
+    <div class="hero-badge hero-badge-satisfaction">
+      <img src="images/badges/stamp-satisfaction.svg" alt="מקום ראשון בישראל בשביעות רצון סטודנטים">
+    </div>
+    <div class="hero-badge hero-badge-atava">
+      <img src="images/badges/atava.svg" alt="תו אטב״א">
+    </div>
+
     <div class="hero-inner">
       <div class="hero-content">
-        <!-- Hero banner image with hover effect -->
-        <div class="hero-banner">
-          <img src="images/hero/banner.webp" alt="סטודנט במרכז האקדמי פרס" class="hero-banner-img" loading="eager">
-          <img src="images/hero/banner-hover.webp" alt="" class="hero-banner-img hero-banner-hover" loading="eager" aria-hidden="true">
-          <!-- Satisfaction badge overlay -->
-          <div class="hero-badge">
-            <img src="images/badges/stamp-satisfaction.svg" alt="מקום ראשון בישראל בשביעות רצון סטודנטים" class="hero-badge-img">
-          </div>
-        </div>
-
         <!-- #3 Clear, practical hero message -->
-        <h1 class="hero-title">תואר ראשון בשנתיים.<br>תואר שני בשנה.</h1>
+        <p class="hero-eyebrow">בואו להשוויץ</p>
         <img src="images/hero/main-text.webp" alt="בקריירה שלכם" class="hero-text-img">
-        <p class="hero-subtitle">למידה היברידית גמישה שמתאימה לחיים שלך — מהבית או מהקמפוס.</p>
+        <h1 class="hero-title">תואר ראשון בשנתיים.<br>תואר שני בשנה.</h1>
+        <p class="hero-subtitle">למידה היברידית גמישה עם מגוון מסלולים ללימוד תואר ראשון ושני!</p>
 
         <!-- #7 Social Proof Above the Fold -->
         <div class="hero-social-proof">

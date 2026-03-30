@@ -279,59 +279,95 @@ input, select {
   z-index: 1;
 }
 
-/* Hero banner image with hover effect */
-.hero-banner {
-  position: relative;
-  margin-bottom: 1.5rem;
-  max-width: 320px;
+/* Hero person cutout — positioned at the side like the live site */
+.hero-person {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.hero-banner-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  transition: opacity 0.3s ease;
+.hero-person-img {
+  display: block;
+  height: 420px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
 }
 
-.hero-banner-hover {
+.hero-person-hover {
   position: absolute;
   inset: 0;
+  height: 420px;
+  width: auto;
+  object-fit: contain;
   opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.hero-banner:hover .hero-banner-hover {
+.hero:hover .hero-person-hover {
   opacity: 1;
 }
 
-.hero-badge {
-  position: absolute;
-  bottom: -16px;
-  left: -16px;
-  z-index: 2;
+.hero:hover .hero-person-img {
+  opacity: 0;
 }
 
-.hero-badge-img {
-  width: 90px;
-  height: 90px;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+/* Floating badges on hero */
+.hero-badge {
+  position: absolute;
+  z-index: 3;
+}
+
+.hero-badge img {
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+}
+
+.hero-badge-satisfaction {
+  left: 30px;
+  top: 30px;
+}
+
+.hero-badge-satisfaction img {
+  width: 110px;
+  height: auto;
+}
+
+.hero-badge-atava {
+  left: 160px;
+  top: 40px;
+}
+
+.hero-badge-atava img {
+  width: 70px;
+  height: auto;
+}
+
+/* Hero eyebrow text */
+.hero-eyebrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e8b931;
+  margin-bottom: 0.25rem;
+}
+
+.hero-text-img {
+  height: 52px;
+  width: auto;
+  margin-bottom: 0.75rem;
+  display: block;
 }
 
 .hero-title {
-  font-size: 2.75rem;
+  font-size: 2.25rem;
   font-weight: 900;
   line-height: 1.2;
   margin-bottom: 0.75rem;
 }
 
-.hero-text-img {
-  height: 40px;
-  width: auto;
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
-
 .hero-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 300;
   opacity: 0.9;
   margin-bottom: 2rem;
@@ -1051,19 +1087,45 @@ input, select {
     font-size: 2rem;
   }
 
-  /* Hero banner mobile */
-  .hero-banner {
-    max-width: 200px;
-    margin: 0 auto 1rem;
+  /* Hero person cutout — smaller on mobile, repositioned */
+  .hero-person {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    text-align: center;
+    margin-bottom: 1rem;
   }
 
-  .hero-badge-img {
-    width: 65px;
-    height: 65px;
+  .hero-person-img,
+  .hero-person-hover {
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  .hero-badge-satisfaction {
+    left: 10px;
+    top: 10px;
+  }
+
+  .hero-badge-satisfaction img {
+    width: 75px;
+  }
+
+  .hero-badge-atava {
+    left: 95px;
+    top: 15px;
+  }
+
+  .hero-badge-atava img {
+    width: 50px;
+  }
+
+  .hero-eyebrow {
+    font-size: 1.15rem;
   }
 
   .hero-text-img {
-    height: 28px;
+    height: 32px;
   }
 
   /* Employers */
