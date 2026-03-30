@@ -127,14 +127,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var scrollAmount = 320;
 
-    // RTL: right arrow (visually right) = scroll towards start = negative scrollBy
-    // Left arrow (visually left) = scroll towards end = positive scrollBy
+    // In RTL: clicking the RIGHT arrow should reveal content to the right (earlier items)
+    // Clicking the LEFT arrow should reveal content to the left (later items)
+    // Use scrollLeft directly: in RTL, scrollLeft starts at 0 and goes negative
     rightBtn.addEventListener('click', function () {
-      trackEl.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      var current = trackEl.scrollLeft;
+      trackEl.scrollTo({ left: current + scrollAmount, behavior: 'smooth' });
     });
 
     leftBtn.addEventListener('click', function () {
-      trackEl.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      var current = trackEl.scrollLeft;
+      trackEl.scrollTo({ left: current - scrollAmount, behavior: 'smooth' });
     });
   }
 
