@@ -353,7 +353,7 @@ input, select {
 
 .btn-primary {
   display: inline-block;
-  background: #BDF2E1;
+  background: #5DE8B0;
   color: #000F37;
   padding: 0.9rem 2rem;
   border-radius: 8px;
@@ -363,13 +363,13 @@ input, select {
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(189,242,225,0.4);
+  box-shadow: 0 4px 12px rgba(93,232,176,0.4);
 }
 
 .btn-primary:hover {
-  background: #9be8cd;
+  background: #3DE09E;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(189,242,225,0.5);
+  box-shadow: 0 6px 20px rgba(93,232,176,0.5);
 }
 
 .btn-secondary {
@@ -460,7 +460,7 @@ input, select {
 
 .btn-submit {
   width: 100%;
-  background: #BDF2E1;
+  background: #5DE8B0;
   color: #000F37;
   padding: 0.95rem;
   border-radius: 8px;
@@ -470,13 +470,13 @@ input, select {
   cursor: pointer;
   transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   margin-top: 0.5rem;
-  box-shadow: 0 4px 12px rgba(189,242,225,0.4);
+  box-shadow: 0 4px 12px rgba(93,232,176,0.4);
 }
 
 .btn-submit:hover {
-  background: #9be8cd;
+  background: #3DE09E;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(189,242,225,0.5);
+  box-shadow: 0 6px 20px rgba(93,232,176,0.5);
 }
 
 .form-step2-msg {
@@ -877,7 +877,7 @@ input, select {
 }
 
 .sticky-form-btn {
-  background: #BDF2E1;
+  background: #5DE8B0;
   color: #000F37;
 }
 
