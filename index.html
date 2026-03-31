@@ -16,12 +16,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "המרכז האקדמי פרס",
+    "alternateName": "Peres Academic Center",
+    "url": "https://peres-pac.co.il",
+    "telephone": "08-3006090",
+    "email": "pac@pac.ac.il",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "רחובות",
+      "addressCountry": "IL"
+    },
+    "sameAs": [
+      "https://www.pac.ac.il"
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV2SWLSL"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Skip link for accessibility -->
+  <a href="#hero" class="skip-link">דלג לתוכן הראשי</a>
 
   <!-- Cookie Consent — GDPR modal with preferences -->
   <div id="cookie-overlay" class="cookie-overlay hidden"></div>
@@ -64,6 +86,7 @@
     </div>
   </header>
 
+  <main>
   <!-- HERO — Video background -->
   <section class="hero" id="hero">
     <!-- Full-screen video background -->
@@ -75,10 +98,10 @@
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-brand">
-          <img src="images/rounded_logo.webp" alt="" class="hero-rounded-logo" aria-hidden="true">
+          <img src="images/rounded_logo.webp" alt="המרכז האקדמי פרס" class="hero-rounded-logo">
           <h1 class="hero-title">המרכז האקדמי פרס</h1>
         </div>
-        <p class="hero-subtitle">בואו ליהנות ממגוון תכניות לימוד חדשניות וגמישות,<br>מסלולי לימוד מקוצרים, לימודי תעודה מתקדמים כבר במהלך התואר ועוד.</p>
+        <p class="hero-subtitle">בואו ליהנות ממגוון תכניות לימוד חדשניות וגמישות, מסלולי לימוד מקוצרים, לימודי תעודה מתקדמים כבר במהלך התואר ועוד.</p>
 
         <!-- Social proof -->
         <div class="hero-social-proof">
@@ -302,6 +325,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
@@ -309,8 +334,6 @@
       <p>&copy; 2026 המרכז האקדמי פרס. כל הזכויות שמורות.</p>
       <div class="footer-links">
         <a href="privacy.html">מדיניות פרטיות</a>
-        <a href="#">תנאי שימוש</a>
-        <a href="#">נגישות</a>
       </div>
     </div>
   </footer>
@@ -333,13 +356,16 @@
       <p>השאירו פרטים ויועץ לימודים יחזור אליכם לשיחה קצרה — בלי התחייבות.</p>
       <form class="exit-form" id="exit-form">
         <div class="form-field">
-          <input type="text" placeholder="שם מלא" required autocomplete="name">
+          <label for="exit-name" class="sr-only">שם מלא</label>
+          <input type="text" id="exit-name" name="name" placeholder="שם מלא" required autocomplete="name">
         </div>
         <div class="form-field">
-          <input type="tel" placeholder="הטלפון שלך" required pattern="[0-9\-+\s]{9,15}">
+          <label for="exit-phone" class="sr-only">טלפון</label>
+          <input type="tel" id="exit-phone" name="phone" placeholder="הטלפון שלך" required pattern="[0-9\-+\s]{9,15}" autocomplete="tel">
         </div>
         <div class="form-field">
-          <input type="email" placeholder="המייל שלך" required>
+          <label for="exit-email" class="sr-only">מייל</label>
+          <input type="email" id="exit-email" name="email" placeholder="המייל שלך" required autocomplete="email">
         </div>
         <button type="submit" class="btn-primary">תחזרו אליי</button>
       </form>
