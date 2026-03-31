@@ -654,10 +654,30 @@ input, select {
   text-align: center;
 }
 
-.benefits-more-text {
-  font-size: 0.95rem;
-  color: #555;
+.benefits-more-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000F37;
+  margin-bottom: 0.75rem;
+}
+
+.benefits-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
   margin-bottom: 1.5rem;
+}
+
+.benefit-pill {
+  background: #fff;
+  color: #0061AF;
+  border: 1.5px solid #27AAE1;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* --- Employers Logo Bar --- */
@@ -925,6 +945,12 @@ input, select {
   color: #fff;
 }
 
+.footer-address {
+  font-size: 0.8rem;
+  color: #6DCFF6;
+  opacity: 0.7;
+}
+
 /* --- #8 Sticky Phone Bar (Mobile) --- */
 .sticky-phone {
   display: none;
@@ -959,8 +985,10 @@ input, select {
   gap: 0.5rem;
 }
 
-.phone-icon {
-  font-size: 1.2rem;
+.phone-icon-svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .sticky-form-btn {
