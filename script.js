@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var cookieClose = document.getElementById('cookie-close');
   var cookiePrefs = document.getElementById('cookie-prefs');
 
-  if (localStorage.getItem('cookie-choice')) {
+  // Only hide permanently if user accepted or declined
+  var cookieChoice = localStorage.getItem('cookie-choice');
+  if (cookieChoice === 'accepted' || cookieChoice === 'declined') {
     cookieBanner.classList.add('dismissed');
     cookieOverlay.classList.add('hidden');
   } else {
@@ -35,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   cookieClose.addEventListener('click', function () {
-    dismissCookies('closed');
+    // Just hide for this session, will show again next visit
+    cookieBanner.classList.add('dismissed');
+    cookieOverlay.classList.add('hidden');
   });
 
   cookieManage.addEventListener('click', function () {
@@ -142,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // --- Carousel Arrow Navigation (shared helper) ---
+  // --- Carousel Arrow Navigation (with wrap-around) ---
   function setupCarouselArrows(trackId, rightBtnId, leftBtnId) {
     var trackEl = document.getElementById(trackId);
     var rightBtn = document.getElementById(rightBtnId);
@@ -150,20 +154,36 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!trackEl || !rightBtn || !leftBtn) return;
 
     var scrollAmount = 280;
+    trackEl.style.scrollBehavior = 'smooth';
 
-    // RTL scroll: scrollLeft is 0 at start (rightmost), negative going left
-    // Right arrow = go back to start (increase scrollLeft toward 0)
-    // Left arrow = go forward (decrease scrollLeft, more negative)
+    // In RTL: scrollLeft is 0 at rightmost (start), negative going left
+    // Right arrow (‹) = reveal items to the right = scrollLeft goes more positive
+    // Left arrow (›) = reveal items to the left = scrollLeft goes more negative
+
     rightBtn.addEventListener('click', function () {
-      trackEl.scrollLeft += scrollAmount;
+      // If already at start (scrollLeft ~0), wrap to end
+      if (trackEl.scrollLeft >= -10) {
+        trackEl.style.scrollBehavior = 'auto';
+        trackEl.scrollLeft = -trackEl.scrollWidth;
+        trackEl.style.scrollBehavior = 'smooth';
+        setTimeout(function() { trackEl.scrollLeft += scrollAmount; }, 50);
+      } else {
+        trackEl.scrollLeft += scrollAmount;
+      }
     });
 
     leftBtn.addEventListener('click', function () {
-      trackEl.scrollLeft -= scrollAmount;
+      // If already at end (scrollLeft is very negative), wrap to start
+      var maxScroll = trackEl.scrollWidth - trackEl.clientWidth;
+      if (trackEl.scrollLeft <= -(maxScroll - 10)) {
+        trackEl.style.scrollBehavior = 'auto';
+        trackEl.scrollLeft = 0;
+        trackEl.style.scrollBehavior = 'smooth';
+        setTimeout(function() { trackEl.scrollLeft -= scrollAmount; }, 50);
+      } else {
+        trackEl.scrollLeft -= scrollAmount;
+      }
     });
-
-    // Add smooth scroll behavior via CSS
-    trackEl.style.scrollBehavior = 'smooth';
   }
 
   setupCarouselArrows('certificates-track', 'cert-arrow-right', 'cert-arrow-left');

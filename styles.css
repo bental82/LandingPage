@@ -68,18 +68,20 @@ input, select {
 
 .cookie-modal {
   position: fixed;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 1rem;
+  left: 1rem;
+  right: auto;
+  transform: none;
   background: #fff;
   color: #000F37;
-  border-radius: 16px;
-  padding: 1.75rem 2rem;
-  max-width: 520px;
-  width: 92%;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  max-width: 380px;
+  width: calc(100% - 2rem);
   z-index: 999;
   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
   direction: rtl;
+  font-size: 0.85rem;
 }
 
 .cookie-modal.dismissed {
@@ -303,13 +305,33 @@ input, select {
   font-weight: 700;
 }
 
-/* --- Hero Section — Gradient background --- */
+/* --- Hero Section — Video background --- */
 .hero {
-  background: linear-gradient(135deg, #000F37 0%, #0061AF 100%);
+  background: #000F37;
   color: #fff;
   padding: 3rem 1.5rem 4rem;
   position: relative;
   overflow: hidden;
+}
+
+.hero-video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-video-bg iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,15,55,0.82) 0%, rgba(0,97,175,0.65) 100%);
+  z-index: 1;
 }
 
 .hero-brand {
@@ -324,13 +346,6 @@ input, select {
   height: 64px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-.hero-video {
-  margin: 1.5rem 0;
-  border-radius: 12px;
-  overflow: hidden;
-  max-width: 560px;
 }
 
 .hero-inner {
@@ -1023,28 +1038,18 @@ input, select {
 
 .exit-form {
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.exit-form input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: 2px solid #E9E9E4;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-align: right;
-  direction: rtl;
-}
-
-.exit-form input::placeholder {
-  text-align: right;
-  direction: rtl;
+.exit-form .form-field {
+  margin-bottom: 0;
 }
 
 .exit-form .btn-primary {
-  white-space: nowrap;
-  padding: 0.75rem 1.25rem;
-  font-size: 0.95rem;
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
 }
 
 /* --- Carousel Arrows (shared for certificates + testimonials) --- */
