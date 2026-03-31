@@ -264,14 +264,22 @@ input, select {
 
 .hero-video-bg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
+  overflow: hidden;
 }
 
 .hero-video-bg iframe {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 177.78vh; /* 16:9 ratio to cover */
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
   border: none;
 }
 
@@ -1053,7 +1061,7 @@ input, select {
   }
 
   .nav-link {
-    font-size: 0.8rem;
+    display: none;
   }
 
   .nav-phone-btn {
@@ -1062,9 +1070,9 @@ input, select {
   }
 
 
-  /* Hero mobile layout */
+  /* Hero mobile layout — video starts right after header */
   .hero {
-    padding: 1.5rem 1rem 2rem;
+    padding: 1rem 1rem 2rem;
   }
 
   .hero-inner {

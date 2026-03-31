@@ -27,7 +27,7 @@
   <div id="cookie-overlay" class="cookie-overlay hidden"></div>
   <div id="cookie-banner" class="cookie-modal" role="dialog" aria-label="הגדרות עוגיות">
     <button class="cookie-close" id="cookie-close" aria-label="סגור">&times;</button>
-    <p class="cookie-text">אתר זה משתמש בקבצי Cookies לשיפור חווית הגלישה. המשך השימוש באתר או סגירת ההודעה מהווה הסכמה <a href="#">תנאי שימוש</a></p>
+    <p class="cookie-text">אתר זה משתמש בקבצי Cookies לשיפור חווית הגלישה. המשך השימוש באתר או סגירת ההודעה מהווה הסכמה <a href="privacy.html">תנאי שימוש</a></p>
     <div id="cookie-prefs" class="cookie-prefs hidden">
       <div class="cookie-pref-item">
         <div class="cookie-pref-header">
@@ -68,7 +68,7 @@
   <section class="hero" id="hero">
     <!-- Full-screen video background -->
     <div class="hero-video-bg">
-      <iframe src="https://player.vimeo.com/video/875118971?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1" allow="autoplay; fullscreen" style="position:absolute;top:50%;left:50%;width:120%;height:120%;transform:translate(-50%,-50%);" title="המרכז האקדמי פרס"></iframe>
+      <iframe src="https://player.vimeo.com/video/875118971?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1" allow="autoplay; fullscreen" title="המרכז האקדמי פרס"></iframe>
       <div class="hero-video-overlay"></div>
     </div>
 
@@ -207,6 +207,10 @@
         </ul>
       </div>
     </div>
+    <div class="benefits-more">
+      <p class="benefits-more-text">ועוד: תכנית LEVEL UP להתמחות | AI Bootcamp | ליווי להשמה בהייטק | מעונות סטודנטים | מקום ראשון בתמיכה במילואימניקים</p>
+      <a href="#form-section" class="btn-primary">רוצים לשמוע עוד? השאירו פרטים</a>
+    </div>
   </section>
 
   <!-- Certificates — directly after benefits, no gap -->
@@ -284,7 +288,7 @@
       <img src="images/logos/logo-white.svg" alt="המרכז האקדמי פרס" class="footer-logo" loading="lazy">
       <p>&copy; 2026 המרכז האקדמי פרס. כל הזכויות שמורות.</p>
       <div class="footer-links">
-        <a href="#">מדיניות פרטיות</a>
+        <a href="privacy.html">מדיניות פרטיות</a>
         <a href="#">תנאי שימוש</a>
         <a href="#">נגישות</a>
       </div>
@@ -308,6 +312,9 @@
       <h3>רגע, לפני שעוזבים!</h3>
       <p>השאירו פרטים ויועץ לימודים יחזור אליכם לשיחה קצרה — בלי התחייבות.</p>
       <form class="exit-form" id="exit-form">
+        <div class="form-field">
+          <input type="text" placeholder="שם מלא" required autocomplete="name">
+        </div>
         <div class="form-field">
           <input type="tel" placeholder="הטלפון שלך" required pattern="[0-9\-+\s]{9,15}">
         </div>
