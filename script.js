@@ -47,23 +47,6 @@ document.addEventListener('DOMContentLoaded', function () {
     this.textContent = cookiePrefs.classList.contains('hidden') ? 'ניהול העדפות' : 'שמור העדפות';
   });
 
-  // --- Mobile Hamburger Menu ---
-  var hamburger = document.getElementById('hamburger');
-  var navMobile = document.getElementById('nav-mobile');
-
-  hamburger.addEventListener('click', function () {
-    var isOpen = navMobile.classList.toggle('open');
-    hamburger.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', isOpen);
-  });
-
-  navMobile.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      navMobile.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
 
   // --- #5 Multi-Step Form ---
   var form = document.getElementById('lead-form');
@@ -246,6 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+  // Mobile: detect rapid scroll up (back intent)
   var lastScrollY = window.scrollY;
   var scrollUpDistance = 0;
 
