@@ -659,26 +659,33 @@ input, select {
   font-weight: 500;
 }
 
-.employers-logos {
+.employers-track {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 2.5rem;
-  flex-wrap: wrap;
-  max-width: 800px;
-  margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0.5rem 0;
 }
 
-.employers-logos img {
-  height: 48px;
+.employers-track::-webkit-scrollbar {
+  display: none;
+}
+
+.employers-track img {
+  height: 44px;
   width: auto;
   object-fit: contain;
+  flex-shrink: 0;
+  scroll-snap-align: start;
   filter: grayscale(100%);
-  opacity: 0.6;
+  opacity: 0.5;
   transition: filter 0.3s, opacity 0.3s;
 }
 
-.employers-logos img:hover {
+.employers-track img:hover {
   filter: grayscale(0%);
   opacity: 1;
 }

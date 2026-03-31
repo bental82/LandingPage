@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   setupCarouselArrows('certificates-track', 'cert-arrow-right', 'cert-arrow-left');
+  setupCarouselArrows('employers-track', 'emp-arrow-right', 'emp-arrow-left');
   setupCarouselArrows('testimonials-track', 'test-arrow-right', 'test-arrow-left');
 
   // --- Testimonials Dots ---
