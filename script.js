@@ -125,20 +125,21 @@ document.addEventListener('DOMContentLoaded', function () {
     var leftBtn = document.getElementById(leftBtnId);
     if (!trackEl || !rightBtn || !leftBtn) return;
 
-    var scrollAmount = 320;
+    var scrollAmount = 280;
 
-    // In RTL: clicking the RIGHT arrow should reveal content to the right (earlier items)
-    // Clicking the LEFT arrow should reveal content to the left (later items)
-    // Use scrollLeft directly: in RTL, scrollLeft starts at 0 and goes negative
+    // RTL scroll: scrollLeft is 0 at start (rightmost), negative going left
+    // Right arrow = go back to start (increase scrollLeft toward 0)
+    // Left arrow = go forward (decrease scrollLeft, more negative)
     rightBtn.addEventListener('click', function () {
-      var current = trackEl.scrollLeft;
-      trackEl.scrollTo({ left: current + scrollAmount, behavior: 'smooth' });
+      trackEl.scrollLeft += scrollAmount;
     });
 
     leftBtn.addEventListener('click', function () {
-      var current = trackEl.scrollLeft;
-      trackEl.scrollTo({ left: current - scrollAmount, behavior: 'smooth' });
+      trackEl.scrollLeft -= scrollAmount;
     });
+
+    // Add smooth scroll behavior via CSS
+    trackEl.style.scrollBehavior = 'smooth';
   }
 
   setupCarouselArrows('certificates-track', 'cert-arrow-right', 'cert-arrow-left');
