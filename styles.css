@@ -302,7 +302,7 @@ input, select {
 .hero-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,15,55,0.65) 0%, rgba(0,97,175,0.45) 100%);
+  background: linear-gradient(135deg, rgba(0,15,55,0.80) 0%, rgba(0,97,175,0.65) 100%);
   z-index: 1;
 }
 
@@ -1109,7 +1109,11 @@ input, select {
    ============================================= */
 
 @media (max-width: 768px) {
-  /* Mobile hero: GIF background instead of video */
+  /* Mobile hero: GIF background, lighter overlay */
+  .hero-video-overlay {
+    background: linear-gradient(135deg, rgba(0,15,55,0.55) 0%, rgba(0,97,175,0.35) 100%);
+  }
+
   .hero-video-bg iframe {
     display: none;
   }
