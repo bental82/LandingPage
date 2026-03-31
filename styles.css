@@ -336,17 +336,19 @@ input, select {
 
 .hero-title {
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1.2;
   margin-bottom: 0.75rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
 .hero-subtitle {
-  font-size: 1.15rem;
-  font-weight: 300;
-  color: rgba(255,255,255,0.85);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
   margin-bottom: 2rem;
   max-width: 550px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
   line-height: 1.7;
 }
 
