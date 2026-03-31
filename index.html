@@ -15,9 +15,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-  <!-- Use Ploni font like the live site -->
-  <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-regular-aaa.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://peres-pac.co.il/wp-content/themes/peres-theme/fonts/ploni-bold-aaa.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -26,69 +23,73 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- #6 Cookie Banner - GDPR compliant with decline option -->
-  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="הודעת עוגיות">
-    <p>אתר זה משתמש בעוגיות לשיפור החוויה.</p>
+  <!-- Cookie Consent — GDPR modal with preferences -->
+  <div id="cookie-overlay" class="cookie-overlay hidden"></div>
+  <div id="cookie-banner" class="cookie-modal" role="dialog" aria-label="הגדרות עוגיות">
+    <button class="cookie-close" id="cookie-close" aria-label="סגור">&times;</button>
+    <p class="cookie-text">אתר זה משתמש בקבצי Cookies לשיפור חווית הגלישה. המשך השימוש באתר או סגירת ההודעה מהווה הסכמה <a href="#">תנאי שימוש</a></p>
+    <div id="cookie-prefs" class="cookie-prefs hidden">
+      <div class="cookie-pref-item">
+        <div class="cookie-pref-header">
+          <span class="cookie-pref-toggle">&#9660;</span>
+          <span class="cookie-pref-status always-active">Always active</span>
+          <span class="cookie-pref-name">פונקציונלי</span>
+        </div>
+      </div>
+      <div class="cookie-pref-item">
+        <div class="cookie-pref-header">
+          <span class="cookie-pref-toggle">&#9660;</span>
+          <label class="cookie-checkbox"><input type="checkbox" id="cookie-stats" checked> </label>
+          <span class="cookie-pref-name">סטטיסטיקה</span>
+        </div>
+      </div>
+    </div>
     <div class="cookie-buttons">
-      <button id="cookie-accept" class="cookie-btn cookie-accept" aria-label="אישור עוגיות">אישור</button>
-      <button id="cookie-decline" class="cookie-btn cookie-decline" aria-label="דחיית עוגיות">דחייה</button>
+      <button id="cookie-manage" class="cookie-btn cookie-manage">ניהול העדפות</button>
+      <button id="cookie-decline" class="cookie-btn cookie-decline">סירוב</button>
+      <button id="cookie-accept" class="cookie-btn cookie-accept">אישור</button>
     </div>
   </div>
 
-  <!-- Header / Nav - #2 Simplified mobile nav -->
+  <!-- Header — Clean, no dropdown menus -->
   <header class="header">
     <div class="header-inner">
       <a href="#hero" class="logo" aria-label="המרכז האקדמי פרס — לעמוד הבית">
         <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" class="logo-img">
       </a>
       <nav class="nav-desktop" aria-label="ניווט ראשי">
-        <div class="nav-dropdown">
-          <button class="nav-btn" aria-expanded="false" aria-haspopup="true">מסלולי תואר ראשון <span class="arrow-down">&#9662;</span></button>
-          <ul class="dropdown-menu" role="menu">
-            <li role="menuitem"><a href="#form-section">מנהל עסקים</a></li>
-            <li role="menuitem"><a href="#form-section">משפטים</a></li>
-            <li role="menuitem"><a href="#form-section">מדעי ההתנהגות</a></li>
-            <li role="menuitem"><a href="#form-section">מדעי התזונה</a></li>
-            <li role="menuitem"><a href="#form-section">מערכות מידע ניהוליות</a></li>
-            <li role="menuitem"><a href="#form-section">תקשורת ומנהל עסקים</a></li>
-          </ul>
-        </div>
-        <div class="nav-dropdown">
-          <button class="nav-btn" aria-expanded="false" aria-haspopup="true">מסלולי תואר שני <span class="arrow-down">&#9662;</span></button>
-          <ul class="dropdown-menu" role="menu">
-            <li role="menuitem"><a href="#form-section">MBA מנהל עסקים</a></li>
-            <li role="menuitem"><a href="#form-section">ייעוץ ופיתוח ארגוני</a></li>
-            <li role="menuitem"><a href="#form-section">ניהול משאבי אנוש</a></li>
-            <li role="menuitem"><a href="#form-section">ניהול מערכות בריאות</a></li>
-            <li role="menuitem"><a href="#form-section">משפטים ללא משפטנים</a></li>
-          </ul>
-        </div>
+        <a href="#form-section" class="nav-link">השאירו פרטים</a>
         <a href="tel:08-3006090" class="nav-phone-btn">&#9742; 08-3006090</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="תפריט" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Mobile menu -->
     <nav class="nav-mobile" id="nav-mobile" aria-label="תפריט נייד">
-      <a href="#form-section" class="mobile-link">מסלולי תואר ראשון</a>
-      <a href="#form-section" class="mobile-link">מסלולי תואר שני</a>
+      <a href="#form-section" class="mobile-link">השאירו פרטים</a>
       <a href="tel:08-3006090" class="mobile-link phone-link">&#9742; התקשרו עכשיו: 08-3006090</a>
     </nav>
   </header>
 
-  <!-- HERO — Gradient background + strong branding -->
+  <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero-inner">
       <div class="hero-content">
-        <img src="images/logos/logo-white.svg" alt="המרכז האקדמי פרס" class="hero-logo">
-        <h1 class="hero-title">המרכז האקדמי פרס</h1>
+        <div class="hero-brand">
+          <img src="images/logos/rounded_logo.png" alt="" class="hero-rounded-logo" aria-hidden="true">
+          <h1 class="hero-title">המרכז האקדמי פרס</h1>
+        </div>
         <p class="hero-subtitle">בואו ליהנות ממגוון תכניות לימוד חדשניות וגמישות,<br>מסלולי לימוד מקוצרים, לימודי תעודה מתקדמים כבר במהלך התואר ועוד.</p>
+
+        <!-- Vimeo video -->
+        <div class="hero-video">
+          <div style="padding:50.52% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/875118971?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;" title="המרכז האקדמי פרס"></iframe></div>
+        </div>
 
         <!-- Social proof -->
         <div class="hero-social-proof">
           <div class="proof-item">
-            <span class="proof-number">15,000+</span>
+            <span class="proof-number">30,000+</span>
             <span class="proof-label">בוגרים בתעשייה</span>
           </div>
           <div class="proof-divider"></div>
@@ -103,20 +104,18 @@
           </div>
         </div>
 
-        <!-- CTA -->
         <div class="hero-cta-group">
           <a href="#form-section" class="btn-primary hero-cta">השאירו פרטים וקבלו פטור מדמי רישום</a>
           <a href="tel:08-3006090" class="btn-secondary hero-phone">&#9742; או חייגו 08-3006090</a>
         </div>
       </div>
 
-      <!-- Form -->
+      <!-- Form — with email field -->
       <div class="hero-form-wrapper" id="form-section">
         <form class="lead-form" id="lead-form" novalidate>
           <div class="form-badge">ההרשמה בעיצומה! פטור מדמי רישום</div>
           <h2 class="form-title">השאירו פרטים ונחזור אליכם</h2>
 
-          <!-- Step 1: Name + Phone only -->
           <div class="form-step" id="form-step-1">
             <div class="form-field">
               <label for="fullname" class="sr-only">שם מלא</label>
@@ -126,16 +125,15 @@
               <label for="phone" class="sr-only">טלפון</label>
               <input type="tel" id="phone" name="phone" placeholder="טלפון" required autocomplete="tel" pattern="[0-9\-+\s]{9,15}">
             </div>
+            <div class="form-field">
+              <label for="email" class="sr-only">מייל</label>
+              <input type="email" id="email" name="email" placeholder="מייל" required autocomplete="email">
+            </div>
             <button type="button" class="btn-submit" id="btn-step1">תחזרו אליי &larr;</button>
           </div>
 
-          <!-- Step 2: Email + Track (shown after step 1) -->
           <div class="form-step hidden" id="form-step-2">
             <p class="form-step2-msg">תודה! עוד רגע סיימנו - עזרו לנו להתאים לכם מסלול:</p>
-            <div class="form-field">
-              <label for="email" class="sr-only">מייל</label>
-              <input type="email" id="email" name="email" placeholder="מייל (לא חובה)" autocomplete="email">
-            </div>
             <div class="form-field">
               <label for="track" class="sr-only">מסלול לימודים</label>
               <select id="track" name="track">
@@ -159,7 +157,6 @@
             <button type="submit" class="btn-submit">שלחו ונדבר &larr;</button>
           </div>
 
-          <!-- Success message -->
           <div class="form-step hidden" id="form-success">
             <div class="success-icon">&#10003;</div>
             <p class="success-msg">תודה! ניצור איתך קשר בהקדם.</p>
@@ -171,7 +168,7 @@
     </div>
   </section>
 
-  <!-- Benefits — 4 cards with brand logos -->
+  <!-- Benefits — 4 cards -->
   <section class="benefits" id="benefits">
     <h2 class="section-title">בואו ליהנות מהיתרונות של המרכז האקדמי פרס</h2>
     <div class="benefits-grid">
@@ -208,7 +205,7 @@
       </div>
       <div class="benefit-card">
         <img src="images/logos/logo_toar plus.png" alt="תואר פלוס" class="benefit-brand-logo">
-        <h3>תואר פלוס+ ולימודי תעודה</h3>
+        <h3>תואר אקדמי + תעודות מקצועיות</h3>
         <ul class="benefit-list">
           <li>לימודי תעודה כבר במהלך התואר</li>
           <li>סייבר, AI, ניהול פרויקטים ועוד</li>
@@ -216,89 +213,37 @@
         </ul>
       </div>
     </div>
-    <div class="benefits-more">
-      <p class="benefits-more-text">ועוד: תכנית LEVEL UP להתמחות | AI Bootcamp | ליווי להשמה בהייטק | מעונות סטודנטים | מקום ראשון בתמיכה במילואימניקים</p>
-      <a href="#form-section" class="btn-primary">רוצים לשמוע עוד? השאירו פרטים</a>
-    </div>
   </section>
 
-  <!-- Certificates Section — "תואר פלוס+" showcase -->
+  <!-- Certificates — directly after benefits, no gap -->
   <section class="certificates" id="certificates">
     <h2 class="section-title">לימודי תעודה במהלך התואר</h2>
     <p class="section-subtitle">עם תכנית ״תואר פלוס+״ תוכלו לקבל תעודות מקצועיות מתקדמות כבר תוך כדי הלימודים</p>
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow-right" id="cert-arrow-right" aria-label="הבא">&#8249;</button>
       <div class="certificates-track" id="certificates-track">
-        <div class="cert-card">
-        <img src="images/certificates/cyber-security.svg" alt="תעודת סייבר ואבטחת מידע" loading="lazy">
-        <span>סייבר ואבטחת מידע</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/digital-marketing.svg" alt="תעודת שיווק דיגיטלי" loading="lazy">
-        <span>שיווק דיגיטלי</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/hr-management.svg" alt="תעודת ניהול משאבי אנוש" loading="lazy">
-        <span>ניהול משאבי אנוש</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/directors.svg" alt="תעודת דירקטורים" loading="lazy">
-        <span>דירקטורים</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/ecommerce.svg" alt="תעודת ניהול eCommerce" loading="lazy">
-        <span>ניהול eCommerce</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/tech-entrepreneurship.svg" alt="תעודת יזמות טכנולוגית" loading="lazy">
-        <span>יזמות טכנולוגית</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/business-coaching.svg" alt="תעודת אימון עסקי למנהלים" loading="lazy">
-        <span>אימון עסקי למנהלים</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/org-development.svg" alt="תעודת שינוי ופיתוח ארגוני" loading="lazy">
-        <span>שינוי ופיתוח ארגוני</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/crisis-management.svg" alt="תעודת ניהול משברים" loading="lazy">
-        <span>ניהול משברים</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/mediator.svg" alt="תעודת מגשר" loading="lazy">
-        <span>מגשר</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/real-estate.svg" alt="תעודת נדלן ויעוץ משכנתאות" loading="lazy">
-        <span>נדל״ן ויעוץ משכנתאות</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/senior-marketing.svg" alt="תעודת ניהול שיווק בכיר" loading="lazy">
-        <span>ניהול שיווק בכיר</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/sales-b2b.svg" alt="תעודת מנהלי מכירות Global B2B" loading="lazy">
-        <span>מנהלי מכירות B2B</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/group-facilitation.svg" alt="תעודת הנחיית קבוצות" loading="lazy">
-        <span>הנחיית קבוצות</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/biofeedback.svg" alt="תעודת ביופידבק" loading="lazy">
-        <span>ביופידבק</span>
-      </div>
-      <div class="cert-card">
-        <img src="images/certificates/human-capital.svg" alt="תעודת תכנון הון אנושי" loading="lazy">
-        <span>תכנון הון אנושי</span>
-      </div>
+        <div class="cert-card"><img src="images/certificates/cyber-security.svg" alt="סייבר ואבטחת מידע" loading="lazy"><span>סייבר ואבטחת מידע</span></div>
+        <div class="cert-card"><img src="images/certificates/digital-marketing.svg" alt="שיווק דיגיטלי" loading="lazy"><span>שיווק דיגיטלי</span></div>
+        <div class="cert-card"><img src="images/certificates/hr-management.svg" alt="ניהול משאבי אנוש" loading="lazy"><span>ניהול משאבי אנוש</span></div>
+        <div class="cert-card"><img src="images/certificates/directors.svg" alt="דירקטורים" loading="lazy"><span>דירקטורים</span></div>
+        <div class="cert-card"><img src="images/certificates/ecommerce.svg" alt="ניהול eCommerce" loading="lazy"><span>ניהול eCommerce</span></div>
+        <div class="cert-card"><img src="images/certificates/tech-entrepreneurship.svg" alt="יזמות טכנולוגית" loading="lazy"><span>יזמות טכנולוגית</span></div>
+        <div class="cert-card"><img src="images/certificates/business-coaching.svg" alt="אימון עסקי למנהלים" loading="lazy"><span>אימון עסקי למנהלים</span></div>
+        <div class="cert-card"><img src="images/certificates/org-development.svg" alt="שינוי ופיתוח ארגוני" loading="lazy"><span>שינוי ופיתוח ארגוני</span></div>
+        <div class="cert-card"><img src="images/certificates/crisis-management.svg" alt="ניהול משברים" loading="lazy"><span>ניהול משברים</span></div>
+        <div class="cert-card"><img src="images/certificates/mediator.svg" alt="מגשר" loading="lazy"><span>מגשר</span></div>
+        <div class="cert-card"><img src="images/certificates/real-estate.svg" alt="נדלן ויעוץ משכנתאות" loading="lazy"><span>נדל״ן ויעוץ משכנתאות</span></div>
+        <div class="cert-card"><img src="images/certificates/senior-marketing.svg" alt="ניהול שיווק בכיר" loading="lazy"><span>ניהול שיווק בכיר</span></div>
+        <div class="cert-card"><img src="images/certificates/sales-b2b.svg" alt="מנהלי מכירות B2B" loading="lazy"><span>מנהלי מכירות B2B</span></div>
+        <div class="cert-card"><img src="images/certificates/group-facilitation.svg" alt="הנחיית קבוצות" loading="lazy"><span>הנחיית קבוצות</span></div>
+        <div class="cert-card"><img src="images/certificates/biofeedback.svg" alt="ביופידבק" loading="lazy"><span>ביופידבק</span></div>
+        <div class="cert-card"><img src="images/certificates/human-capital.svg" alt="תכנון הון אנושי" loading="lazy"><span>תכנון הון אנושי</span></div>
       </div>
       <button class="carousel-arrow carousel-arrow-left" id="cert-arrow-left" aria-label="הקודם">&#8250;</button>
     </div>
   </section>
 
-  <!-- Employer Logos Bar — Social proof -->
+  <!-- Employer Logos -->
   <section class="employers-bar">
     <p class="employers-title">הבוגרים שלנו עובדים ב:</p>
     <div class="employers-logos">
@@ -309,79 +254,25 @@
     </div>
   </section>
 
-  <!-- #12 Testimonials moved UP — with real photos -->
+  <!-- Testimonials -->
   <section class="testimonials" id="testimonials">
     <h2 class="section-title">הבוגרים שלנו מספרים</h2>
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow-right" id="test-arrow-right" aria-label="הבא">&#8249;</button>
       <div class="testimonials-track" id="testimonials-track">
-      <div class="testimonial-card">
-        <img src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" class="testimonial-photo" loading="lazy">
-        <blockquote>
-          <p>המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי.</p>
-        </blockquote>
-        <cite>
-          <strong>עידו איינבינדר</strong>
-          <span>סמנכ״ל משאבי אנוש ומטה, חדשות 13</span>
-        </cite>
+        <div class="testimonial-card"><img src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" class="testimonial-photo" loading="lazy"><blockquote><p>המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי.</p></blockquote><cite><strong>עידו איינבינדר</strong><span>סמנכ״ל משאבי אנוש ומטה, חדשות 13</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/hava-atias.webp" alt="חוה אטיאס" class="testimonial-photo" loading="lazy"><blockquote><p>הלימודים במרכז נתנו לי פרספקטיבה רחבה וכלים לעולם העבודה החדש שנתנו לי יתרון ממשי בקריירה.</p></blockquote><cite><strong>חוה אטיאס</strong><span>סמנכ"לית משאבי אנוש, ארגון ״מסע״</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/kobi-kanti.webp" alt="קובי קנטי" class="testimonial-photo" loading="lazy"><blockquote><p>הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד.</p></blockquote><cite><strong>קובי קנטי</strong><span>Product Manager, Commit</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/ido-vafner.webp" alt="עידו ופנר" class="testimonial-photo" loading="lazy"><blockquote><p>ארסנל הכלים שקיבלתי במהלך התואר הוא עצום ועזר לי להשתלב במהירות בעולם ההייטק.</p></blockquote><cite><strong>עידו ופנר</strong><span>סמנכ"ל וחבר הנהלה, Kyndryl</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" class="testimonial-photo" loading="lazy"><blockquote><p>תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים.</p></blockquote><cite><strong>ניצן לוין</strong><span>מנהלת שיווק, סומך חייקין KPMG</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" class="testimonial-photo" loading="lazy"><blockquote><p>תכנית הלימודים נתנה לי אפשרות לשלב לימודי תואר ראשון עם עבודה, חברים ופנאי. המרצים מדהימים.</p></blockquote><cite><strong>דניאל ביטון</strong><span>מנכ"לית משותפת, E.D.I Energy</span></cite></div>
       </div>
-      <div class="testimonial-card">
-        <img src="images/testimonials/hava-atias.webp" alt="חוה אטיאס" class="testimonial-photo" loading="lazy">
-        <blockquote>
-          <p>הלימודים במרכז נתנו לי פרספקטיבה רחבה וכלים לעולם העבודה החדש שנתנו לי יתרון ממשי בקריירה.</p>
-        </blockquote>
-        <cite>
-          <strong>חוה אטיאס</strong>
-          <span>סמנכ"לית משאבי אנוש, ארגון ״מסע״</span>
-        </cite>
-      </div>
-      <div class="testimonial-card">
-        <img src="images/testimonials/kobi-kanti.webp" alt="קובי קנטי" class="testimonial-photo" loading="lazy">
-        <blockquote>
-          <p>הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד.</p>
-        </blockquote>
-        <cite>
-          <strong>קובי קנטי</strong>
-          <span>Product Manager, Commit</span>
-        </cite>
-      </div>
-      <div class="testimonial-card">
-        <img src="images/testimonials/ido-vafner.webp" alt="עידו ופנר" class="testimonial-photo" loading="lazy">
-        <blockquote>
-          <p>ארסנל הכלים שקיבלתי במהלך התואר הוא עצום ועזר לי להשתלב במהירות בעולם ההייטק.</p>
-        </blockquote>
-        <cite>
-          <strong>עידו ופנר</strong>
-          <span>סמנכ"ל וחבר הנהלה, Kyndryl</span>
-        </cite>
-      </div>
-      <div class="testimonial-card">
-        <img src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" class="testimonial-photo" loading="lazy">
-        <blockquote>
-          <p>תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים.</p>
-        </blockquote>
-        <cite>
-          <strong>ניצן לוין</strong>
-          <span>מנהלת שיווק, סומך חייקין KPMG</span>
-        </cite>
-      </div>
-      <div class="testimonial-card">
-        <img src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" class="testimonial-photo" loading="lazy">
-        <blockquote>
-          <p>תכנית הלימודים נתנה לי אפשרות לשלב לימודי תואר ראשון עם עבודה, חברים ופנאי. המרצים מדהימים.</p>
-        </blockquote>
-        <cite>
-          <strong>דניאל ביטון</strong>
-          <span>מנכ"לית משותפת, E.D.I Energy</span>
-        </cite>
-      </div>
-    </div>
       <button class="carousel-arrow carousel-arrow-left" id="test-arrow-left" aria-label="הקודם">&#8250;</button>
     </div>
     <div class="testimonials-dots" id="testimonials-dots" aria-label="ניווט ביקורות"></div>
   </section>
 
-  <!-- Secondary CTA / Final form section -->
+  <!-- Final CTA -->
   <section class="final-cta">
     <div class="final-cta-inner">
       <h2>מוכנים להתחיל?</h2>
@@ -393,7 +284,7 @@
     </div>
   </section>
 
-  <!-- Footer with secondary logo -->
+  <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
       <img src="images/logos/logo-white.svg" alt="המרכז האקדמי פרס" class="footer-logo" loading="lazy">
@@ -406,31 +297,35 @@
     </div>
   </footer>
 
-  <!-- #8 Sticky Click-to-Call for mobile -->
+  <!-- Sticky mobile bar -->
   <div class="sticky-phone" id="sticky-phone">
     <a href="tel:08-3006090" class="sticky-phone-btn" aria-label="התקשרו עכשיו">
       <span class="phone-icon">&#9742;</span>
       <span class="phone-text">התקשרו עכשיו</span>
     </a>
-    <a href="#form-section" class="sticky-form-btn" aria-label="השאירו פרטים">
-      השאירו פרטים
-    </a>
+    <a href="#form-section" class="sticky-form-btn" aria-label="השאירו פרטים">השאירו פרטים</a>
   </div>
 
-  <!-- #15 Exit Intent Popup (desktop) / Scroll-back trigger (mobile) -->
+  <!-- Exit Intent Popup — with email -->
   <div class="exit-popup hidden" id="exit-popup" role="dialog" aria-label="לפני שעוזבים">
     <div class="exit-popup-overlay" id="exit-overlay"></div>
     <div class="exit-popup-content">
       <button class="exit-close" id="exit-close" aria-label="סגור">&times;</button>
       <h3>רגע, לפני שעוזבים!</h3>
-      <p>השאירו טלפון ויועץ לימודים יחזור אליכם לשיחה קצרה — בלי התחייבות.</p>
+      <p>השאירו פרטים ויועץ לימודים יחזור אליכם לשיחה קצרה — בלי התחייבות.</p>
       <form class="exit-form" id="exit-form">
-        <input type="tel" placeholder="הטלפון שלכם" required pattern="[0-9\-+\s]{9,15}">
+        <div class="form-field">
+          <input type="tel" placeholder="הטלפון שלכם" required pattern="[0-9\-+\s]{9,15}">
+        </div>
+        <div class="form-field">
+          <input type="email" placeholder="המייל שלכם" required>
+        </div>
         <button type="submit" class="btn-primary">שיחת ייעוץ חינם</button>
       </form>
     </div>
   </div>
 
+  <script src="https://player.vimeo.com/api/player.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

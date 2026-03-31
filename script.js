@@ -4,26 +4,43 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // --- Cookie Banner (#6) — GDPR with accept/decline ---
+  // --- Cookie Consent Modal — GDPR with preferences ---
   var cookieBanner = document.getElementById('cookie-banner');
+  var cookieOverlay = document.getElementById('cookie-overlay');
   var cookieAccept = document.getElementById('cookie-accept');
   var cookieDecline = document.getElementById('cookie-decline');
+  var cookieManage = document.getElementById('cookie-manage');
+  var cookieClose = document.getElementById('cookie-close');
+  var cookiePrefs = document.getElementById('cookie-prefs');
 
   if (localStorage.getItem('cookie-choice')) {
     cookieBanner.classList.add('dismissed');
+    cookieOverlay.classList.add('hidden');
+  } else {
+    cookieOverlay.classList.remove('hidden');
   }
 
-  function dismissCookieBanner(choice) {
+  function dismissCookies(choice) {
     cookieBanner.classList.add('dismissed');
+    cookieOverlay.classList.add('hidden');
     localStorage.setItem('cookie-choice', choice);
   }
 
   cookieAccept.addEventListener('click', function () {
-    dismissCookieBanner('accepted');
+    dismissCookies('accepted');
   });
 
   cookieDecline.addEventListener('click', function () {
-    dismissCookieBanner('declined');
+    dismissCookies('declined');
+  });
+
+  cookieClose.addEventListener('click', function () {
+    dismissCookies('closed');
+  });
+
+  cookieManage.addEventListener('click', function () {
+    cookiePrefs.classList.toggle('hidden');
+    this.textContent = cookiePrefs.classList.contains('hidden') ? 'ניהול העדפות' : 'שמור העדפות';
   });
 
   // --- Mobile Hamburger Menu ---
@@ -70,10 +87,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (valid) {
+      var emailInput = document.getElementById('email');
+      if (!emailInput.value.trim() || !emailInput.validity.valid) {
+        emailInput.classList.add('error');
+        emailInput.focus();
+        return;
+      }
+
       if (typeof gtag === 'function') {
         gtag('event', 'lead_form_step1', {
           event_category: 'form',
-          event_label: 'name_phone_submitted'
+          event_label: 'name_phone_email_submitted'
         });
       }
 

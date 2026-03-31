@@ -58,53 +58,136 @@ input, select {
   display: none !important;
 }
 
-/* --- #6 Cookie Banner — minimal, bottom bar, not blocking CTA --- */
-.cookie-banner {
+/* --- Cookie Consent Modal — GDPR with preferences --- */
+.cookie-overlay {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #000F37;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.85rem;
-  z-index: 999;
-  transform: translateY(0);
-  transition: transform 0.3s ease;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 998;
 }
 
-.cookie-banner.dismissed {
-  transform: translateY(100%);
-  pointer-events: none;
+.cookie-modal {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #000F37;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  max-width: 520px;
+  width: 92%;
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  direction: rtl;
+}
+
+.cookie-modal.dismissed {
+  display: none !important;
+}
+
+.cookie-close {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  font-size: 1.5rem;
+  color: #666;
+  min-width: 44px;
+  min-height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cookie-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+
+.cookie-text a {
+  color: #0061AF;
+  text-decoration: underline;
+}
+
+.cookie-prefs {
+  margin-bottom: 1rem;
+  border-top: 1px solid #E9E9E4;
+}
+
+.cookie-pref-item {
+  border-bottom: 1px solid #E9E9E4;
+  padding: 0.75rem 0;
+}
+
+.cookie-pref-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  direction: rtl;
+}
+
+.cookie-pref-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.cookie-pref-status {
+  font-size: 0.8rem;
+  color: #029640;
+  font-weight: 600;
+}
+
+.always-active {
+  color: #029640;
+}
+
+.cookie-pref-toggle {
+  font-size: 0.8rem;
+  color: #666;
+  cursor: pointer;
+}
+
+.cookie-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: #0061AF;
 }
 
 .cookie-buttons {
   display: flex;
   gap: 0.5rem;
+  direction: ltr;
 }
 
 .cookie-btn {
-  padding: 0.4rem 1.5rem;
-  border-radius: 4px;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
   font-weight: 700;
   font-size: 0.9rem;
-  min-width: 44px;
   min-height: 44px;
+  cursor: pointer;
+  border: none;
+  flex: 1;
+  text-align: center;
 }
 
 .cookie-accept {
-  background: #27AAE1;
+  background: #0061AF;
   color: #fff;
 }
 
 .cookie-decline {
-  background: transparent;
-  color: #AAE3FF;
-  border: 1px solid #AAE3FF;
+  background: #fff;
+  color: #000F37;
+  border: 1px solid #E9E9E4;
+}
+
+.cookie-manage {
+  background: #fff;
+  color: #000F37;
+  border: 1px solid #E9E9E4;
 }
 
 /* --- Header --- */
@@ -141,53 +224,11 @@ input, select {
   gap: 1.5rem;
 }
 
-.nav-dropdown {
-  position: relative;
-}
-
-.nav-btn {
+.nav-link {
   font-size: 0.95rem;
-  font-weight: 500;
-  color: #000F37;
+  font-weight: 600;
+  color: #0061AF;
   padding: 0.5rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.arrow-down {
-  font-size: 0.7rem;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  min-width: 220px;
-  padding: 0.5rem 0;
-  list-style: none;
-  z-index: 50;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 0.6rem 1.2rem;
-  font-size: 0.9rem;
-  text-align: right;
-  transition: background 0.2s;
-}
-
-.dropdown-menu li a:hover {
-  background: #E9E9E4;
-}
-
-.nav-dropdown:hover .dropdown-menu,
-.nav-dropdown:focus-within .dropdown-menu {
-  display: block;
 }
 
 .nav-phone-btn {
@@ -271,11 +312,25 @@ input, select {
   overflow: hidden;
 }
 
-.hero-logo {
-  height: 56px;
-  width: auto;
-  margin-bottom: 1.25rem;
-  display: block;
+.hero-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-rounded-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero-video {
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 560px;
 }
 
 .hero-inner {
@@ -513,7 +568,7 @@ input, select {
 
 /* --- #4 Benefits Section (replaces 13 accordions) --- */
 .benefits {
-  padding: 4rem 1.5rem;
+  padding: 4rem 1.5rem 2rem;
   background: #f5f5f0;
 }
 
@@ -659,7 +714,7 @@ input, select {
 
 /* --- Certificates Section --- */
 .certificates {
-  padding: 4rem 1.5rem;
+  padding: 2rem 1.5rem 4rem;
   background: #f5f5f0;
 }
 
@@ -1058,8 +1113,9 @@ input, select {
     gap: 2rem;
   }
 
-  .hero-logo {
-    height: 44px;
+  .hero-rounded-logo {
+    width: 48px;
+    height: 48px;
   }
 
   .hero-title {
