@@ -533,9 +533,6 @@ input, select {
   gap: 1.5rem;
 }
 
-.benefits-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
 
 .benefit-card {
   background: #fff;
@@ -558,6 +555,20 @@ input, select {
 .benefit-icon-wrap svg {
   width: 48px;
   height: 48px;
+}
+
+.benefit-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.benefit-brand-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
 }
 
 .benefit-card h3 {
@@ -1096,9 +1107,6 @@ input, select {
     gap: 1rem;
   }
 
-  .benefits-grid-3 {
-    grid-template-columns: 1fr;
-  }
 
   .benefit-card {
     padding: 1.5rem 1rem;
