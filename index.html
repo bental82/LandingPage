@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TV2SWLSL');</script>
+  <!-- Google Tag Manager — delayed to reduce TBT -->
+  <script>window.dataLayer=window.dataLayer||[];
+  setTimeout(function(){var f=document.getElementsByTagName('script')[0],
+  j=document.createElement('script');j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id=GTM-TV2SWLSL';
+  f.parentNode.insertBefore(j,f);
+  dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});},1500);</script>
   <!-- End Google Tag Manager -->
   <meta name="theme-color" content="#000F37">
   <title>המרכז האקדמי פרס — הרשמה לתואר</title>
@@ -20,6 +21,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet"></noscript>
   <link rel="preload" href="images/rounded_logo.webp" as="image">
+  <link rel="preload" href="images/mobile/caps-1-poster.webp" as="image" media="(max-width: 768px)">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
