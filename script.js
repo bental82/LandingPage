@@ -4,13 +4,27 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // --- Lazy-load Vimeo iframe (performance: avoid render-blocking) ---
+  // --- Lazy-load Vimeo iframe — facade pattern (save ~322 KiB initial) ---
   var vimeoIframe = document.querySelector('.hero-video-bg iframe[data-src]');
   if (vimeoIframe && window.innerWidth > 768) {
-    // Load after a short delay to prioritize LCP
-    setTimeout(function () {
+    var vimeoLoaded = false;
+    function loadVimeo() {
+      if (vimeoLoaded) return;
+      vimeoLoaded = true;
       vimeoIframe.src = vimeoIframe.getAttribute('data-src');
-    }, 1500);
+    }
+    // Load on first user interaction or after 3s — whichever comes first
+    var interactionEvents = ['scroll', 'mousemove', 'touchstart', 'keydown'];
+    function onInteraction() {
+      loadVimeo();
+      interactionEvents.forEach(function (evt) {
+        window.removeEventListener(evt, onInteraction);
+      });
+    }
+    interactionEvents.forEach(function (evt) {
+      window.addEventListener(evt, onInteraction, { once: true, passive: true });
+    });
+    setTimeout(loadVimeo, 3000);
   }
 
   // --- GTM Consent Mode v2 — default state ---
@@ -336,14 +350,6 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    });
-  });
-
-  // --- Nav dropdowns: keyboard accessible ---
-  document.querySelectorAll('.nav-dropdown .nav-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var expanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !expanded);
     });
   });
 

@@ -264,10 +264,6 @@ input, select {
   background: #00437A;
 }
 
-.phone-link {
-  color: #0061AF;
-  font-weight: 700;
-}
 
 /* --- Hero Section — Video background --- */
 .hero {
@@ -605,13 +601,6 @@ input, select {
   height: 48px;
 }
 
-.benefit-logos {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  margin-bottom: 1rem;
-}
 
 .benefit-brand-logo {
   height: 52px;
@@ -1229,15 +1218,6 @@ input, select {
     left: 0;
   }
 
-  /* Employers */
-  .employers-logos {
-    gap: 1.5rem;
-  }
-
-  .employers-logos img {
-    height: 36px;
-  }
-
   /* Certificates */
   .cert-card {
     min-width: 120px;
@@ -1270,15 +1250,6 @@ input, select {
   /* Add padding at bottom for sticky bar */
   .footer {
     padding-bottom: 5rem;
-  }
-
-  /* Cookie banner above sticky bar */
-  .cookie-banner {
-    bottom: 60px;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
   }
 
   /* Exit popup mobile */
