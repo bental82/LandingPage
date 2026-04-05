@@ -4,6 +4,41 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  // --- Lazy-load Vimeo iframe (performance: avoid render-blocking) ---
+  var vimeoIframe = document.querySelector('.hero-video-bg iframe[data-src]');
+  if (vimeoIframe && window.innerWidth > 768) {
+    // Load after a short delay to prioritize LCP
+    setTimeout(function () {
+      vimeoIframe.src = vimeoIframe.getAttribute('data-src');
+    }, 1500);
+  }
+
+  // --- GTM Consent Mode v2 — default state ---
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+
+  // Restore consent from previous choice
+  var savedChoice = localStorage.getItem('cookie-choice');
+  var savedStats = localStorage.getItem('cookie-stats');
+  if (savedChoice === 'accepted') {
+    var statsGranted = savedStats !== 'denied';
+    gtag('consent', 'update', {
+      'analytics_storage': statsGranted ? 'granted' : 'denied',
+      'ad_storage': statsGranted ? 'granted' : 'denied',
+      'ad_user_data': statsGranted ? 'granted' : 'denied',
+      'ad_personalization': statsGranted ? 'granted' : 'denied'
+    });
+  }
+
   // --- Cookie Consent Modal — GDPR with preferences ---
   var cookieBanner = document.getElementById('cookie-banner');
   var cookieOverlay = document.getElementById('cookie-overlay');
@@ -12,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var cookieManage = document.getElementById('cookie-manage');
   var cookieClose = document.getElementById('cookie-close');
   var cookiePrefs = document.getElementById('cookie-prefs');
+  var cookieStatsCheckbox = document.getElementById('cookie-stats');
 
   // Only hide permanently if user accepted or declined
   var cookieChoice = localStorage.getItem('cookie-choice');
@@ -22,10 +58,35 @@ document.addEventListener('DOMContentLoaded', function () {
     cookieOverlay.classList.remove('hidden');
   }
 
+  // Restore checkbox state
+  if (savedStats === 'denied' && cookieStatsCheckbox) {
+    cookieStatsCheckbox.checked = false;
+  }
+
   function dismissCookies(choice) {
     cookieBanner.classList.add('dismissed');
     cookieOverlay.classList.add('hidden');
     localStorage.setItem('cookie-choice', choice);
+
+    var statsAllowed = cookieStatsCheckbox && cookieStatsCheckbox.checked;
+    localStorage.setItem('cookie-stats', statsAllowed ? 'granted' : 'denied');
+
+    if (choice === 'accepted') {
+      gtag('consent', 'update', {
+        'analytics_storage': statsAllowed ? 'granted' : 'denied',
+        'ad_storage': statsAllowed ? 'granted' : 'denied',
+        'ad_user_data': statsAllowed ? 'granted' : 'denied',
+        'ad_personalization': statsAllowed ? 'granted' : 'denied'
+      });
+    } else {
+      // Declined — deny all
+      gtag('consent', 'update', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    }
   }
 
   cookieAccept.addEventListener('click', function () {
@@ -146,8 +207,9 @@ document.addEventListener('DOMContentLoaded', function () {
     rightBtn.addEventListener('click', function () {
       // If already at start (scrollLeft ~0), wrap to end
       if (trackEl.scrollLeft >= -10) {
+        var maxNeg = -(trackEl.scrollWidth - trackEl.clientWidth);
         trackEl.style.scrollBehavior = 'auto';
-        trackEl.scrollLeft = -trackEl.scrollWidth;
+        trackEl.scrollLeft = maxNeg;
         trackEl.style.scrollBehavior = 'smooth';
         setTimeout(function() { trackEl.scrollLeft += scrollAmount; }, 50);
       } else {

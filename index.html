@@ -14,7 +14,10 @@
   <meta name="description" content="תואר ראשון בשנתיים, תואר שני בשנה. למידה היברידית גמישה. הרשמו עכשיו וקבלו פטור מדמי רישום!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://i.vimeocdn.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">
   {
@@ -77,7 +80,7 @@
   <header class="header">
     <div class="header-inner">
       <a href="#hero" class="logo" aria-label="המרכז האקדמי פרס — לעמוד הבית">
-        <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" class="logo-img">
+        <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" class="logo-img" width="140" height="44">
       </a>
       <nav class="nav-desktop" aria-label="ניווט ראשי">
         <a href="#form-section" class="nav-link">השאירו פרטים</a>
@@ -89,16 +92,16 @@
   <main>
   <!-- HERO — Video background -->
   <section class="hero" id="hero">
-    <!-- Full-screen video background -->
+    <!-- Full-screen video background — lazy loaded for performance -->
     <div class="hero-video-bg">
-      <iframe src="https://player.vimeo.com/video/875118971?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1" allow="autoplay; fullscreen" title="המרכז האקדמי פרס"></iframe>
+      <iframe data-src="https://player.vimeo.com/video/875118971?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1" allow="autoplay; fullscreen" title="המרכז האקדמי פרס"></iframe>
       <div class="hero-video-overlay"></div>
     </div>
 
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-brand">
-          <img src="images/rounded_logo.webp" alt="המרכז האקדמי פרס" class="hero-rounded-logo">
+          <img src="images/rounded_logo.webp" alt="המרכז האקדמי פרס" class="hero-rounded-logo" width="64" height="64" fetchpriority="high">
           <h1 class="hero-title">המרכז האקדמי פרס</h1>
         </div>
         <p class="hero-subtitle">בואו ליהנות ממגוון תכניות לימוד חדשניות וגמישות, מסלולי לימוד מקוצרים, לימודי תעודה מתקדמים כבר במהלך התואר ועוד.</p>
@@ -212,7 +215,7 @@
         </ul>
       </div>
       <div class="benefit-card">
-        <img src="images/Logo_Infinity_vertical_blue.webp" alt="INFINITY" class="benefit-brand-logo">
+        <img src="images/Logo_Infinity_vertical_blue.webp" alt="INFINITY" class="benefit-brand-logo" width="52" height="52" loading="lazy" decoding="async">
         <h3>תואר שמתעדכן לנצח</h3>
         <ul class="benefit-list">
           <li>גישה לקורסים חדשים ותכנים מעודכנים</li>
@@ -221,7 +224,7 @@
         </ul>
       </div>
       <div class="benefit-card">
-        <img src="images/logo_toar_plus.webp" alt="תואר פלוס" class="benefit-brand-logo">
+        <img src="images/logo_toar_plus.webp" alt="תואר פלוס" class="benefit-brand-logo" width="52" height="52" loading="lazy" decoding="async">
         <h3>תואר אקדמי + תעודות מקצועיות</h3>
         <ul class="benefit-list">
           <li>לימודי תעודה כבר במהלך התואר</li>
@@ -251,22 +254,22 @@
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow-right" id="cert-arrow-right" aria-label="הבא">&#8249;</button>
       <div class="certificates-track" id="certificates-track">
-        <div class="cert-card"><img src="images/certificates/cyber-security.svg" alt="סייבר ואבטחת מידע" loading="lazy"><span>סייבר ואבטחת מידע</span></div>
-        <div class="cert-card"><img src="images/certificates/digital-marketing.svg" alt="שיווק דיגיטלי" loading="lazy"><span>שיווק דיגיטלי</span></div>
-        <div class="cert-card"><img src="images/certificates/hr-management.svg" alt="ניהול משאבי אנוש" loading="lazy"><span>ניהול משאבי אנוש</span></div>
-        <div class="cert-card"><img src="images/certificates/directors.svg" alt="דירקטורים" loading="lazy"><span>דירקטורים</span></div>
-        <div class="cert-card"><img src="images/certificates/ecommerce.svg" alt="ניהול eCommerce" loading="lazy"><span>ניהול eCommerce</span></div>
-        <div class="cert-card"><img src="images/certificates/tech-entrepreneurship.svg" alt="יזמות טכנולוגית" loading="lazy"><span>יזמות טכנולוגית</span></div>
-        <div class="cert-card"><img src="images/certificates/business-coaching.svg" alt="אימון עסקי למנהלים" loading="lazy"><span>אימון עסקי למנהלים</span></div>
-        <div class="cert-card"><img src="images/certificates/org-development.svg" alt="שינוי ופיתוח ארגוני" loading="lazy"><span>שינוי ופיתוח ארגוני</span></div>
-        <div class="cert-card"><img src="images/certificates/crisis-management.svg" alt="ניהול משברים" loading="lazy"><span>ניהול משברים</span></div>
-        <div class="cert-card"><img src="images/certificates/mediator.svg" alt="מגשר" loading="lazy"><span>מגשר</span></div>
-        <div class="cert-card"><img src="images/certificates/real-estate.svg" alt="נדלן ויעוץ משכנתאות" loading="lazy"><span>נדל״ן ויעוץ משכנתאות</span></div>
-        <div class="cert-card"><img src="images/certificates/senior-marketing.svg" alt="ניהול שיווק בכיר" loading="lazy"><span>ניהול שיווק בכיר</span></div>
-        <div class="cert-card"><img src="images/certificates/sales-b2b.svg" alt="מנהלי מכירות B2B" loading="lazy"><span>מנהלי מכירות B2B</span></div>
-        <div class="cert-card"><img src="images/certificates/group-facilitation.svg" alt="הנחיית קבוצות" loading="lazy"><span>הנחיית קבוצות</span></div>
-        <div class="cert-card"><img src="images/certificates/biofeedback.svg" alt="ביופידבק" loading="lazy"><span>ביופידבק</span></div>
-        <div class="cert-card"><img src="images/certificates/human-capital.svg" alt="תכנון הון אנושי" loading="lazy"><span>תכנון הון אנושי</span></div>
+        <div class="cert-card"><img src="images/certificates/cyber-security.svg" alt="סייבר ואבטחת מידע" loading="lazy" decoding="async"><span>סייבר ואבטחת מידע</span></div>
+        <div class="cert-card"><img src="images/certificates/digital-marketing.svg" alt="שיווק דיגיטלי" loading="lazy" decoding="async"><span>שיווק דיגיטלי</span></div>
+        <div class="cert-card"><img src="images/certificates/hr-management.svg" alt="ניהול משאבי אנוש" loading="lazy" decoding="async"><span>ניהול משאבי אנוש</span></div>
+        <div class="cert-card"><img src="images/certificates/directors.svg" alt="דירקטורים" loading="lazy" decoding="async"><span>דירקטורים</span></div>
+        <div class="cert-card"><img src="images/certificates/ecommerce.svg" alt="ניהול eCommerce" loading="lazy" decoding="async"><span>ניהול eCommerce</span></div>
+        <div class="cert-card"><img src="images/certificates/tech-entrepreneurship.svg" alt="יזמות טכנולוגית" loading="lazy" decoding="async"><span>יזמות טכנולוגית</span></div>
+        <div class="cert-card"><img src="images/certificates/business-coaching.svg" alt="אימון עסקי למנהלים" loading="lazy" decoding="async"><span>אימון עסקי למנהלים</span></div>
+        <div class="cert-card"><img src="images/certificates/org-development.svg" alt="שינוי ופיתוח ארגוני" loading="lazy" decoding="async"><span>שינוי ופיתוח ארגוני</span></div>
+        <div class="cert-card"><img src="images/certificates/crisis-management.svg" alt="ניהול משברים" loading="lazy" decoding="async"><span>ניהול משברים</span></div>
+        <div class="cert-card"><img src="images/certificates/mediator.svg" alt="מגשר" loading="lazy" decoding="async"><span>מגשר</span></div>
+        <div class="cert-card"><img src="images/certificates/real-estate.svg" alt="נדלן ויעוץ משכנתאות" loading="lazy" decoding="async"><span>נדל״ן ויעוץ משכנתאות</span></div>
+        <div class="cert-card"><img src="images/certificates/senior-marketing.svg" alt="ניהול שיווק בכיר" loading="lazy" decoding="async"><span>ניהול שיווק בכיר</span></div>
+        <div class="cert-card"><img src="images/certificates/sales-b2b.svg" alt="מנהלי מכירות B2B" loading="lazy" decoding="async"><span>מנהלי מכירות B2B</span></div>
+        <div class="cert-card"><img src="images/certificates/group-facilitation.svg" alt="הנחיית קבוצות" loading="lazy" decoding="async"><span>הנחיית קבוצות</span></div>
+        <div class="cert-card"><img src="images/certificates/biofeedback.svg" alt="ביופידבק" loading="lazy" decoding="async"><span>ביופידבק</span></div>
+        <div class="cert-card"><img src="images/certificates/human-capital.svg" alt="תכנון הון אנושי" loading="lazy" decoding="async"><span>תכנון הון אנושי</span></div>
       </div>
       <button class="carousel-arrow carousel-arrow-left" id="cert-arrow-left" aria-label="הקודם">&#8250;</button>
     </div>
@@ -278,26 +281,26 @@
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow-right" id="emp-arrow-right" aria-label="הבא">&#8249;</button>
       <div class="employers-track" id="employers-track">
-        <img src="images/israel-electric-optimized.webp" alt="חברת החשמל" loading="lazy">
-        <img src="images/employers/unilever.webp" alt="Unilever" loading="lazy">
-        <img src="images/tnuva-optimized.webp" alt="תנובה" loading="lazy">
-        <img src="images/mizrahi-tefahot-optimized.webp" alt="בנק מזרחי-טפחות" loading="lazy">
-        <img src="images/לוגו_שטראוס.webp" alt="שטראוס" loading="lazy">
-        <img src="images/לוגו_אסם.webp" alt="אסם" loading="lazy">
-        <img src="images/לוגו_LOREAL.webp" alt="L'Oreal" loading="lazy">
-        <img src="images/לוגו_AHAVA.webp" alt="AHAVA" loading="lazy">
-        <img src="images/לוגו_DHL.webp" alt="DHL" loading="lazy">
-        <img src="images/לוגו_UPS.webp" alt="UPS" loading="lazy">
-        <img src="images/לוגו_איילון.webp" alt="איילון" loading="lazy">
-        <img src="images/לוגו_סודה_סטרים.webp" alt="סודה סטרים" loading="lazy">
-        <img src="images/לוגו_כאן_-_תאגיד_השידור_הישראלי.webp" alt="כאן - תאגיד השידור" loading="lazy">
-        <img src="images/מכון_ויצמן_למדע.webp" alt="מכון ויצמן למדע" loading="lazy">
-        <img src="images/מאוחדת.webp" alt="מאוחדת" loading="lazy">
-        <img src="images/בית_חולים_איכילוב.webp" alt="בית חולים איכילוב" loading="lazy">
-        <img src="images/DIPLOMAT.webp" alt="דיפלומט" loading="lazy">
-        <img src="images/FRIDENSON.webp" alt="פרידנסון" loading="lazy">
-        <img src="images/UMI.webp" alt="UMI" loading="lazy">
-        <img src="images/כצט.webp" alt="כצט" loading="lazy">
+        <img src="images/israel-electric-optimized.webp" alt="חברת החשמל" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/employers/unilever.webp" alt="Unilever" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/tnuva-optimized.webp" alt="תנובה" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/mizrahi-tefahot-optimized.webp" alt="בנק מזרחי-טפחות" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_שטראוס.webp" alt="שטראוס" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_אסם.webp" alt="אסם" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_LOREAL.webp" alt="L'Oreal" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_AHAVA.webp" alt="AHAVA" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_DHL.webp" alt="DHL" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_UPS.webp" alt="UPS" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_איילון.webp" alt="איילון" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_סודה_סטרים.webp" alt="סודה סטרים" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/לוגו_כאן_-_תאגיד_השידור_הישראלי.webp" alt="כאן - תאגיד השידור" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/מכון_ויצמן_למדע.webp" alt="מכון ויצמן למדע" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/מאוחדת.webp" alt="מאוחדת" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/בית_חולים_איכילוב.webp" alt="בית חולים איכילוב" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/DIPLOMAT.webp" alt="דיפלומט" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/FRIDENSON.webp" alt="פרידנסון" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/UMI.webp" alt="UMI" loading="lazy" decoding="async" width="80" height="44">
+        <img src="images/כצט.webp" alt="כצט" loading="lazy" decoding="async" width="80" height="44">
       </div>
       <button class="carousel-arrow carousel-arrow-left" id="emp-arrow-left" aria-label="הקודם">&#8250;</button>
     </div>
@@ -309,12 +312,12 @@
     <div class="carousel-wrapper">
       <button class="carousel-arrow carousel-arrow-right" id="test-arrow-right" aria-label="הבא">&#8249;</button>
       <div class="testimonials-track" id="testimonials-track">
-        <div class="testimonial-card"><img src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" class="testimonial-photo" loading="lazy"><blockquote><p>המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי.</p></blockquote><cite><strong>עידו איינבינדר</strong><span>סמנכ״ל משאבי אנוש ומטה, חדשות 13</span></cite></div>
-        <div class="testimonial-card"><img src="images/testimonials/hava-atias.webp" alt="חוה אטיאס" class="testimonial-photo" loading="lazy"><blockquote><p>הלימודים במרכז נתנו לי פרספקטיבה רחבה וכלים לעולם העבודה החדש שנתנו לי יתרון ממשי בקריירה.</p></blockquote><cite><strong>חוה אטיאס</strong><span>סמנכ"לית משאבי אנוש, ארגון ״מסע״</span></cite></div>
-        <div class="testimonial-card"><img src="images/testimonials/kobi-kanti.webp" alt="קובי קנטי" class="testimonial-photo" loading="lazy"><blockquote><p>הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד.</p></blockquote><cite><strong>קובי קנטי</strong><span>Product Manager, Commit</span></cite></div>
-        <div class="testimonial-card"><img src="images/testimonials/ido-vafner.webp" alt="עידו ופנר" class="testimonial-photo" loading="lazy"><blockquote><p>ארסנל הכלים שקיבלתי במהלך התואר הוא עצום ועזר לי להשתלב במהירות בעולם ההייטק.</p></blockquote><cite><strong>עידו ופנר</strong><span>סמנכ"ל וחבר הנהלה, Kyndryl</span></cite></div>
-        <div class="testimonial-card"><img src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" class="testimonial-photo" loading="lazy"><blockquote><p>תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים.</p></blockquote><cite><strong>ניצן לוין</strong><span>מנהלת שיווק, סומך חייקין KPMG</span></cite></div>
-        <div class="testimonial-card"><img src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" class="testimonial-photo" loading="lazy"><blockquote><p>תכנית הלימודים נתנה לי אפשרות לשלב לימודי תואר ראשון עם עבודה, חברים ופנאי. המרצים מדהימים.</p></blockquote><cite><strong>דניאל ביטון</strong><span>מנכ"לית משותפת, E.D.I Energy</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" class="testimonial-photo" loading="lazy" decoding="async" width="72" height="72"><blockquote><p>המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי.</p></blockquote><cite><strong>עידו איינבינדר</strong><span>סמנכ״ל משאבי אנוש ומטה, חדשות 13</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/hava-atias.webp" alt="חוה אטיאס" class="testimonial-photo" loading="lazy" decoding="async" width="72" height="72"><blockquote><p>הלימודים במרכז נתנו לי פרספקטיבה רחבה וכלים לעולם העבודה החדש שנתנו לי יתרון ממשי בקריירה.</p></blockquote><cite><strong>חוה אטיאס</strong><span>סמנכ"לית משאבי אנוש, ארגון ״מסע״</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/kobi-kanti.webp" alt="קובי קנטי" class="testimonial-photo" loading="lazy" decoding="async" width="72" height="72"><blockquote><p>הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד.</p></blockquote><cite><strong>קובי קנטי</strong><span>Product Manager, Commit</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/ido-vafner.webp" alt="עידו ופנר" class="testimonial-photo" loading="lazy" decoding="async" width="72" height="72"><blockquote><p>ארסנל הכלים שקיבלתי במהלך התואר הוא עצום ועזר לי להשתלב במהירות בעולם ההייטק.</p></blockquote><cite><strong>עידו ופנר</strong><span>סמנכ"ל וחבר הנהלה, Kyndryl</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" class="testimonial-photo" loading="lazy" decoding="async" width="72" height="72"><blockquote><p>תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים.</p></blockquote><cite><strong>ניצן לוין</strong><span>מנהלת שיווק, סומך חייקין KPMG</span></cite></div>
+        <div class="testimonial-card"><img src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" class="testimonial-photo" loading="lazy" decoding="async" width="72" height="72"><blockquote><p>תכנית הלימודים נתנה לי אפשרות לשלב לימודי תואר ראשון עם עבודה, חברים ופנאי. המרצים מדהימים.</p></blockquote><cite><strong>דניאל ביטון</strong><span>מנכ"לית משותפת, E.D.I Energy</span></cite></div>
       </div>
       <button class="carousel-arrow carousel-arrow-left" id="test-arrow-left" aria-label="הקודם">&#8250;</button>
     </div>
@@ -338,7 +341,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
-      <img src="images/logos/logo-white.svg" alt="המרכז האקדמי פרס" class="footer-logo" loading="lazy">
+      <img src="images/logos/logo-white.svg" alt="המרכז האקדמי פרס" class="footer-logo" loading="lazy" decoding="async" width="120" height="36">
       <p>&copy; 2026 המרכז האקדמי פרס. כל הזכויות שמורות.</p>
       <div class="footer-links">
         <a href="privacy.html">מדיניות פרטיות</a>
@@ -382,6 +385,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
