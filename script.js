@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
       email: document.getElementById('email').value.trim(),
       track: document.getElementById('track').value
     };
-    console.log('Lead submitted:', formData);
+    // TODO: send formData to backend/HubSpot
   });
 
   // --- Certificates: shuffle and show 5 random ---
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function () {
           event_label: 'exit_popup'
         });
       }
-      console.log('Exit intent lead:', phone);
+      // TODO: send exit lead to backend/HubSpot
       closeExitPopup();
     }
   });
