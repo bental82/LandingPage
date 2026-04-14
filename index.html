@@ -39,18 +39,6 @@
   }
   </script>
 
-  <!-- HubSpot tracking — loaded on first interaction -->
-  <script>
-  function loadHS(){if(window._hsL)return;window._hsL=1;var s=document.createElement('script');s.id='hs-script-loader';s.async=true;s.defer=true;s.src='//js.hs-scripts.com/143688847.js';document.body.appendChild(s);}
-  ['scroll','click','touchstart'].forEach(function(e){window.addEventListener(e,loadHS,{once:true,passive:true});});setTimeout(loadHS,5000);
-  </script>
-
-  <!-- Microsoft Clarity — loaded on idle -->
-  <script>
-  (function(){function loadClarity(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","wbh22yjj17");}
-  if(window.requestIdleCallback)requestIdleCallback(loadClarity,{timeout:3000});else setTimeout(loadClarity,2000);})();
-  </script>
-
   <!-- HubSpot Forms SDK — loaded after first paint -->
   <script>
   function loadHSForms(){if(window._hsFL)return;window._hsFL=1;var s=document.createElement('script');s.charset='utf-8';s.src='//js-eu1.hsforms.net/forms/embed/v2.js';s.onload=function(){window.dispatchEvent(new Event('hsformsready'));};document.head.appendChild(s);}
