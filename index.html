@@ -70,6 +70,7 @@ section{padding-block:56px}
 /* ============ DEGREE NAV ============ */
 .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:none;cursor:pointer;font-size:22px;color:var(--navy);font-family:var(--font)}
 @media(max-width:899.98px){
+  .nav-toggle{order:1} /* hamburger anchors to the far-left edge (RTL: last in visual order) */
   .main-nav{position:fixed;top:60px;inset-inline:0;z-index:59;background:#fff;box-shadow:var(--shadow);padding:10px 20px 16px;display:none;flex-direction:column}
   .main-nav.open{display:flex}
   .nav-item{width:100%}
