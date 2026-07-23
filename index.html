@@ -64,9 +64,33 @@ section{padding-block:56px}
 .brand img{height:34px;width:auto}
 .header-cta{display:flex;align-items:center;gap:10px}
 .header-phone{display:inline-flex;align-items:center;gap:6px;color:var(--navy);font-weight:700;font-size:14px;padding:9px 14px;border-radius:10px;border:1.5px solid var(--line)}
-.header-leave{background:var(--navy);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:10px}
+.header-leave{background:var(--navy);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:10px;white-space:nowrap}
 .header-leave:hover{background:var(--navy-soft)}
 @media(max-width:767.98px){.header-phone{display:inline-flex;padding:9px 11px}.header-phone-num{display:none}}
+/* ============ DEGREE NAV ============ */
+.nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:none;cursor:pointer;font-size:22px;color:var(--navy);font-family:var(--font)}
+@media(max-width:899.98px){
+  .main-nav{position:fixed;top:60px;inset-inline:0;z-index:59;background:#fff;box-shadow:var(--shadow);padding:10px 20px 16px;display:none;flex-direction:column}
+  .main-nav.open{display:flex}
+  .nav-item{width:100%}
+  .nav-link{width:100%;text-align:start;padding:13px 4px;font-weight:800;font-size:15px;display:flex;justify-content:space-between;align-items:center;color:var(--navy);background:none;border:none;cursor:pointer;font-family:var(--font)}
+  .nav-caret{font-size:12px}
+  .nav-drop{display:none;position:static}
+  .nav-item.open .nav-drop{display:block}
+  .nav-drop a{display:block;padding:10px 14px;padding-inline-start:14px;font-size:14.5px;color:var(--ink);border-radius:var(--r-sm)}
+  .nav-drop a:hover{background:var(--bg)}
+}
+@media(min-width:900px){
+  .main-nav{display:flex;align-items:center;gap:4px}
+  .nav-toggle{display:none}
+  .nav-item{position:relative}
+  .nav-link{font-size:15px;padding:10px 12px;font-weight:700;color:var(--navy);background:none;border:none;cursor:pointer;font-family:var(--font)}
+  .nav-caret{font-size:11px;margin-inline-start:2px}
+  .nav-drop{display:none;position:absolute;top:100%;inset-inline-start:0;z-index:70;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow);padding:8px;min-width:220px}
+  .nav-item:hover .nav-drop,.nav-item:focus-within .nav-drop,.nav-item.open .nav-drop{display:block}
+  .nav-drop a{display:block;padding:10px 14px;font-size:14.5px;border-radius:var(--r-sm);color:var(--ink);white-space:nowrap}
+  .nav-drop a:hover{background:var(--bg)}
+}
 /* ============ HERO ============ */
 .hero{position:relative;padding:34px 0 44px;color:#fff;overflow:hidden;background:var(--navy-deep)}
 .hero-bg{position:absolute;inset:0;z-index:0}
@@ -270,7 +294,33 @@ body.cookie-on .sticky-bar{display:none!important}
     <a class="brand" href="#hero" aria-label="המרכז האקדמי פרס">
       <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" width="207" height="43">
     </a>
+    <nav class="main-nav" id="mainNav" aria-label="תפריט תארים">
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false" aria-haspopup="true">תואר ראשון <span class="nav-caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop">
+          <a href="#form-section" data-program="מנהל עסקים">מנהל עסקים</a>
+          <a href="#form-section" data-program="משפטים">משפטים</a>
+          <a href="#form-section" data-program="מדעי ההתנהגות">מדעי ההתנהגות</a>
+          <a href="#form-section" data-program="תקשורת">תקשורת</a>
+          <a href="#form-section" data-program="מערכות מידע ניהוליות">מערכות מידע ניהוליות</a>
+          <a href="#form-section" data-program="ניהול שירותי בריאות">ניהול שירותי בריאות</a>
+          <a href="#form-section" data-program="ניהול משאבי אנוש">ניהול משאבי אנוש</a>
+          <a href="#form-section" data-program="מדעי התזונה">מדעי התזונה</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-link" aria-expanded="false" aria-haspopup="true">תואר שני <span class="nav-caret" aria-hidden="true">▾</span></button>
+        <div class="nav-drop">
+          <!-- TODO: verify current MBA specialization list -->
+          <a href="#form-section" data-program="MBA מנהל עסקים">מנהל עסקים MBA — בהתאמה אישית</a>
+          <a href="#form-section" data-program="MBA אסטרטגיה ופיתוח עסקי">MBA — אסטרטגיה ופיתוח עסקי</a>
+          <a href="#form-section" data-program="MBA ייעוץ וניהול ארגוני">MBA — ייעוץ וניהול ארגוני</a>
+          <a href="#form-section" data-program="MBA דיני עסקים">MBA — דיני עסקים</a>
+        </div>
+      </div>
+    </nav>
     <div class="header-cta">
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="תפריט">☰</button>
       <a class="header-phone" href="tel:08-3006090">☎ <span class="header-phone-num">08-3006090</span></a>
       <a class="header-leave" href="#form-section">השאירו פרטים</a>
     </div>
@@ -947,6 +997,44 @@ setTimeout(loadProdAnalytics, 5000);
     document.getElementById('exitMain').classList.add('hidden');
     document.getElementById('exitSuccess').classList.remove('hidden');
     setTimeout(function(){ exitPopup.classList.remove('show'); }, 3000);
+  });
+
+  /* ---- Degree nav: mobile hamburger panel + dropdown toggles ---- */
+  const mainNav = document.getElementById('mainNav');
+  const navToggle = document.getElementById('navToggle');
+  function closeNav(){
+    mainNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.textContent = '☰';
+    mainNav.querySelectorAll('.nav-item.open').forEach(function(item){
+      item.classList.remove('open');
+      item.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
+    });
+  }
+  navToggle.addEventListener('click', function(){
+    const open = mainNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.textContent = open ? '✕' : '☰';
+  });
+  mainNav.querySelectorAll('.nav-link').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const item = btn.parentElement;
+      const willOpen = !item.classList.contains('open');
+      /* close the sibling dropdown so only one is open at a time */
+      mainNav.querySelectorAll('.nav-item.open').forEach(function(sib){
+        sib.classList.remove('open');
+        sib.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
+      });
+      item.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+  /* the shared a[href="#form-section"] handler does scroll/focus/cta_click; just close the menu */
+  mainNav.querySelectorAll('.nav-drop a').forEach(function(a){
+    a.addEventListener('click', closeNav);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeNav();
   });
 
   /* ---- Certificates: expand/collapse the extra exec-ed cards ---- */

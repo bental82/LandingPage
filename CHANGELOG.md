@@ -86,3 +86,8 @@ Outcome H1, deadline countdown badge, miluim band, 8-program grid, employer logo
 **CRO/copy:** sticky bar gains "השאירו פרטים" and shows at 20% scroll · icon-only phone in mobile header · form heading aligned to the CTA promise ("בדקו אם מגיע לכם הפטור") + מועצה להשכלה גבוהה trust line · exit popup leads with the waiver · H1 typo fixed (לפסל → לפסוח על) · absolute og:image + canonical/og:url · `*` on the sourced #1 stat · "תואר פלוס" naming unified · program cards carry `data-program` into `cta_click`.
 **Deferred (needs owner input):** WhatsApp number is still landline-derived (TODO) · two GTM containers both load (possible GA4 double-count if the property is also a GTM tag — check container configs) · "30,000+ / 93%" stats unsourced · program cards still link to the form, not program pages.
 **Verified (headless Chromium, mobile + desktop):** zero JS errors, zero overflow, RTL dot sync ✓, consent accept-all and granular both persist + restore correctly ✓, marquee duplicated ✓, exit popup focus ✓.
+
+---
+
+## Round 3 — degree navigation menu
+Header gains a degree menu: **תואר ראשון** (8 BA programs, same names/`data-program` values as the program cards) and **תואר שני** (4 MBA specialization tracks — list marked TODO to verify). Desktop (≥900px): hover/focus/click dropdowns. Mobile: hamburger (☰/✕) opens a fixed panel under the header with expandable groups. All degree links reuse the existing `#form-section` smooth-scroll + `cta_click` handler, so advisors get the chosen program per lead. Escape closes; menu closes on link tap. Header CTA no longer wraps on small phones.
