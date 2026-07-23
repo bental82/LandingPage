@@ -207,6 +207,14 @@ section{padding-block:56px}
 .t-dots button{width:24px;height:24px;background:none;border:none;cursor:pointer;padding:0;position:relative}
 .t-dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#cfd8e3;position:absolute;inset:0;margin:auto}
 .t-dots button.on::before{background:var(--navy)}
+/* prev/next arrows (desktop; mobile swipes) */
+.t-wrap{position:relative}
+.t-arrow{position:absolute;top:38%;z-index:2;width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);color:var(--navy);font-size:20px;font-weight:900;cursor:pointer;display:none;align-items:center;justify-content:center;line-height:1;font-family:var(--font)}
+.t-arrow:hover{border-color:var(--mint)}
+.t-arrow.prev{inset-inline-start:2px}
+.t-arrow.next{inset-inline-end:2px}
+@media(min-width:768px){.t-arrow{display:flex}}
+@media(min-width:768px){.t-track{cursor:grab;user-select:none}}
 @media(min-width:768px){.t-card{flex:0 0 46%}}
 @media(min-width:1000px){.t-card{flex:0 0 31.5%}}
 /* ============ FINAL CTA ============ */
@@ -585,7 +593,9 @@ body.cookie-on .sticky-bar{display:none!important}
   <div class="wrap">
     <h2 class="section-title">הבוגרים שלנו מספרים</h2>
     <p class="section-sub">אנשים שעמדו בדיוק איפה שאתם עומדים עכשיו</p>
-    <div class="t-track" id="tTrack" tabindex="0" role="region" aria-label="המלצות בוגרים">
+    <div class="t-wrap">
+      <button class="t-arrow prev" id="tPrev" aria-label="המלצה קודמת">›</button>
+      <div class="t-track" id="tTrack" tabindex="0" role="region" aria-label="המלצות בוגרים">
       <div class="t-card">
         <blockquote>"המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי."</blockquote>
         <div class="t-person">
@@ -628,6 +638,8 @@ body.cookie-on .sticky-bar{display:none!important}
           <div><b>דניאל ביטון</b><span>מנכ״לית משותפת, E.D.I Energy</span></div>
         </div>
       </div>
+    </div>
+      <button class="t-arrow next" id="tNext" aria-label="המלצה הבאה">‹</button>
     </div>
     <div class="t-dots" id="tDots"></div>
   </div>
@@ -859,6 +871,30 @@ setTimeout(loadProdAnalytics, 5000);
     });
   }
   track.addEventListener('scroll', syncDots, {passive:true}); syncDots();
+
+  /* ---- Testimonial arrows (desktop) — RTL: "next" scrolls towards negative scrollLeft ---- */
+  const cardStep = function(){ return cards[0].offsetWidth + 14; };
+  document.getElementById('tNext').addEventListener('click', function(){ track.scrollBy({left: -cardStep(), behavior:'smooth'}); });
+  document.getElementById('tPrev').addEventListener('click', function(){ track.scrollBy({left: cardStep(), behavior:'smooth'}); });
+
+  /* ---- Mouse-drag scrolling (desktop has no touch swipe) ---- */
+  let dragging = false, dragX = 0, dragL = 0;
+  track.addEventListener('pointerdown', function(e){
+    if (e.pointerType !== 'mouse') return;
+    dragging = true; dragX = e.clientX; dragL = track.scrollLeft;
+    track.style.scrollSnapType = 'none';
+    track.setPointerCapture(e.pointerId);
+  });
+  track.addEventListener('pointermove', function(e){
+    if (!dragging) return;
+    track.scrollLeft = dragL - (e.clientX - dragX);
+  });
+  ['pointerup','pointercancel'].forEach(function(ev){
+    track.addEventListener(ev, function(){
+      if (!dragging) return;
+      dragging = false; track.style.scrollSnapType = '';
+    });
+  });
 
   /* ---- Sticky mobile bar: appears after 20% scroll, hides near form & final CTA ---- */
   const bar = document.getElementById('stickyBar');

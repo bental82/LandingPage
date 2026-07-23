@@ -91,3 +91,8 @@ Outcome H1, deadline countdown badge, miluim band, 8-program grid, employer logo
 
 ## Round 3 — degree navigation menu
 Header gains a degree menu: **תואר ראשון** (8 BA programs, same names/`data-program` values as the program cards) and **תואר שני** (4 MBA specialization tracks — list marked TODO to verify). Desktop (≥900px): hover/focus/click dropdowns. Mobile: hamburger (☰/✕) opens a fixed panel under the header with expandable groups. All degree links reuse the existing `#form-section` smooth-scroll + `cta_click` handler, so advisors get the chosen program per lead. Escape closes; menu closes on link tap. Header CTA no longer wraps on small phones.
+
+---
+
+## Round 4 — testimonial carousel fix
+Reported "carousel doesn't work": on desktop there was no way to navigate (no swipe, no arrows — only dots). Added prev/next arrows (desktop, ≥768px) and mouse-drag scrolling on the track. Note: the first arrow attempt nested `#tNext` inside the scroll track, so its clicks fed the drag handler and scroll-snap cancelled the scroll — buttons must be direct children of `.t-wrap`. Verified: real mouse clicks step both directions, drag works, mobile dots/swipe unchanged.
