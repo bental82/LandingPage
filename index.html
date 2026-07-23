@@ -16,18 +16,20 @@ gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad
 <meta property="og:type" content="website">
 <meta property="og:title" content="תואר ראשון בשנתיים — המרכז האקדמי פרס">
 <meta property="og:description" content="לימודים היברידיים, מסלולים מקוצרים ותעודות הייטק במהלך התואר. פטור מדמי רישום לנרשמים עכשיו.">
-<meta property="og:image" content="images/mobile/caps-1-poster.webp"><!-- TODO: replace with a dedicated 1200x630 share image when available -->
+<meta property="og:image" content="https://peres-pac.co.il/images/mobile/caps-1-poster.webp"><!-- TODO: replace with a dedicated 1200x630 share image when available -->
+<meta property="og:url" content="https://peres-pac.co.il/">
 <meta property="og:locale" content="he_IL">
+<link rel="canonical" href="https://peres-pac.co.il/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- LCP: preload the mobile hero poster -->
-<link rel="preload" href="images/mobile/caps-1-poster.webp" as="image" media="(max-width:899px)" fetchpriority="high">
+<link rel="preload" href="images/mobile/caps-1-poster.webp" as="image" media="(max-width:899.98px)" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#0a2a4d; --navy-deep:#071c36; --navy-soft:#123c6b;
   --mint:#2fe39b; --mint-dark:#1fc582; --mint-ink:#063b27;
-  --blue:#2f7fd1; --ink:#0f1f38; --muted:#5b6b82; --line:#e6ebf2;
+  --blue:#2a6cb0; --ink:#0f1f38; --muted:#5b6b82; --line:#e6ebf2;
   --bg:#f7f9fc; --card:#ffffff;
   --r-lg:18px; --r-md:14px; --r-sm:10px;
   --shadow:0 6px 24px rgba(10,42,77,.10);
@@ -51,7 +53,6 @@ section{padding-block:56px}
 .btn-ghost:hover{background:rgba(255,255,255,.18)}
 .btn-wa{background:#fff;color:#0e7a44;border:2px solid #25d366}
 .btn-wa:hover{background:#f0fdf6}
-.check{color:var(--mint-dark);font-weight:900;margin-inline-start:6px}
 /* ============ A11Y UTILITIES ============ */
 .skip-link{position:absolute;top:-100px;right:0;background:var(--navy);color:#fff;padding:12px 24px;z-index:100;font-weight:700;border-radius:0 0 10px 10px}
 .skip-link:focus{top:0}
@@ -62,10 +63,10 @@ section{padding-block:56px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy);font-size:17px}
 .brand img{height:34px;width:auto}
 .header-cta{display:flex;align-items:center;gap:10px}
-.header-phone{display:none;align-items:center;gap:6px;color:var(--navy);font-weight:700;font-size:14px;padding:9px 14px;border-radius:10px;border:1.5px solid var(--line)}
+.header-phone{display:inline-flex;align-items:center;gap:6px;color:var(--navy);font-weight:700;font-size:14px;padding:9px 14px;border-radius:10px;border:1.5px solid var(--line)}
 .header-leave{background:var(--navy);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:10px}
 .header-leave:hover{background:var(--navy-soft)}
-@media(min-width:768px){.header-phone{display:inline-flex}}
+@media(max-width:767.98px){.header-phone{display:inline-flex;padding:9px 11px}.header-phone-num{display:none}}
 /* ============ HERO ============ */
 .hero{position:relative;padding:34px 0 44px;color:#fff;overflow:hidden;background:var(--navy-deep)}
 .hero-bg{position:absolute;inset:0;z-index:0}
@@ -74,7 +75,7 @@ section{padding-block:56px}
 @media(min-width:900px){.hero-bg iframe{display:block;width:300%;height:300%;left:-100%;top:-100%}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,28,54,.82) 0%,rgba(7,28,54,.70) 55%,rgba(7,28,54,.88) 100%);z-index:1}
 .hero .wrap{position:relative;z-index:2;display:flex;flex-direction:column;gap:18px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(47,227,155,.16);border:1.5px solid var(--mint);color:var(--mint);font-weight:800;font-size:12.5px;padding:8px 14px;border-radius:999px;width:fit-content}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap;max-width:100%;background:rgba(47,227,155,.16);border:1.5px solid var(--mint);color:var(--mint);font-weight:800;font-size:12.5px;padding:8px 14px;border-radius:999px;width:fit-content}
 @media(min-width:768px){.hero-badge{font-size:14px;padding:8px 16px}}
 .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--mint);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
@@ -148,7 +149,7 @@ section{padding-block:56px}
 .program:hover{border-color:var(--mint);transform:translateY(-2px)}
 .program h3{font-size:15.5px;color:var(--navy)}
 .program p{font-size:13px;color:var(--muted);flex:1}
-.program .tag{font-size:11px;font-weight:800;color:var(--mint-dark);background:rgba(47,227,155,.14);padding:3px 10px;border-radius:999px;width:fit-content}
+.program .tag{font-size:11px;font-weight:800;color:var(--mint-ink);background:rgba(47,227,155,.14);padding:3px 10px;border-radius:999px;width:fit-content}
 @media(min-width:1000px){.programs-grid{grid-template-columns:repeat(4,1fr)}}
 .programs-note{text-align:center;font-size:13px;color:var(--muted);margin-top:16px}
 /* ============ CERTIFICATES (Degree+) ============ */
@@ -179,8 +180,9 @@ section{padding-block:56px}
 .t-person b{display:block;font-size:15px;color:var(--navy)}
 .t-person span{font-size:12.5px;color:var(--muted)}
 .t-dots{display:flex;justify-content:center;gap:7px;margin-top:6px}
-.t-dots button{width:8px;height:8px;border-radius:50%;border:none;background:#cfd8e3;cursor:pointer;padding:0}
-.t-dots button.on{background:var(--navy)}
+.t-dots button{width:24px;height:24px;background:none;border:none;cursor:pointer;padding:0;position:relative}
+.t-dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#cfd8e3;position:absolute;inset:0;margin:auto}
+.t-dots button.on::before{background:var(--navy)}
 @media(min-width:768px){.t-card{flex:0 0 46%}}
 @media(min-width:1000px){.t-card{flex:0 0 31.5%}}
 /* ============ FINAL CTA ============ */
@@ -194,9 +196,10 @@ section{padding-block:56px}
 .footer .wrap{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
 .footer-links{display:flex;gap:20px}
 .footer-links a{color:rgba(255,255,255,.85);font-weight:700}
+body.cookie-on .footer{padding-bottom:200px}
 @media(min-width:768px){.footer{padding-bottom:32px}.footer .wrap{flex-direction:row;justify-content:space-between}}
 /* ============ STICKY MOBILE BAR ============ */
-.sticky-bar{position:fixed;bottom:0;inset-inline:0;z-index:55;background:#fff;box-shadow:0 -4px 18px rgba(10,42,77,.14);display:flex;gap:8px;padding:10px 12px;transform:translateY(110%);transition:transform .25s ease}
+.sticky-bar{position:fixed;bottom:0;inset-inline:0;z-index:55;background:#fff;box-shadow:0 -4px 18px rgba(10,42,77,.14);display:flex;gap:8px;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s ease}
 .sticky-bar.show{transform:translateY(0)}
 body.cookie-on .sticky-bar{display:none!important}
 .sticky-bar .btn{flex:1;padding:12px 6px;font-size:13.5px}
@@ -204,11 +207,11 @@ body.cookie-on .sticky-bar{display:none!important}
 .btn-navy{background:var(--navy);color:#fff}
 .btn-navy:hover{background:var(--navy-soft)}
 /* ============ COOKIE BANNER (slim, delayed) ============ */
-.cookie-bar{position:fixed;bottom:0;inset-inline:0;z-index:70;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(10,42,77,.16);padding:12px 16px;display:none;gap:12px;align-items:center;flex-wrap:wrap}
+.cookie-bar{position:fixed;bottom:0;inset-inline:0;z-index:70;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(10,42,77,.16);padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));display:none;gap:12px;align-items:center;flex-wrap:wrap}
 .cookie-bar.show{display:flex}
 .cookie-bar p{flex:1;min-width:220px;font-size:12.5px;color:var(--muted)}
 .cookie-bar .c-btns{display:flex;gap:8px}
-.cookie-bar .btn{padding:9px 18px;font-size:13.5px}
+.cookie-bar .btn{padding:12px 18px;font-size:13.5px}
 .cookie-accept{background:var(--navy);color:#fff}
 .cookie-reject{background:#eef2f7;color:var(--ink)}
 .cookie-manage{background:none;color:var(--blue);font-weight:700}
@@ -231,6 +234,7 @@ body.cookie-on .sticky-bar{display:none!important}
 .exit-form input:focus{border-color:var(--mint);outline:none;background:#fff}
 .exit-success .success-icon{width:52px;height:52px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-size:26px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
 .hidden{display:none!important}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .marquee,.hero-badge .dot{animation:none} *{transition:none!important} }
 </style>
 <!-- Structured data: EducationalOrganization -->
 <script type="application/ld+json">
@@ -258,7 +262,7 @@ body.cookie-on .sticky-bar{display:none!important}
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV2SWLSL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Skip link for keyboard/screen-reader users -->
-<a href="#hero" class="skip-link">דלג לתוכן הראשי</a>
+<a href="#main" class="skip-link">דלג לתוכן הראשי</a>
 
 <!-- ================= HEADER ================= -->
 <header class="header">
@@ -267,16 +271,17 @@ body.cookie-on .sticky-bar{display:none!important}
       <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" width="207" height="43">
     </a>
     <div class="header-cta">
-      <a class="header-phone" href="tel:08-3006090">☎ 08-3006090</a>
+      <a class="header-phone" href="tel:08-3006090">☎ <span class="header-phone-num">08-3006090</span></a>
       <a class="header-leave" href="#form-section">השאירו פרטים</a>
     </div>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
+<main id="main">
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <img src="images/mobile/caps-1-poster.webp" alt="" aria-hidden="true" fetchpriority="high" onerror="this.remove()">
+    <img data-src="images/mobile/caps-1-poster.webp" alt="" aria-hidden="true" fetchpriority="high" onerror="this.remove()">
     <!-- Original Vimeo background (desktop only, lazy) -->
     <iframe id="heroVideo" data-src="https://player.vimeo.com/video/1149314717?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1&amp;dnt=1" allow="autoplay; fullscreen" title="המרכז האקדמי פרס"></iframe>
   </div>
@@ -285,7 +290,7 @@ body.cookie-on .sticky-bar{display:none!important}
   <div class="wrap">
     <div class="hero-content-col" style="display:flex;flex-direction:column;gap:16px">
       <span class="hero-badge"><span class="dot"></span> ההרשמה בעיצומה · פטור מדמי רישום עד ה-<span id="deadlineDate">31.8</span> · נותרו <b id="daysLeft">–</b> ימים</span>
-      <h1>תואר ראשון <em>בשנתיים.</em><br>בלי לפסל את העבודה והחיים.</h1>
+      <h1>תואר ראשון <em>בשנתיים.</em><br>בלי לפסוח על העבודה והחיים.</h1>
       <p class="hero-sub">מסלולים מואצים ולימודים היברידיים במרכז האקדמי פרס — המקום הראשון בתמיכה במילואימניקים. יוצאים עם תואר אקדמי ועם תעודות מקצועיות עוד במהלך הלימודים.</p>
 
       <!-- FORM: on mobile this renders right here (above stats); on desktop it sits in the right grid cell -->
@@ -293,7 +298,7 @@ body.cookie-on .sticky-bar{display:none!important}
 
       <div class="hero-stats" role="list">
         <div class="stat" role="listitem"><b>30,000+</b><span>בוגרים בתעשייה</span></div>
-        <div class="stat" role="listitem"><b>#1</b><span>בשביעות רצון סטודנטים</span></div>
+        <div class="stat" role="listitem"><b>#1</b><span>בשביעות רצון סטודנטים*</span></div>
         <div class="stat" role="listitem"><b>93%</b><span>השמה בשוק העבודה</span></div>
       </div>
       <span class="stats-src">* מקום ראשון: על פי סקר שביעות רצון הסטודנטים הארצי (התאחדות הסטודנטים), 2024<!-- TODO: verify exact survey citation --></span>
@@ -309,8 +314,8 @@ body.cookie-on .sticky-bar{display:none!important}
     <div class="hero-form-wrapper" id="form-section">
       <div class="lead-form">
         <span class="form-badge">🎓 פטור מדמי רישום לנרשמים עכשיו</span>
-        <h2>השאירו פרטים ונחזור אליכם</h2>
-        <p class="form-note">שיחה קצרה עם יועץ לימודים — בלי התחייבות.</p>
+        <h2>בדקו אם מגיע לכם הפטור</h2>
+        <p class="form-note">השאירו פרטים ויועץ לימודים יחזור אליכם — בלי התחייבות. תואר מוכר של המועצה להשכלה גבוהה.</p>
         <!-- HubSpot form — SAME portal/form IDs as production, so all workflows keep working -->
         <div id="hs-lead-form"></div>
         <p class="form-alt">מעדיפים עכשיו? <a href="tel:08-3006090">חייגו 08-3006090</a> או <a href="https://wa.me/97283006090" target="_blank" rel="noopener">שלחו וואטסאפ</a></p>
@@ -325,18 +330,31 @@ body.cookie-on .sticky-bar{display:none!important}
   <p>הבוגרים שלנו עובדים בחברות המובילות במשק</p>
   <div class="marquee" id="marquee">
     <!-- keep original asset filenames; text fallbacks shown if images missing -->
-    <img src="images/לוגו_אסם.webp" alt="אסם" onerror="this.outerHTML='<span class=logo-fallback>אסם</span>'">
-    <img src="images/לוגו_שטראוס.webp" alt="שטראוס" onerror="this.outerHTML='<span class=logo-fallback>שטראוס</span>'">
-    <img src="images/לוגו_LOREAL.webp" alt="L'Oréal" onerror="this.outerHTML='<span class=logo-fallback>L’ORÉAL</span>'">
-    <img src="images/לוגו_AHAVA.webp" alt="AHAVA" onerror="this.outerHTML='<span class=logo-fallback>AHAVA</span>'">
-    <img src="images/employers/unilever.webp" alt="Unilever" onerror="this.outerHTML='<span class=logo-fallback>Unilever</span>'">
-    <img src="images/tnuva-optimized.webp" alt="תנובה" onerror="this.outerHTML='<span class=logo-fallback>תנובה</span>'">
-    <img src="images/mizrahi-tefahot-optimized.webp" alt="מזרחי טפחות" onerror="this.outerHTML='<span class=logo-fallback>מזרחי טפחות</span>'">
-    <img src="images/israel-electric-optimized.webp" alt="חברת החשמל" onerror="this.outerHTML='<span class=logo-fallback>חברת החשמל</span>'">
-    <img src="images/לוגו_DHL.webp" alt="DHL" onerror="this.outerHTML='<span class=logo-fallback>DHL</span>'">
-    <img src="images/מכון_ויצמן_למדע.webp" alt="מכון ויצמן" onerror="this.outerHTML='<span class=logo-fallback>מכון ויצמן</span>'">
-    <img src="images/בית_חולים_איכילוב.webp" alt="איכילוב" onerror="this.outerHTML='<span class=logo-fallback>איכילוב</span>'">
-    <img src="images/לוגו_כאן_-_תאגיד_השידור_הישראלי.webp" alt="כאן" onerror="this.outerHTML='<span class=logo-fallback>כאן</span>'">
+    <img src="images/לוגו_אסם.webp" alt="אסם" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>אסם</span>'">
+    <img src="images/לוגו_שטראוס.webp" alt="שטראוס" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>שטראוס</span>'">
+    <img src="images/לוגו_LOREAL.webp" alt="L'Oréal" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>L’ORÉAL</span>'">
+    <img src="images/לוגו_AHAVA.webp" alt="AHAVA" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>AHAVA</span>'">
+    <img src="images/employers/unilever.webp" alt="Unilever" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>Unilever</span>'">
+    <img src="images/tnuva-optimized.webp" alt="תנובה" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>תנובה</span>'">
+    <img src="images/mizrahi-tefahot-optimized.webp" alt="מזרחי טפחות" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>מזרחי טפחות</span>'">
+    <img src="images/israel-electric-optimized.webp" alt="חברת החשמל" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>חברת החשמל</span>'">
+    <img src="images/לוגו_DHL.webp" alt="DHL" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>DHL</span>'">
+    <img src="images/מכון_ויצמן_למדע.webp" alt="מכון ויצמן" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>מכון ויצמן</span>'">
+    <img src="images/בית_חולים_איכילוב.webp" alt="איכילוב" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>איכילוב</span>'">
+    <img src="images/לוגו_כאן_-_תאגיד_השידור_הישראלי.webp" alt="כאן" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>כאן</span>'">
+    <!-- second copy for a seamless 50% marquee loop -->
+    <img src="images/לוגו_אסם.webp" alt="אסם" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>אסם</span>'">
+    <img src="images/לוגו_שטראוס.webp" alt="שטראוס" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>שטראוס</span>'">
+    <img src="images/לוגו_LOREAL.webp" alt="L'Oréal" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>L’ORÉAL</span>'">
+    <img src="images/לוגו_AHAVA.webp" alt="AHAVA" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>AHAVA</span>'">
+    <img src="images/employers/unilever.webp" alt="Unilever" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>Unilever</span>'">
+    <img src="images/tnuva-optimized.webp" alt="תנובה" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>תנובה</span>'">
+    <img src="images/mizrahi-tefahot-optimized.webp" alt="מזרחי טפחות" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>מזרחי טפחות</span>'">
+    <img src="images/israel-electric-optimized.webp" alt="חברת החשמל" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>חברת החשמל</span>'">
+    <img src="images/לוגו_DHL.webp" alt="DHL" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>DHL</span>'">
+    <img src="images/מכון_ויצמן_למדע.webp" alt="מכון ויצמן" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>מכון ויצמן</span>'">
+    <img src="images/בית_חולים_איכילוב.webp" alt="איכילוב" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>איכילוב</span>'">
+    <img src="images/לוגו_כאן_-_תאגיד_השידור_הישראלי.webp" alt="כאן" aria-hidden="true" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>כאן</span>'">
   </div>
 </div>
 
@@ -414,14 +432,14 @@ body.cookie-on .sticky-bar{display:none!important}
     <h2 class="section-title">מה לומדים?</h2>
     <p class="section-sub">תארים ראשונים מוכרים, עם מסלולים מואצים והתמחויות לשוק העבודה<!-- TODO: verify current program list + link each card to its program page --></p>
     <div class="programs-grid">
-      <a class="program" href="#form-section"><h3>מנהל עסקים</h3><p>ניהול, שיווק ומימון — הכתובת לעולם העסקי</p><span class="tag">מסלול מקוצר</span></a>
-      <a class="program" href="#form-section"><h3>משפטים</h3><p>LL.B עם התמחויות מסחריות ויישומיות</p><span class="tag">תכנית LEVEL UP</span></a>
-      <a class="program" href="#form-section"><h3>מדעי ההתנהגות</h3><p>שער לקריירה בפסיכולוגיה ארגונית ו-HR</p><span class="tag">היברידי</span></a>
-      <a class="program" href="#form-section"><h3>תקשורת</h3><p>מדיה, תוכן דיגיטלי ואסטרטגיית מותג</p><span class="tag">היברידי</span></a>
-      <a class="program" href="#form-section"><h3>מערכות מידע ניהוליות</h3><p>החיבור הישיר בין עסקים לטכנולוגיה</p><span class="tag">שער להייטק</span></a>
-      <a class="program" href="#form-section"><h3>ניהול שירותי בריאות</h3><p>ניהול ומנהל במערכת הבריאות הצומחת</p><span class="tag">ביקוש גבוה</span></a>
-      <a class="program" href="#form-section"><h3>ניהול משאבי אנוש</h3><p>ה-HR של העולם החדש — אנשים, דאטה וארגונים</p><span class="tag">ביקוש גבוה</span></a>
-      <a class="program" href="#form-section"><h3>מדעי התזונה</h3><p>תואר אקדמי בעולמות הבריאות והתזונה</p><span class="tag">מסלול מקוצר</span></a>
+      <a class="program" href="#form-section" data-program="מנהל עסקים"><h3>מנהל עסקים</h3><p>ניהול, שיווק ומימון — הכתובת לעולם העסקי</p><span class="tag">מסלול מקוצר</span></a>
+      <a class="program" href="#form-section" data-program="משפטים"><h3>משפטים</h3><p>LL.B עם התמחויות מסחריות ויישומיות</p><span class="tag">תכנית LEVEL UP</span></a>
+      <a class="program" href="#form-section" data-program="מדעי ההתנהגות"><h3>מדעי ההתנהגות</h3><p>שער לקריירה בפסיכולוגיה ארגונית ו-HR</p><span class="tag">היברידי</span></a>
+      <a class="program" href="#form-section" data-program="תקשורת"><h3>תקשורת</h3><p>מדיה, תוכן דיגיטלי ואסטרטגיית מותג</p><span class="tag">היברידי</span></a>
+      <a class="program" href="#form-section" data-program="מערכות מידע ניהוליות"><h3>מערכות מידע ניהוליות</h3><p>החיבור הישיר בין עסקים לטכנולוגיה</p><span class="tag">שער להייטק</span></a>
+      <a class="program" href="#form-section" data-program="ניהול שירותי בריאות"><h3>ניהול שירותי בריאות</h3><p>ניהול ומנהל במערכת הבריאות הצומחת</p><span class="tag">ביקוש גבוה</span></a>
+      <a class="program" href="#form-section" data-program="ניהול משאבי אנוש"><h3>ניהול משאבי אנוש</h3><p>ה-HR של העולם החדש — אנשים, דאטה וארגונים</p><span class="tag">ביקוש גבוה</span></a>
+      <a class="program" href="#form-section" data-program="מדעי התזונה"><h3>מדעי התזונה</h3><p>תואר אקדמי בעולמות הבריאות והתזונה</p><span class="tag">מסלול מקוצר</span></a>
     </div>
     <p class="programs-note">לא בטוחים מה מתאים לכם? <a href="#form-section" style="color:var(--blue);font-weight:800">דברו עם יועץ לימודים ›</a></p>
   </div>
@@ -430,7 +448,7 @@ body.cookie-on .sticky-bar{display:none!important}
 <!-- ================= CERTIFICATES mini-grid (Clarity #3: 18% of clicks were carousel arrows → surface them) ================= -->
 <section class="certs" id="certificates">
   <div class="wrap">
-    <h2 class="section-title">תואר פלוס+: תעודות מקצועיות כבר במהלך התואר</h2>
+    <h2 class="section-title">תואר פלוס: תעודות מקצועיות כבר במהלך התואר</h2>
     <p class="section-sub">יוצאים לשוק עם תואר אקדמי <b>ועם</b> תעודה שהמעסיקים מחפשים</p>
     <div class="certs-grid" id="certsGrid">
       <div class="cert">
@@ -517,7 +535,7 @@ body.cookie-on .sticky-bar{display:none!important}
   <div class="wrap">
     <h2 class="section-title">הבוגרים שלנו מספרים</h2>
     <p class="section-sub">אנשים שעמדו בדיוק איפה שאתם עומדים עכשיו</p>
-    <div class="t-track" id="tTrack">
+    <div class="t-track" id="tTrack" tabindex="0" role="region" aria-label="המלצות בוגרים">
       <div class="t-card">
         <blockquote>"המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי."</blockquote>
         <div class="t-person">
@@ -577,6 +595,7 @@ body.cookie-on .sticky-bar{display:none!important}
     </div>
   </div>
 </section>
+</main>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
@@ -593,6 +612,7 @@ body.cookie-on .sticky-bar{display:none!important}
 
 <!-- ================= STICKY MOBILE BAR (Clarity #6: mid-page capture) ================= -->
 <div class="sticky-bar" id="stickyBar" role="complementary" aria-label="פעולות מהירות">
+  <a href="#form-section" class="btn btn-navy">השאירו פרטים</a>
   <a href="tel:08-3006090" class="btn btn-mint">☎ התקשרו עכשיו</a>
   <a href="https://wa.me/97283006090" target="_blank" rel="noopener" class="btn btn-wa">💬 וואטסאפ</a>
 </div>
@@ -607,8 +627,8 @@ body.cookie-on .sticky-bar{display:none!important}
   </div>
   <div class="cookie-prefs hidden" id="cookiePrefs">
     <span class="cookie-pref-fixed">פונקציונלי ואבטחה — פעילים תמיד (נדרש לתפעול האתר)</span>
-    <label><input type="checkbox" id="prefAnalytics" checked> סטטיסטיקה ומדידה (GA4 / Clarity)</label>
-    <label><input type="checkbox" id="prefAds" checked> שיווק ופרסום ממומן</label>
+    <label><input type="checkbox" id="prefAnalytics"> סטטיסטיקה ומדידה (GA4 / Clarity)</label>
+    <label><input type="checkbox" id="prefAds"> שיווק ופרסום ממומן</label>
   </div>
 </div>
 
@@ -617,13 +637,16 @@ body.cookie-on .sticky-bar{display:none!important}
   <div class="exit-card">
     <button class="exit-close" id="exitClose" aria-label="סגירה">✕</button>
     <div id="exitMain">
-      <h3>רגע, לפני שעוזבים 👋</h3>
-      <p>שיחה קצרה עם יועץ לימודים — בלי התחייבות. ואם זה לא מתאים, פשוט לא עונים.</p>
+      <h3>עוד לא בדקתם אם מגיע לכם הפטור?</h3>
+      <p>השאירו פרטים ויועץ לימודים יחזור אליכם לשיחה קצרה — בלי התחייבות.</p>
       <!-- posts to the SAME HubSpot endpoint as the hero form, so leads land in the same pipeline -->
       <form class="exit-form" id="exitForm" novalidate>
-        <input type="text" name="full_name_he" placeholder="שם מלא" required autocomplete="name">
-        <input type="tel" name="phone" placeholder="טלפון" required inputmode="tel" autocomplete="tel" pattern="[0-9\-+\s]{9,15}">
-        <input type="email" name="email" placeholder="מייל" required inputmode="email" autocomplete="email">
+        <label class="sr-only" for="exitName">שם מלא</label>
+        <input type="text" id="exitName" name="full_name_he" placeholder="שם מלא" required autocomplete="name">
+        <label class="sr-only" for="exitPhone">טלפון</label>
+        <input type="tel" id="exitPhone" name="phone" placeholder="טלפון" required inputmode="tel" autocomplete="tel" pattern="[0-9\-+\s]{9,15}">
+        <label class="sr-only" for="exitEmail">מייל</label>
+        <input type="email" id="exitEmail" name="email" placeholder="מייל" required inputmode="email" autocomplete="email">
         <button type="submit" class="btn btn-mint" style="width:100%">תחזרו אליי ←</button>
       </form>
     </div>
@@ -657,7 +680,7 @@ setTimeout(loadProdAnalytics, 5000);
 <!-- Microsoft Clarity loads via GTM on production — keep it there (no code change needed) -->
 
 <!-- HubSpot forms loader (EU region) -->
-<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js" defer onload="window.renderHubspot&&window.renderHubspot()" onerror="window.renderHubspot&&window.renderHubspot()"></script>
 
 <script>
 /* ============================================================
@@ -676,12 +699,21 @@ setTimeout(loadProdAnalytics, 5000);
 
   /* ---- Deadline countdown ---- */
   const days = Math.max(0, Math.ceil((DEADLINE - new Date()) / 86400000));
-  document.getElementById('daysLeft').textContent = days;
-  document.getElementById('deadlineDate').textContent =
-    DEADLINE.getDate() + '.' + (DEADLINE.getMonth() + 1);
+  if (days <= 0) {
+    /* deadline passed: don't show a stale date (keep the pulsing dot) */
+    document.querySelector('.hero-badge').innerHTML =
+      '<span class="dot"></span> ההרשמה בעיצומה · פטור מדמי רישום לנרשמים עכשיו';
+  } else {
+    document.getElementById('daysLeft').textContent = days;
+    document.getElementById('deadlineDate').textContent =
+      DEADLINE.getDate() + '.' + (DEADLINE.getMonth() + 1);
+  }
 
   /* ---- HubSpot embed with native fallback ---- */
   function renderHubspot(){
+    const wrap = document.getElementById('hs-lead-form');
+    if (wrap.dataset.rendered) return;   // deferred loader may call us twice (onload/onerror)
+    wrap.dataset.rendered = '1';
     if (window.hbspt && hbspt.forms) {
       hbspt.forms.create({
         portalId: HS_PORTAL, formId: HS_FORM, region: HS_REGION,
@@ -691,33 +723,51 @@ setTimeout(loadProdAnalytics, 5000);
       });
     } else {
       /* fallback: plain form posting to the same HS endpoint (keeps leads flowing) */
-      const wrap = document.getElementById('hs-lead-form');
       wrap.innerHTML =
-        '<form dir="rtl" method="POST" enctype="multipart/form-data" ' +
+        '<form dir="rtl" method="POST" enctype="multipart/form-data" id="hsFallbackForm" ' +
         'action="https://forms-eu1.hsforms.com/submissions/v3/public/submit/formsnext/multipart/' + HS_PORTAL + '/' + HS_FORM + '">' +
-        '<input name="full_name_he" required placeholder="שם מלא" type="text" class="hs-input-fb">' +
-        '<input name="phone" required placeholder="טלפון" type="tel" inputmode="tel" autocomplete="tel" class="hs-input-fb">' +
-        '<input name="email" required placeholder="מייל" type="email" inputmode="email" autocomplete="email" class="hs-input-fb">' +
+        '<input name="full_name_he" required placeholder="שם מלא" aria-label="שם מלא" type="text" class="hs-input-fb">' +
+        '<input name="phone" required placeholder="טלפון" aria-label="טלפון" type="tel" inputmode="tel" autocomplete="tel" class="hs-input-fb">' +
+        '<input name="email" required placeholder="מייל" aria-label="מייל" type="email" inputmode="email" autocomplete="email" class="hs-input-fb">' +
         '<button type="submit" class="btn btn-mint" style="width:100%">תחזרו אליי ←</button>' +
         '</form>';
       wrap.querySelectorAll('.hs-input-fb').forEach(function(i){
         i.style.cssText='width:100%;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;font-size:16px;font-family:inherit;background:#fbfcfe;margin-bottom:10px';
       });
+      /* send via fetch so the browser doesn't navigate away to the JSON response */
+      document.getElementById('hsFallbackForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        const f = e.target;
+        fetch(f.action, {method:'POST', body:new FormData(f), mode:'no-cors'}).catch(function(){});
+        pushEvent('generate_lead', {form:'lead_fallback'});
+        wrap.innerHTML = '<p style="color:var(--navy);font-weight:800;text-align:center">תודה! הפרטים התקבלו. יועץ לימודים יחזור אליכם בהקדם.</p>';
+      });
     }
   }
-  renderHubspot();
+  /* the deferred embed script calls this via onload/onerror once it loads (or fails) */
+  window.renderHubspot = renderHubspot;
 
   /* ---- dataLayer helper ---- */
   function pushEvent(name, params){ window.dataLayer = window.dataLayer || []; window.dataLayer.push(Object.assign({event:name}, params||{})); }
 
-  /* ---- Lazy-load hero video (desktop only) ---- */
-  if (matchMedia('(min-width:900px)').matches) {
-    const v = document.getElementById('heroVideo');
-    v.src = v.dataset.src;
+  /* ---- Lazy-load hero video (desktop only, after load, never with reduced motion) ---- */
+  if (matchMedia('(min-width:900px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    window.addEventListener('load', function(){
+      setTimeout(function(){
+        const v = document.getElementById('heroVideo');
+        v.src = v.dataset.src;
+      }, 1200);
+    });
+  }
+
+  /* ---- Hero poster img: only fetched on mobile, where the video doesn't render ---- */
+  if (matchMedia('(max-width:899.98px)').matches) {
+    const heroImg = document.querySelector('.hero-bg img');
+    if (heroImg && heroImg.dataset.src) heroImg.src = heroImg.dataset.src;
   }
 
   /* ---- Mobile hero reorder: form right after the sub-headline (Clarity: 23% mobile drop-off in hero) ---- */
-  const mq = matchMedia('(max-width:899px)');
+  const mq = matchMedia('(max-width:899.98px)');
   const formWrap = document.getElementById('form-section');
   const mobileSlot = document.getElementById('form-section-mobile');
   function placeForm(){
@@ -735,7 +785,7 @@ setTimeout(loadProdAnalytics, 5000);
         const inp = formWrap.querySelector('input[name="full_name_he"], input[type="text"]');
         if (inp) inp.focus({preventScroll:true});
       }, 650);
-      pushEvent('cta_click', {location:a.id || a.textContent.trim().slice(0,20)});
+      pushEvent('cta_click', {location:a.id || a.textContent.trim().slice(0,20), program:a.dataset.program || undefined});
     });
   });
 
@@ -750,19 +800,24 @@ setTimeout(loadProdAnalytics, 5000);
     dots.appendChild(b);
   }
   function syncDots(){
-    const idx = Math.round(track.scrollLeft / (track.scrollWidth / cards.length));
-    dots.querySelectorAll('button').forEach(function(d,i){ d.classList.toggle('on', i===Math.min(idx, cards.length-1)); });
+    /* RTL: scrollLeft is negative — measure progress from the inline-start edge */
+    const max = track.scrollWidth - track.clientWidth;
+    const idx = max > 0 ? Math.round(Math.abs(track.scrollLeft) / max * (cards.length - 1)) : 0;
+    dots.querySelectorAll('button').forEach(function(d,i){
+      d.classList.toggle('on', i===idx);
+      if (i===idx) { d.setAttribute('aria-current', 'true'); } else { d.removeAttribute('aria-current'); }
+    });
   }
   track.addEventListener('scroll', syncDots, {passive:true}); syncDots();
 
-  /* ---- Sticky mobile bar: appears after 40% scroll, hides near form & final CTA ---- */
+  /* ---- Sticky mobile bar: appears after 20% scroll, hides near form & final CTA ---- */
   const bar = document.getElementById('stickyBar');
   let formVisible = false, finalVisible = false;
   new IntersectionObserver(function(en){ formVisible = en[0].isIntersecting; }, {threshold:.15}).observe(formWrap);
   new IntersectionObserver(function(en){ finalVisible = en[0].isIntersecting; }, {threshold:.15}).observe(document.getElementById('final-cta'));
   addEventListener('scroll', function(){
     const depth = scrollY / (document.body.scrollHeight - innerHeight);
-    bar.classList.toggle('show', depth > .4 && !formVisible && !finalVisible);
+    bar.classList.toggle('show', depth > .2 && !formVisible && !finalVisible);
   }, {passive:true});
 
   /* ---- Cookie bar: slim + delayed until engagement (Clarity: 23% of first interactions wasted on it) ---- */
@@ -770,6 +825,8 @@ setTimeout(loadProdAnalytics, 5000);
   const CONSENT_KEY = 'pac_consent_v2';
   const prefAnalytics = document.getElementById('prefAnalytics');
   const prefAds = document.getElementById('prefAds');
+  /* did the visitor engage with the granular prefs? (vs. a plain accept-all click) */
+  let prefsTouched = false;
   /* push the granular choice into Consent Mode v2 (defaults in <head> are all-denied) */
   function applyConsent(granted){
     const stats = granted && prefAnalytics.checked ? 'granted' : 'denied';
@@ -780,8 +837,19 @@ setTimeout(loadProdAnalytics, 5000);
     });
   }
   function consent(v){
-    localStorage.setItem(CONSENT_KEY, v);
-    applyConsent(v === 'granted');
+    const granted = v === 'granted';
+    if (granted && !prefsTouched) {
+      /* accept-all without touching the granular prefs: grant everything */
+      prefAnalytics.checked = true;
+      prefAds.checked = true;
+    }
+    /* persist the granular state: {v: overall choice, a: analytics, d: ads} */
+    localStorage.setItem(CONSENT_KEY, JSON.stringify({
+      v: v,
+      a: granted && prefAnalytics.checked,
+      d: granted && prefAds.checked
+    }));
+    applyConsent(granted);
     cookieBar.classList.remove('show');
     document.body.classList.remove('cookie-on');
     pushEvent('consent_' + v);
@@ -792,13 +860,31 @@ setTimeout(loadProdAnalytics, 5000);
   const cookieManage = document.getElementById('cookieManage');
   const cookiePrefs = document.getElementById('cookiePrefs');
   cookieManage.addEventListener('click', function(){
+    prefsTouched = true;
     const open = cookiePrefs.classList.toggle('hidden') === false;
     cookieManage.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
+  [prefAnalytics, prefAds].forEach(function(cb){
+    cb.addEventListener('change', function(){ prefsTouched = true; });
+  });
   const savedConsent = localStorage.getItem(CONSENT_KEY);
   if (savedConsent) {
-    /* returning visitor: re-apply their choice (stored prefs are accept-all / deny-all) */
-    applyConsent(savedConsent === 'granted');
+    /* returning visitor: restore granular prefs and re-apply their choice */
+    let saved = null;
+    try {
+      const parsed = JSON.parse(savedConsent);
+      if (parsed && typeof parsed.v === 'string') saved = parsed;
+    } catch (err) {
+      /* legacy plain-string value ('granted' / 'denied') */
+      if (savedConsent === 'granted' || savedConsent === 'denied') {
+        saved = {v: savedConsent, a: savedConsent === 'granted', d: savedConsent === 'granted'};
+      }
+    }
+    if (saved) {
+      prefAnalytics.checked = !!saved.a;
+      prefAds.checked = !!saved.d;
+      applyConsent(saved.v === 'granted');
+    }
   } else {
     let shown = false;
     const show = function(){ if (!shown){ shown = true; cookieBar.classList.add('show'); document.body.classList.add('cookie-on'); } };
@@ -814,17 +900,39 @@ setTimeout(loadProdAnalytics, 5000);
   /* ---- Exit popup: desktop (fine pointer) only, once per session, suppressed on touch ---- */
   const isTouch = matchMedia('(pointer:coarse)').matches;
   const exitPopup = document.getElementById('exitPopup');
-  if (!isTouch && !sessionStorage.getItem('pac_exit_shown')) {
+  let exitPrevFocus = null;
+  function openExitPopup(){
+    exitPrevFocus = document.activeElement;
+    exitPopup.classList.add('show');
+    document.getElementById('exitClose').focus();
+    pushEvent('exit_popup_view');
+  }
+  function closeExitPopup(){
+    exitPopup.classList.remove('show');
+    if (exitPrevFocus && exitPrevFocus.focus) { exitPrevFocus.focus(); exitPrevFocus = null; }
+  }
+  if (!isTouch) {
     document.addEventListener('mouseout', function(e){
+      if (sessionStorage.getItem('pac_exit_shown')) return;
       if (!e.relatedTarget && e.clientY < 8) {
         sessionStorage.setItem('pac_exit_shown','1');
-        exitPopup.classList.add('show');
-        pushEvent('exit_popup_view');
+        openExitPopup();
       }
     });
   }
-  document.getElementById('exitClose').addEventListener('click', function(){ exitPopup.classList.remove('show'); });
-  exitPopup.addEventListener('click', function(e){ if (e.target === exitPopup) exitPopup.classList.remove('show'); });
+  document.getElementById('exitClose').addEventListener('click', closeExitPopup);
+  exitPopup.addEventListener('click', function(e){ if (e.target === exitPopup) closeExitPopup(); });
+  /* keyboard: Escape closes; Tab/Shift+Tab cycles focus inside the card */
+  exitPopup.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeExitPopup(); return; }
+    if (e.key !== 'Tab') return;
+    const focusables = exitPopup.querySelectorAll('.exit-card button, .exit-card input, .exit-card a[href], .exit-card [tabindex]:not([tabindex="-1"])');
+    const list = Array.prototype.filter.call(focusables, function(el){ return el.offsetParent !== null; });
+    if (!list.length) return;
+    const first = list[0], last = list[list.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
 
   /* ---- Exit-popup lead form: posts to the same HubSpot endpoint as the hero form ---- */
   document.getElementById('exitForm').addEventListener('submit', function(e){

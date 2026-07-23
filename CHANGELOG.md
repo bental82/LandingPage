@@ -76,3 +76,13 @@ Outcome H1, deadline countdown badge, miluim band, 8-program grid, employer logo
 
 ## Verified in headless Chromium (390×844 mobile + 1440×900 desktop)
 ✓ No horizontal overflow ✓ No JS errors ✓ Cert toggle expands ✓ Cookie prefs open + consent update fires ✓ Exit form renders ✓ Real testimonial photos render ✓ Form in viewport #1 on mobile ✓ RTL correct
+
+---
+
+## Round 2 — multi-agent review fixes (CRO / a11y / perf / JS / mobile / copy lenses)
+**Bugs:** RTL testimonial dots now track correctly (`Math.abs(scrollLeft)` + stride math) · marquee logo set duplicated so the loop is seamless · exit popup no longer re-fires after close · granular consent persisted as JSON and restored on return (accept-all vs. granular honored) · past-deadline badge no longer shows a stale date · HubSpot fallback form submits via fetch instead of navigating to a JSON page.
+**Perf:** HubSpot loader deferred (`onload/onerror` → render) · Vimeo iframe deferred to post-load +1.2s and skipped under reduced-motion · hero poster no longer fetched on desktop (JS-assigned, mobile-only) · 899→899.98px breakpoint gap closed.
+**A11y:** `<main>` landmark + skip link · exit popup focus trap/Escape/restore · sr-only labels on exit + fallback inputs · `prefers-reduced-motion` block · contrast fixes (`.program .tag` → mint-ink, `--blue` → #2a6cb0) · testimonial track keyboard-scrollable, dot hit targets 24px · safe-area-inset on bottom bars · cookie prefs UI matches the all-denied default.
+**CRO/copy:** sticky bar gains "השאירו פרטים" and shows at 20% scroll · icon-only phone in mobile header · form heading aligned to the CTA promise ("בדקו אם מגיע לכם הפטור") + מועצה להשכלה גבוהה trust line · exit popup leads with the waiver · H1 typo fixed (לפסל → לפסוח על) · absolute og:image + canonical/og:url · `*` on the sourced #1 stat · "תואר פלוס" naming unified · program cards carry `data-program` into `cta_click`.
+**Deferred (needs owner input):** WhatsApp number is still landline-derived (TODO) · two GTM containers both load (possible GA4 double-count if the property is also a GTM tag — check container configs) · "30,000+ / 93%" stats unsourced · program cards still link to the form, not program pages.
+**Verified (headless Chromium, mobile + desktop):** zero JS errors, zero overflow, RTL dot sync ✓, consent accept-all and granular both persist + restore correctly ✓, marquee duplicated ✓, exit popup focus ✓.
