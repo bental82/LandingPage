@@ -101,3 +101,8 @@ Reported "carousel doesn't work": on desktop there was no way to navigate (no sw
 
 ## Round 5 — "מה לומדים?" becomes a tabbed degree explorer, moved under testimonials
 The programs section is now interactive: **תארים ראשונים** (8 BA cards) / **תארים שניים** (4 MBA cards, `data-program` values matching the header menu). ARIA tablist pattern (roles, aria-selected, arrow-key support), `degree_tab_switch` dataLayer event. Section relocated to sit between testimonials and the final CTA. Card hrefs still scroll to the form — single TODO to point them at the degree sub-pages once those ship.
+
+---
+
+## Round 6 — copy pivot: from fee-waiver hook to consultation-meeting funnel
+All "פטור מדמי רישום" framing removed. Every CTA now sells the meeting with an advisor who guides enrollment: hero/final/sticky CTAs → "קבעו שיחת ייעוץ", form card → "קבעו שיחת ייעוץ אישית" with advisor-guides-enrollment note, exit popup → "עוד לא דיברתם עם יועץ לימודים?", badge now counts down to registration close (was waiver deadline), title/meta/OG updated. 18 strings rewritten; zero "פטור" left on the page.
