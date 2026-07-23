@@ -3,16 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a2a4d">
+<!-- Consent Mode v2: everything denied by default until the visitor chooses (cookie bar below updates this) -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};
+gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500});</script>
+<!-- Google Tag Manager — deferred: loads on first interaction or after 5s to protect TBT (live proven container) -->
+<script>function loadGTM(){if(window._gtmL)return;window._gtmL=1;var f=document.getElementsByTagName('script')[0],j=document.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-TV2SWLSL';f.parentNode.insertBefore(j,f);dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});}
+['scroll','click','touchstart'].forEach(function(e){window.addEventListener(e,loadGTM,{once:true,passive:true});});setTimeout(loadGTM,5000);</script>
 <title>המרכז האקדמי פרס | תואר ראשון בשנתיים — פטור מדמי רישום</title>
 <meta name="description" content="מסלולים מואצים ולימודים היברידיים במרכז האקדמי פרס — המקום הראשון בתמיכה במילואימניקים. השאירו פרטים וקבלו פטור מדמי רישום.">
 <!-- Open Graph (WhatsApp/social share previews) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="תואר ראשון בשנתיים — המרכז האקדמי פרס">
 <meta property="og:description" content="לימודים היברידיים, מסלולים מקוצרים ותעודות הייטק במהלך התואר. פטור מדמי רישום לנרשמים עכשיו.">
-<meta property="og:image" content="assets/og-share.jpg"><!-- TODO: add 1200x630 share image -->
+<meta property="og:image" content="images/mobile/caps-1-poster.webp"><!-- TODO: replace with a dedicated 1200x630 share image when available -->
 <meta property="og:locale" content="he_IL">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- LCP: preload the mobile hero poster -->
+<link rel="preload" href="images/mobile/caps-1-poster.webp" as="image" media="(max-width:899px)" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -43,6 +52,10 @@ section{padding-block:56px}
 .btn-wa{background:#fff;color:#0e7a44;border:2px solid #25d366}
 .btn-wa:hover{background:#f0fdf6}
 .check{color:var(--mint-dark);font-weight:900;margin-inline-start:6px}
+/* ============ A11Y UTILITIES ============ */
+.skip-link{position:absolute;top:-100px;right:0;background:var(--navy);color:#fff;padding:12px 24px;z-index:100;font-weight:700;border-radius:0 0 10px 10px}
+.skip-link:focus{top:0}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 /* ============ HEADER ============ */
 .header{position:sticky;top:0;z-index:60;background:#fff;box-shadow:0 2px 12px rgba(10,42,77,.08)}
 .header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
@@ -89,6 +102,7 @@ section{padding-block:56px}
 .lead-form .legal-consent-container{font-size:12px;color:var(--muted)}
 .form-alt{margin-top:12px;text-align:center;font-size:13.5px;color:var(--muted)}
 .form-alt a{color:var(--blue);font-weight:700}
+.form-disclaimer{margin-top:10px;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.5}
 /* desktop hero layout */
 @media(min-width:900px){
   .hero{padding:64px 0 72px}
@@ -111,6 +125,7 @@ section{padding-block:56px}
 .benefits-grid{display:grid;grid-template-columns:1fr;gap:14px}
 .benefit{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 20px;box-shadow:var(--shadow)}
 .benefit .b-icon{width:44px;height:44px;border-radius:12px;background:rgba(47,227,155,.14);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.benefit .b-logo{height:44px;width:auto;object-fit:contain;margin-bottom:12px}
 .benefit h3{font-size:17.5px;color:var(--navy);margin-bottom:8px}
 .benefit ul{list-style:none;font-size:14.5px;color:var(--ink)}
 .benefit li{padding-block:3px}
@@ -140,12 +155,19 @@ section{padding-block:56px}
 .certs{background:#fff;border-block:1px solid var(--line)}
 .certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cert{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
-.cert .c-icon{width:46px;height:46px;border-radius:12px;background:rgba(47,125,209,.10);display:flex;align-items:center;justify-content:center}
+.cert img{width:46px;height:46px;object-fit:contain}
 .cert h3{font-size:14.5px;color:var(--navy)}
 .cert span{font-size:12px;color:var(--muted)}
+/* extra (exec-ed) certificates: hidden until the toggle expands the grid */
+.cert-extra{display:none}
+.certs-grid.expanded .cert-extra{display:flex}
 @media(min-width:768px){.certs-grid{grid-template-columns:repeat(3,1fr)}}
-.certs-more{text-align:center;margin-top:18px}
-.certs-more a{color:var(--blue);font-weight:800;font-size:15px}
+.cert-toggle{display:block;margin:18px auto 0;background:none;border:1.5px solid var(--line);color:var(--navy);font-family:var(--font);font-weight:800;font-size:15px;padding:11px 26px;border-radius:12px;cursor:pointer}
+.cert-toggle:hover{border-color:var(--mint)}
+/* ============ MID-PAGE CTA BAND ============ */
+.mid-cta{padding-block:0}
+.mid-cta-inner{background:linear-gradient(135deg,var(--mint) 0%,var(--mint-dark) 100%);border-radius:var(--r-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow)}
+.mid-cta-inner p{font-size:19px;font-weight:800;color:var(--mint-ink);margin-bottom:14px}
 /* ============ TESTIMONIALS ============ */
 .t-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .t-track::-webkit-scrollbar{display:none}
@@ -161,7 +183,6 @@ section{padding-block:56px}
 .t-dots button.on{background:var(--navy)}
 @media(min-width:768px){.t-card{flex:0 0 46%}}
 @media(min-width:1000px){.t-card{flex:0 0 31.5%}}
-.young-tag{font-size:11px;font-weight:800;color:var(--blue);background:rgba(47,125,209,.12);padding:3px 10px;border-radius:999px;width:fit-content}
 /* ============ FINAL CTA ============ */
 .final-cta{background:linear-gradient(180deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;text-align:center;padding-block:64px}
 .final-cta h2{font-size:26px;margin-bottom:10px}
@@ -178,8 +199,10 @@ section{padding-block:56px}
 .sticky-bar{position:fixed;bottom:0;inset-inline:0;z-index:55;background:#fff;box-shadow:0 -4px 18px rgba(10,42,77,.14);display:flex;gap:8px;padding:10px 12px;transform:translateY(110%);transition:transform .25s ease}
 .sticky-bar.show{transform:translateY(0)}
 body.cookie-on .sticky-bar{display:none!important}
-.sticky-bar .btn{flex:1;padding:13px 10px;font-size:15px}
+.sticky-bar .btn{flex:1;padding:12px 6px;font-size:13.5px}
 @media(min-width:768px){.sticky-bar{display:none}}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-soft)}
 /* ============ COOKIE BANNER (slim, delayed) ============ */
 .cookie-bar{position:fixed;bottom:0;inset-inline:0;z-index:70;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(10,42,77,.16);padding:12px 16px;display:none;gap:12px;align-items:center;flex-wrap:wrap}
 .cookie-bar.show{display:flex}
@@ -188,6 +211,12 @@ body.cookie-on .sticky-bar{display:none!important}
 .cookie-bar .btn{padding:9px 18px;font-size:13.5px}
 .cookie-accept{background:var(--navy);color:#fff}
 .cookie-reject{background:#eef2f7;color:var(--ink)}
+.cookie-manage{background:none;color:var(--blue);font-weight:700}
+/* granular preferences row (Consent Mode v2) */
+.cookie-prefs{flex-basis:100%;border-top:1px solid var(--line);padding-top:10px;font-size:13px;color:var(--ink);display:flex;flex-direction:column;gap:8px}
+.cookie-prefs label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.cookie-prefs input{width:17px;height:17px;accent-color:var(--navy)}
+.cookie-pref-fixed{color:var(--muted);font-size:12px}
 @media(min-width:768px){.cookie-bar{bottom:16px;inset-inline-start:16px;inset-inline-end:auto;max-width:440px;border-radius:var(--r-md);border:1px solid var(--line)}}
 /* ============ EXIT POPUP (desktop only) ============ */
 .exit-popup{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center;background:rgba(7,28,54,.6);padding:20px}
@@ -196,17 +225,46 @@ body.cookie-on .sticky-bar{display:none!important}
 .exit-card h3{color:var(--navy);font-size:21px;margin-bottom:8px}
 .exit-card p{color:var(--muted);font-size:14.5px;margin-bottom:18px}
 .exit-close{position:absolute;top:10px;inset-inline-end:14px;background:none;border:none;font-size:22px;color:var(--muted);cursor:pointer}
+/* inline lead form inside the exit popup */
+.exit-form{display:flex;flex-direction:column;gap:10px;text-align:right}
+.exit-form input{width:100%;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:13px 14px;font-size:16px;font-family:var(--font);background:#fbfcfe}
+.exit-form input:focus{border-color:var(--mint);outline:none;background:#fff}
+.exit-success .success-icon{width:52px;height:52px;border-radius:50%;background:var(--mint);color:var(--mint-ink);font-size:26px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.hidden{display:none!important}
 </style>
+<!-- Structured data: EducationalOrganization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "המרכז האקדמי פרס",
+  "alternateName": "Peres Academic Center",
+  "url": "https://peres-pac.co.il",
+  "telephone": "08-3006090",
+  "email": "pac@pac.ac.il",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "רחובות",
+    "addressCountry": "IL"
+  },
+  "sameAs": [
+    "https://www.pac.ac.il"
+  ]
+}
+</script>
 </head>
 <body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TV2SWLSL" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- Skip link for keyboard/screen-reader users -->
+<a href="#hero" class="skip-link">דלג לתוכן הראשי</a>
 
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="wrap">
     <a class="brand" href="#hero" aria-label="המרכז האקדמי פרס">
-      <!-- keep original asset path from your repo -->
-      <img src="assets/logo-main.svg" alt="המרכז האקדמי פרס" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
-      <span style="display:none">המרכז האקדמי פרס</span>
+      <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" width="207" height="43">
     </a>
     <div class="header-cta">
       <a class="header-phone" href="tel:08-3006090">☎ 08-3006090</a>
@@ -218,7 +276,7 @@ body.cookie-on .sticky-bar{display:none!important}
 <!-- ================= HERO ================= -->
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <img src="assets/caps-1-poster.webp" alt="" aria-hidden="true" fetchpriority="high" onerror="this.remove()">
+    <img src="images/mobile/caps-1-poster.webp" alt="" aria-hidden="true" fetchpriority="high" onerror="this.remove()">
     <!-- Original Vimeo background (desktop only, lazy) -->
     <iframe id="heroVideo" data-src="https://player.vimeo.com/video/1149314717?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1&amp;background=1&amp;dnt=1" allow="autoplay; fullscreen" title="המרכז האקדמי פרס"></iframe>
   </div>
@@ -256,6 +314,7 @@ body.cookie-on .sticky-bar{display:none!important}
         <!-- HubSpot form — SAME portal/form IDs as production, so all workflows keep working -->
         <div id="hs-lead-form"></div>
         <p class="form-alt">מעדיפים עכשיו? <a href="tel:08-3006090">חייגו 08-3006090</a> או <a href="https://wa.me/97283006090" target="_blank" rel="noopener">שלחו וואטסאפ</a></p>
+        <p class="form-disclaimer">בשליחת הטופס אני מאשר/ת קבלת מידע מהמרכז האקדמי פרס. ניתן לבטל בכל עת.</p>
       </div>
     </div>
   </div>
@@ -266,18 +325,18 @@ body.cookie-on .sticky-bar{display:none!important}
   <p>הבוגרים שלנו עובדים בחברות המובילות במשק</p>
   <div class="marquee" id="marquee">
     <!-- keep original asset filenames; text fallbacks shown if images missing -->
-    <img src="assets/לוגו_אסם.webp" alt="אסם" onerror="this.outerHTML='<span class=logo-fallback>אסם</span>'">
-    <img src="assets/לוגו_שטראוס.webp" alt="שטראוס" onerror="this.outerHTML='<span class=logo-fallback>שטראוס</span>'">
-    <img src="assets/לוגו_LOREAL.webp" alt="L'Oréal" onerror="this.outerHTML='<span class=logo-fallback>L’ORÉAL</span>'">
-    <img src="assets/לוגו_AHAVA.webp" alt="AHAVA" onerror="this.outerHTML='<span class=logo-fallback>AHAVA</span>'">
-    <img src="assets/unilever.webp" alt="Unilever" onerror="this.outerHTML='<span class=logo-fallback>Unilever</span>'">
-    <img src="assets/tnuva-optimized.webp" alt="תנובה" onerror="this.outerHTML='<span class=logo-fallback>תנובה</span>'">
-    <img src="assets/mizrahi-tefahot-optimized.webp" alt="מזרחי טפחות" onerror="this.outerHTML='<span class=logo-fallback>מזרחי טפחות</span>'">
-    <img src="assets/israel-electric-optimized.webp" alt="חברת החשמל" onerror="this.outerHTML='<span class=logo-fallback>חברת החשמל</span>'">
-    <img src="assets/לוגו_DHL.webp" alt="DHL" onerror="this.outerHTML='<span class=logo-fallback>DHL</span>'">
-    <img src="assets/מכון_ויצמן_למדע.webp" alt="מכון ויצמן" onerror="this.outerHTML='<span class=logo-fallback>מכון ויצמן</span>'">
-    <img src="assets/בית_חולים_איכילוב.webp" alt="איכילוב" onerror="this.outerHTML='<span class=logo-fallback>איכילוב</span>'">
-    <img src="assets/לוגו_כאן_-_תאגיד_השידור_הישראלי.webp" alt="כאן" onerror="this.outerHTML='<span class=logo-fallback>כאן</span>'">
+    <img src="images/לוגו_אסם.webp" alt="אסם" onerror="this.outerHTML='<span class=logo-fallback>אסם</span>'">
+    <img src="images/לוגו_שטראוס.webp" alt="שטראוס" onerror="this.outerHTML='<span class=logo-fallback>שטראוס</span>'">
+    <img src="images/לוגו_LOREAL.webp" alt="L'Oréal" onerror="this.outerHTML='<span class=logo-fallback>L’ORÉAL</span>'">
+    <img src="images/לוגו_AHAVA.webp" alt="AHAVA" onerror="this.outerHTML='<span class=logo-fallback>AHAVA</span>'">
+    <img src="images/employers/unilever.webp" alt="Unilever" onerror="this.outerHTML='<span class=logo-fallback>Unilever</span>'">
+    <img src="images/tnuva-optimized.webp" alt="תנובה" onerror="this.outerHTML='<span class=logo-fallback>תנובה</span>'">
+    <img src="images/mizrahi-tefahot-optimized.webp" alt="מזרחי טפחות" onerror="this.outerHTML='<span class=logo-fallback>מזרחי טפחות</span>'">
+    <img src="images/israel-electric-optimized.webp" alt="חברת החשמל" onerror="this.outerHTML='<span class=logo-fallback>חברת החשמל</span>'">
+    <img src="images/לוגו_DHL.webp" alt="DHL" onerror="this.outerHTML='<span class=logo-fallback>DHL</span>'">
+    <img src="images/מכון_ויצמן_למדע.webp" alt="מכון ויצמן" onerror="this.outerHTML='<span class=logo-fallback>מכון ויצמן</span>'">
+    <img src="images/בית_חולים_איכילוב.webp" alt="איכילוב" onerror="this.outerHTML='<span class=logo-fallback>איכילוב</span>'">
+    <img src="images/לוגו_כאן_-_תאגיד_השידור_הישראלי.webp" alt="כאן" onerror="this.outerHTML='<span class=logo-fallback>כאן</span>'">
   </div>
 </div>
 
@@ -306,7 +365,7 @@ body.cookie-on .sticky-bar{display:none!important}
         </ul>
       </div>
       <div class="benefit">
-        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><path d="M18 8a6 6 0 1 0 0 8"/><path d="M6 8a6 6 0 1 1 0 8"/></svg></div>
+        <img class="b-logo" src="images/Logo_Infinity_vertical_blue.webp" alt="INFINITY" width="65" height="44" loading="lazy" decoding="async">
         <h3>תואר שמתעדכן לנצח</h3>
         <ul>
           <li>גישה לקורסים חדשים גם אחרי הסיום</li>
@@ -315,7 +374,7 @@ body.cookie-on .sticky-bar{display:none!important}
         </ul>
       </div>
       <div class="benefit">
-        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><path d="M12 3 4 7l8 4 8-4-8-4z"/><path d="M4 12l8 4 8-4"/><path d="M4 17l8 4 8-4"/></svg></div>
+        <img class="b-logo" src="images/logo_toar_plus.webp" alt="תואר פלוס" width="52" height="44" loading="lazy" decoding="async">
         <h3>תואר + תעודות מקצועיות</h3>
         <ul>
           <li>תעודות מתקדמות כבר במהלך התואר</li>
@@ -373,33 +432,83 @@ body.cookie-on .sticky-bar{display:none!important}
   <div class="wrap">
     <h2 class="section-title">תואר פלוס+: תעודות מקצועיות כבר במהלך התואר</h2>
     <p class="section-sub">יוצאים לשוק עם תואר אקדמי <b>ועם</b> תעודה שהמעסיקים מחפשים</p>
-    <div class="certs-grid">
+    <div class="certs-grid" id="certsGrid">
       <div class="cert">
-        <div class="c-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f7fd1" stroke-width="2" stroke-linecap="round"><rect x="4" y="9" width="16" height="11" rx="2"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></div>
+        <img src="images/certificates/cyber-security.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
         <h3>סייבר ואבטחת מידע</h3><span>התחום הכי חם בהייטק</span>
       </div>
       <div class="cert">
-        <div class="c-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f7fd1" stroke-width="2" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
-        <h3>AI Bootcamp</h3><span>בינה מלאכותית לעולם העבודה</span>
-      </div>
-      <div class="cert">
-        <div class="c-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f7fd1" stroke-width="2" stroke-linecap="round"><path d="M3 11l14-6-3 16-4-6-7-4z"/><path d="M10 15l4 6"/></svg></div>
+        <img src="images/certificates/digital-marketing.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
         <h3>שיווק דיגיטלי</h3><span>קמפיינים, דאטה וגדילה</span>
       </div>
       <div class="cert">
-        <div class="c-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f7fd1" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l3 13h11l2-9H6"/></svg></div>
-        <h3>ניהול eCommerce</h3><span>חנויות, פלטפורמות ומכירות אונליין</span>
-      </div>
-      <div class="cert">
-        <div class="c-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f7fd1" stroke-width="2" stroke-linecap="round"><path d="M12 2a7 7 0 0 1 4 12c-.7.6-1 1.6-1 3h-6c0-1.4-.3-2.4-1-3a7 7 0 0 1 4-12z"/><path d="M10 20h4"/></svg></div>
+        <img src="images/certificates/tech-entrepreneurship.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
         <h3>יזמות טכנולוגית</h3><span>מרעיון לסטארט-אפ</span>
       </div>
       <div class="cert">
-        <div class="c-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2f7fd1" stroke-width="2" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></div>
+        <img src="images/certificates/ecommerce.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>ניהול eCommerce</h3><span>חנויות, פלטפורמות ומכירות אונליין</span>
+      </div>
+      <div class="cert">
+        <img src="images/certificates/hr-management.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>ניהול משאבי אנוש</h3><span>ה-HR של העולם החדש</span>
+      </div>
+      <div class="cert">
+        <img src="images/certificates/sales-b2b.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
         <h3>מנהלי מכירות B2B</h3><span>המיומנות שמכניסה שכר גבוה</span>
       </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/senior-marketing.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>ניהול שיווק בכיר</h3><span>למנהלים שרוצים צעד קדימה</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/directors.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>דירקטורים</h3><span>הכשרה לדירקטוריומים</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/real-estate.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>נדל״ן ויעוץ משכנתאות</h3><span>השקעות ומימון נדל״ן</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/business-coaching.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>אימון עסקי למנהלים</h3><span>כלים פרקטיים לניהול</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/org-development.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>שינוי ופיתוח ארגוני</h3><span>הובלת שינוי בארגונים</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/crisis-management.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>ניהול משברים</h3><span>מוכנות ותקשורת משבר</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/mediator.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>מגשר</h3><span>יישוב סכסוכים מחוץ לבית המשפט</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/group-facilitation.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>הנחיית קבוצות</h3><span>מיומנות ניהולית מבוקשת</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/biofeedback.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>ביופידבק</h3><span>טכנולוגיות רפואה משלימה</span>
+      </div>
+      <div class="cert cert-extra">
+        <img src="images/certificates/human-capital.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>תכנון הון אנושי</h3><span>אסטרטגיית כוח אדם</span>
+      </div>
     </div>
-    <p class="certs-more"><a href="#form-section">רוצים את הרשימה המלאה של 10+ התעודות? השאירו פרטים ›</a></p>
+    <button class="cert-toggle" id="certToggle" aria-expanded="false" aria-controls="certsGrid">כל התעודות (16) ▼</button>
+  </div>
+</section>
+
+<!-- ================= MID-PAGE CTA (conversion trigger at peak attention) ================= -->
+<section class="mid-cta">
+  <div class="wrap">
+    <div class="mid-cta-inner">
+      <p>רוצים לדעת איזו תעודה מתאימה לכם?</p>
+      <a href="#form-section" class="btn btn-navy">השאירו פרטים ונחזור אליכם ›</a>
+    </div>
   </div>
 </section>
 
@@ -409,35 +518,46 @@ body.cookie-on .sticky-bar{display:none!important}
     <h2 class="section-title">הבוגרים שלנו מספרים</h2>
     <p class="section-sub">אנשים שעמדו בדיוק איפה שאתם עומדים עכשיו</p>
     <div class="t-track" id="tTrack">
-      <!-- TODO: replace the two "young" cards with REAL recent-graduate stories (name, photo, current role). These are layout placeholders. -->
       <div class="t-card">
-        <span class="young-tag">בוגר/ת 2025</span>
-        <blockquote>"סיימתי תואר בשנתיים תוך כדי עבודה — ועוד במהלך התואר כבר התקבלתי לעבודה בהייטק בזכות תעודת הסייבר."</blockquote>
+        <blockquote>"המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי."</blockquote>
         <div class="t-person">
-          <span class="t-avatar-fallback">א</span>
-          <div><b>שם בוגר/ת צעיר/ה</b><span>מדעי ההתנהגות · היום: צוות SOC בחברת סייבר</span></div>
+          <img class="t-avatar" src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ע</span>'">
+          <div><b>עידו איינבינדר</b><span>סמנכ״ל משאבי אנוש ומטה, חדשות 13</span></div>
         </div>
       </div>
       <div class="t-card">
-        <span class="young-tag">בוגר/ת 2024</span>
-        <blockquote>"חזרתי מהטיול הגדול בלי תוכנית. שנתיים אחר כך יצאתי עם תואר, תעודת שיווק דיגיטלי ועבודה ראשונה."</blockquote>
+        <blockquote>"הלימודים נתנו לי פרספקטיבה רחבה וכלים לעולם העבודה החדש — יתרון ממשי בקריירה."</blockquote>
         <div class="t-person">
-          <span class="t-avatar-fallback">ב</span>
-          <div><b>שם בוגר/ת צעיר/ה</b><span>מנהל עסקים · היום: מנהל/ת שיווק דיגיטלי</span></div>
+          <img class="t-avatar" src="images/testimonials/hava-atias.webp" alt="חוה אטיאס" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ח</span>'">
+          <div><b>חוה אטיאס</b><span>סמנכ״לית משאבי אנוש, ארגון ״מסע״</span></div>
         </div>
       </div>
       <div class="t-card">
         <blockquote>"הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד."</blockquote>
         <div class="t-person">
-          <img class="t-avatar" src="assets/kobi-kanti.webp" alt="קובי קנטי" onerror="this.outerHTML='<span class=t-avatar-fallback>ק</span>'">
+          <img class="t-avatar" src="images/testimonials/kobi-kanti.webp" alt="קובי קנטי" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ק</span>'">
           <div><b>קובי קנטי</b><span>Product Manager, Commit</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <blockquote>"ארסנל הכלים שקיבלתי במהלך התואר הוא עצום ועזר לי להשתלב במהירות בעולם ההייטק."</blockquote>
+        <div class="t-person">
+          <img class="t-avatar" src="images/testimonials/ido-vafner.webp" alt="עידו ופנר" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ע</span>'">
+          <div><b>עידו ופנר</b><span>סמנכ״ל וחבר הנהלה, Kyndryl</span></div>
         </div>
       </div>
       <div class="t-card">
         <blockquote>"תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים."</blockquote>
         <div class="t-person">
-          <img class="t-avatar" src="assets/nitzan-levin.webp" alt="ניצן לוין" onerror="this.outerHTML='<span class=t-avatar-fallback>נ</span>'">
+          <img class="t-avatar" src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>נ</span>'">
           <div><b>ניצן לוין</b><span>מנהלת שיווק, סומך חייקין KPMG</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <blockquote>"תכנית הלימודים אפשרה לי לשלב תואר ראשון עם עבודה, חברים ופנאי. והמרצים — מדהימים."</blockquote>
+        <div class="t-person">
+          <img class="t-avatar" src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ד</span>'">
+          <div><b>דניאל ביטון</b><span>מנכ״לית משותפת, E.D.I Energy</span></div>
         </div>
       </div>
     </div>
@@ -461,10 +581,11 @@ body.cookie-on .sticky-bar{display:none!important}
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="wrap">
+    <img src="images/logos/logo-white.svg" alt="המרכז האקדמי פרס" width="120" height="36" loading="lazy" decoding="async" style="height:30px;width:auto">
     <span>© <span id="year">2026</span> המרכז האקדמי פרס. כל הזכויות שמורות.</span>
     <div class="footer-links">
-      <a href="https://www.pac.ac.il/privacy" rel="noopener">מדיניות פרטיות</a><!-- TODO: confirm URL -->
-      <a href="https://www.pac.ac.il/accessibility" rel="noopener">נגישות</a><!-- TODO: confirm URL -->
+      <a href="privacy.html">מדיניות פרטיות</a>
+      <a href="accessibility.html">נגישות</a>
     </div>
     <span>שמעון פרס 10, רחובות</span>
   </div>
@@ -478,10 +599,16 @@ body.cookie-on .sticky-bar{display:none!important}
 
 <!-- ================= COOKIE BAR (Clarity #1: slim + delayed, never covers the form) ================= -->
 <div class="cookie-bar" id="cookieBar" role="dialog" aria-label="הודעת Cookies">
-  <p>אנחנו משתמשים בעוגיות כדי לשפר את החוויה ולמדוד תוצאות. <a href="https://www.pac.ac.il/privacy" style="color:var(--blue)">מדיניות פרטיות</a></p>
+  <p>אנחנו משתמשים בעוגיות כדי לשפר את החוויה ולמדוד תוצאות. <a href="privacy.html" style="color:var(--blue)">מדיניות פרטיות</a></p>
   <div class="c-btns">
+    <button class="btn cookie-manage" id="cookieManage" aria-expanded="false" aria-controls="cookiePrefs">העדפות</button>
     <button class="btn cookie-reject" id="cookieReject">סירוב</button>
     <button class="btn cookie-accept" id="cookieAccept">אישור</button>
+  </div>
+  <div class="cookie-prefs hidden" id="cookiePrefs">
+    <span class="cookie-pref-fixed">פונקציונלי ואבטחה — פעילים תמיד (נדרש לתפעול האתר)</span>
+    <label><input type="checkbox" id="prefAnalytics" checked> סטטיסטיקה ומדידה (GA4 / Clarity)</label>
+    <label><input type="checkbox" id="prefAds" checked> שיווק ופרסום ממומן</label>
   </div>
 </div>
 
@@ -489,18 +616,44 @@ body.cookie-on .sticky-bar{display:none!important}
 <div class="exit-popup" id="exitPopup" role="dialog" aria-modal="true" aria-label="לפני שעוזבים">
   <div class="exit-card">
     <button class="exit-close" id="exitClose" aria-label="סגירה">✕</button>
-    <h3>רגע, לפני שעוזבים 👋</h3>
-    <p>שיחה קצרה עם יועץ לימודים — בלי התחייבות. ואם זה לא מתאים, פשוט לא עונים.</p>
-    <a href="#form-section" class="btn btn-mint" id="exitGoForm" style="width:100%">טוב, שתפו אותי בפרטים ›</a>
+    <div id="exitMain">
+      <h3>רגע, לפני שעוזבים 👋</h3>
+      <p>שיחה קצרה עם יועץ לימודים — בלי התחייבות. ואם זה לא מתאים, פשוט לא עונים.</p>
+      <!-- posts to the SAME HubSpot endpoint as the hero form, so leads land in the same pipeline -->
+      <form class="exit-form" id="exitForm" novalidate>
+        <input type="text" name="full_name_he" placeholder="שם מלא" required autocomplete="name">
+        <input type="tel" name="phone" placeholder="טלפון" required inputmode="tel" autocomplete="tel" pattern="[0-9\-+\s]{9,15}">
+        <input type="email" name="email" placeholder="מייל" required inputmode="email" autocomplete="email">
+        <button type="submit" class="btn btn-mint" style="width:100%">תחזרו אליי ←</button>
+      </form>
+    </div>
+    <div class="exit-success hidden" id="exitSuccess">
+      <div class="success-icon">✓</div>
+      <h3>תודה! הפרטים התקבלו.</h3>
+      <p>יועץ לימודים יחזור אליכם בהקדם.</p>
+    </div>
   </div>
 </div>
 
-<!-- ================= ANALYTICS — preserved from production ================= -->
-<!-- Google Tag Manager (same container as production) -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KT5TP6N');</script>
-<!-- GA4 (same property as production) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C565158BPQ"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config','G-C565158BPQ');</script>
+<!-- ================= ANALYTICS — preserved IDs from production, deferred + consent-aware ================= -->
+<!-- Production GTM container + GA4 property, loaded on first interaction (same trigger as the head GTM).
+     Consent Mode v2 defaults (denied) are set in <head>; the cookie bar updates them on choice. -->
+<script>
+function loadProdAnalytics(){
+  if (window._prodL) return; window._prodL = 1;
+  var f = document.getElementsByTagName('script')[0];
+  var g = document.createElement('script'); g.async = true;
+  g.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-KT5TP6N';
+  f.parentNode.insertBefore(g, f);
+  dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+  var a = document.createElement('script'); a.async = true;
+  a.src = 'https://www.googletagmanager.com/gtag/js?id=G-C565158BPQ';
+  a.onload = function(){ gtag('js', new Date()); gtag('config', 'G-C565158BPQ'); };
+  f.parentNode.insertBefore(a, f);
+}
+['scroll','click','touchstart'].forEach(function(e){ window.addEventListener(e, loadProdAnalytics, {once:true, passive:true}); });
+setTimeout(loadProdAnalytics, 5000);
+</script>
 <!-- Microsoft Clarity loads via GTM on production — keep it there (no code change needed) -->
 
 <!-- HubSpot forms loader (EU region) -->
@@ -615,16 +768,38 @@ body.cookie-on .sticky-bar{display:none!important}
   /* ---- Cookie bar: slim + delayed until engagement (Clarity: 23% of first interactions wasted on it) ---- */
   const cookieBar = document.getElementById('cookieBar');
   const CONSENT_KEY = 'pac_consent_v2';
+  const prefAnalytics = document.getElementById('prefAnalytics');
+  const prefAds = document.getElementById('prefAds');
+  /* push the granular choice into Consent Mode v2 (defaults in <head> are all-denied) */
+  function applyConsent(granted){
+    const stats = granted && prefAnalytics.checked ? 'granted' : 'denied';
+    const ads   = granted && prefAds.checked ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      analytics_storage: stats,
+      ad_storage: ads, ad_user_data: ads, ad_personalization: ads
+    });
+  }
   function consent(v){
     localStorage.setItem(CONSENT_KEY, v);
+    applyConsent(v === 'granted');
     cookieBar.classList.remove('show');
     document.body.classList.remove('cookie-on');
     pushEvent('consent_' + v);
-    /* hook: enable/disable marketing pixels here according to v */
   }
   document.getElementById('cookieAccept').addEventListener('click', function(){ consent('granted'); });
   document.getElementById('cookieReject').addEventListener('click', function(){ consent('denied'); });
-  if (!localStorage.getItem(CONSENT_KEY)) {
+  /* granular preferences row */
+  const cookieManage = document.getElementById('cookieManage');
+  const cookiePrefs = document.getElementById('cookiePrefs');
+  cookieManage.addEventListener('click', function(){
+    const open = cookiePrefs.classList.toggle('hidden') === false;
+    cookieManage.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  const savedConsent = localStorage.getItem(CONSENT_KEY);
+  if (savedConsent) {
+    /* returning visitor: re-apply their choice (stored prefs are accept-all / deny-all) */
+    applyConsent(savedConsent === 'granted');
+  } else {
     let shown = false;
     const show = function(){ if (!shown){ shown = true; cookieBar.classList.add('show'); document.body.classList.add('cookie-on'); } };
     setTimeout(show, 6000);                       // at the latest after 6s
@@ -649,8 +824,32 @@ body.cookie-on .sticky-bar{display:none!important}
     });
   }
   document.getElementById('exitClose').addEventListener('click', function(){ exitPopup.classList.remove('show'); });
-  document.getElementById('exitGoForm').addEventListener('click', function(){ exitPopup.classList.remove('show'); });
   exitPopup.addEventListener('click', function(e){ if (e.target === exitPopup) exitPopup.classList.remove('show'); });
+
+  /* ---- Exit-popup lead form: posts to the same HubSpot endpoint as the hero form ---- */
+  document.getElementById('exitForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const f = e.target;
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    const data = new FormData(f);
+    fetch('https://forms-eu1.hsforms.com/submissions/v3/public/submit/formsnext/multipart/' + HS_PORTAL + '/' + HS_FORM, {
+      method: 'POST', body: data, mode: 'no-cors'
+    }).catch(function(){ /* no-cors: response is opaque; lead is sent either way */ });
+    pushEvent('generate_lead', {form:'exit_popup'});
+    document.getElementById('exitMain').classList.add('hidden');
+    document.getElementById('exitSuccess').classList.remove('hidden');
+    setTimeout(function(){ exitPopup.classList.remove('show'); }, 3000);
+  });
+
+  /* ---- Certificates: expand/collapse the extra exec-ed cards ---- */
+  const certsGrid = document.getElementById('certsGrid');
+  const certToggle = document.getElementById('certToggle');
+  certToggle.addEventListener('click', function(){
+    const expanded = certsGrid.classList.toggle('expanded');
+    certToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    certToggle.textContent = expanded ? 'הצג פחות ▲' : 'כל התעודות (16) ▼';
+    pushEvent('cert_grid_toggle', {state: expanded ? 'expand' : 'collapse'});
+  });
 })();
 </script>
 </body>

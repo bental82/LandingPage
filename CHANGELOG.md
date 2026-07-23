@@ -47,3 +47,32 @@
 
 ## Verified in headless mobile emulation (390×844)
 ✓ No horizontal overflow ✓ Form in viewport #1 ✓ Sticky bar shows after 40%, hides near form/footer ✓ Cookie bar delayed + never covers submit ✓ Sticky/cookie never overlap ✓ RTL correct throughout ✓ Fallback form renders if HubSpot is blocked
+
+---
+
+# kimi-redesign-impv — merge with cro-optimization-brief + fixes
+**Base:** `Kimi-redesign` (v2 above) → **this:** best-of-both merge with `cro-optimization-brief`
+
+## Adopted from cro-optimization-brief
+| Element | Notes |
+|---|---|
+| 6 REAL testimonials with photos | Ido Einbinder, Hava Atias, Kobi Kanti, Ido Vafner, Nitzan Levin, Daniel Biton (`images/testimonials/`) — replaces the 2 placeholder "young grad" cards (TODO #1 done) |
+| 16 real certificate SVG icons | `images/certificates/`; 6 shown by default, 10 more via "כל התעודות (16)" expand toggle |
+| Mid-page CTA band | Mint band after certificates: "רוצים לדעת איזו תעודה מתאימה לכם?" |
+| Granular cookie preferences | "העדפות" button opens analytics/ads checkboxes, wired to Consent Mode v2 `gtag('consent','update')` |
+| Inline form in exit popup | Name/phone/email, POSTs to the SAME HubSpot endpoint as the hero form (cro's version showed success without submitting — fixed here) |
+| Brand logos in benefits | INFINITY + תואר פלוס logos on the matching benefit cards |
+| Form disclaimer microcopy | "בשליחת הטופס אני מאשר/ת…" under the form |
+
+## Kept from Kimi-redesign (stronger than cro)
+Outcome H1, deadline countdown badge, miluim band, 8-program grid, employer logo marquee, mobile form-first reorder, slim delayed cookie bar (cro's was a modal), HubSpot embedded form (cro's form never submitted anywhere), sticky mobile bar logic, exit popup suppressed on touch.
+
+## Fixes applied while merging
+- Hero poster `<img>` pointed at non-existent `assets/caps-1-poster.webp` → now `images/mobile/caps-1-poster.webp` (matches the LCP preload; was a broken LCP image)
+- All 12 employer logos pointed at empty `assets/` dir → real paths under `images/` / `images/employers/`
+- Production GTM (GTM-KT5TP6N) + GA4 (G-C565158BPQ) loaded eagerly at page end, bypassing Consent Mode defaults → now deferred on first interaction / 5s, same pattern as the head GTM; IDs unchanged
+- Footer privacy/accessibility links → local `privacy.html` / `accessibility.html` (were external TODO URLs); added white logo
+- Returning visitors' stored consent is now re-applied to Consent Mode on load
+
+## Verified in headless Chromium (390×844 mobile + 1440×900 desktop)
+✓ No horizontal overflow ✓ No JS errors ✓ Cert toggle expands ✓ Cookie prefs open + consent update fires ✓ Exit form renders ✓ Real testimonial photos render ✓ Form in viewport #1 on mobile ✓ RTL correct
