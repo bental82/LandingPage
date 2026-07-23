@@ -96,3 +96,8 @@ Header gains a degree menu: **תואר ראשון** (8 BA programs, same names/`
 
 ## Round 4 — testimonial carousel fix
 Reported "carousel doesn't work": on desktop there was no way to navigate (no swipe, no arrows — only dots). Added prev/next arrows (desktop, ≥768px) and mouse-drag scrolling on the track. Note: the first arrow attempt nested `#tNext` inside the scroll track, so its clicks fed the drag handler and scroll-snap cancelled the scroll — buttons must be direct children of `.t-wrap`. Verified: real mouse clicks step both directions, drag works, mobile dots/swipe unchanged.
+
+---
+
+## Round 5 — "מה לומדים?" becomes a tabbed degree explorer, moved under testimonials
+The programs section is now interactive: **תארים ראשונים** (8 BA cards) / **תארים שניים** (4 MBA cards, `data-program` values matching the header menu). ARIA tablist pattern (roles, aria-selected, arrow-key support), `degree_tab_switch` dataLayer event. Section relocated to sit between testimonials and the final CTA. Card hrefs still scroll to the form — single TODO to point them at the degree sub-pages once those ship.

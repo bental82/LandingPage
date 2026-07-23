@@ -177,6 +177,11 @@ section{padding-block:56px}
 .program .tag{font-size:11px;font-weight:800;color:var(--mint-ink);background:rgba(47,227,155,.14);padding:3px 10px;border-radius:999px;width:fit-content}
 @media(min-width:1000px){.programs-grid{grid-template-columns:repeat(4,1fr)}}
 .programs-note{text-align:center;font-size:13px;color:var(--muted);margin-top:16px}
+/* degree tabs (BA / MBA switcher) */
+.deg-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:22px}
+.deg-tab{font-family:var(--font);font-weight:800;font-size:15px;padding:11px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);cursor:pointer}
+.deg-tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media(max-width:480px){.deg-tabs{padding-inline:0}.deg-tab{flex:1;padding:11px 10px}}
 /* ============ CERTIFICATES (Degree+) ============ */
 .certs{background:#fff;border-block:1px solid var(--line)}
 .certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -485,25 +490,6 @@ body.cookie-on .sticky-bar{display:none!important}
   </div>
 </section>
 
-<!-- ================= PROGRAMS (critique: page never says WHAT you can study) ================= -->
-<section id="programs" style="padding-top:0">
-  <div class="wrap">
-    <h2 class="section-title">מה לומדים?</h2>
-    <p class="section-sub">תארים ראשונים מוכרים, עם מסלולים מואצים והתמחויות לשוק העבודה<!-- TODO: verify current program list + link each card to its program page --></p>
-    <div class="programs-grid">
-      <a class="program" href="#form-section" data-program="מנהל עסקים"><h3>מנהל עסקים</h3><p>ניהול, שיווק ומימון — הכתובת לעולם העסקי</p><span class="tag">מסלול מקוצר</span></a>
-      <a class="program" href="#form-section" data-program="משפטים"><h3>משפטים</h3><p>LL.B עם התמחויות מסחריות ויישומיות</p><span class="tag">תכנית LEVEL UP</span></a>
-      <a class="program" href="#form-section" data-program="מדעי ההתנהגות"><h3>מדעי ההתנהגות</h3><p>שער לקריירה בפסיכולוגיה ארגונית ו-HR</p><span class="tag">היברידי</span></a>
-      <a class="program" href="#form-section" data-program="תקשורת"><h3>תקשורת</h3><p>מדיה, תוכן דיגיטלי ואסטרטגיית מותג</p><span class="tag">היברידי</span></a>
-      <a class="program" href="#form-section" data-program="מערכות מידע ניהוליות"><h3>מערכות מידע ניהוליות</h3><p>החיבור הישיר בין עסקים לטכנולוגיה</p><span class="tag">שער להייטק</span></a>
-      <a class="program" href="#form-section" data-program="ניהול שירותי בריאות"><h3>ניהול שירותי בריאות</h3><p>ניהול ומנהל במערכת הבריאות הצומחת</p><span class="tag">ביקוש גבוה</span></a>
-      <a class="program" href="#form-section" data-program="ניהול משאבי אנוש"><h3>ניהול משאבי אנוש</h3><p>ה-HR של העולם החדש — אנשים, דאטה וארגונים</p><span class="tag">ביקוש גבוה</span></a>
-      <a class="program" href="#form-section" data-program="מדעי התזונה"><h3>מדעי התזונה</h3><p>תואר אקדמי בעולמות הבריאות והתזונה</p><span class="tag">מסלול מקוצר</span></a>
-    </div>
-    <p class="programs-note">לא בטוחים מה מתאים לכם? <a href="#form-section" style="color:var(--blue);font-weight:800">דברו עם יועץ לימודים ›</a></p>
-  </div>
-</section>
-
 <!-- ================= CERTIFICATES mini-grid (Clarity #3: 18% of clicks were carousel arrows → surface them) ================= -->
 <section class="certs" id="certificates">
   <div class="wrap">
@@ -643,6 +629,40 @@ body.cookie-on .sticky-bar{display:none!important}
       <button class="t-arrow next" id="tNext" aria-label="המלצה הבאה">‹</button>
     </div>
     <div class="t-dots" id="tDots"></div>
+  </div>
+</section>
+
+<!-- ================= PROGRAMS: tabbed degree explorer (BA / MBA) ================= -->
+<section id="programs">
+  <div class="wrap">
+    <h2 class="section-title">מה לומדים?</h2>
+    <p class="section-sub">תארים מוכרים של המועצה להשכלה גבוהה — ראשון בשנתיים, שני בשנה<!-- TODO: verify current program list + link each card to its program page --></p>
+    <div class="deg-tabs" role="tablist" aria-label="סוג התואר">
+      <button class="deg-tab on" id="degTabBA" role="tab" aria-selected="true" aria-controls="degPanelBA">תארים ראשונים</button>
+      <button class="deg-tab" id="degTabMA" role="tab" aria-selected="false" aria-controls="degPanelMA">תארים שניים</button>
+    </div>
+    <div class="deg-panel" id="degPanelBA" role="tabpanel" aria-labelledby="degTabBA">
+      <div class="programs-grid">
+        <a class="program" href="#form-section" data-program="מנהל עסקים"><h3>מנהל עסקים</h3><p>ניהול, שיווק ומימון — הכתובת לעולם העסקי</p><span class="tag">מסלול מקוצר</span></a>
+        <a class="program" href="#form-section" data-program="משפטים"><h3>משפטים</h3><p>LL.B עם התמחויות מסחריות ויישומיות</p><span class="tag">תכנית LEVEL UP</span></a>
+        <a class="program" href="#form-section" data-program="מדעי ההתנהגות"><h3>מדעי ההתנהגות</h3><p>שער לקריירה בפסיכולוגיה ארגונית ו-HR</p><span class="tag">היברידי</span></a>
+        <a class="program" href="#form-section" data-program="תקשורת"><h3>תקשורת</h3><p>מדיה, תוכן דיגיטלי ואסטרטגיית מותג</p><span class="tag">היברידי</span></a>
+        <a class="program" href="#form-section" data-program="מערכות מידע ניהוליות"><h3>מערכות מידע ניהוליות</h3><p>החיבור הישיר בין עסקים לטכנולוגיה</p><span class="tag">שער להייטק</span></a>
+        <a class="program" href="#form-section" data-program="ניהול שירותי בריאות"><h3>ניהול שירותי בריאות</h3><p>ניהול ומנהל במערכת הבריאות הצומחת</p><span class="tag">ביקוש גבוה</span></a>
+        <a class="program" href="#form-section" data-program="ניהול משאבי אנוש"><h3>ניהול משאבי אנוש</h3><p>ה-HR של העולם החדש — אנשים, דאטה וארגונים</p><span class="tag">ביקוש גבוה</span></a>
+        <a class="program" href="#form-section" data-program="מדעי התזונה"><h3>מדעי התזונה</h3><p>תואר אקדמי בעולמות הבריאות והתזונה</p><span class="tag">מסלול מקוצר</span></a>
+      </div>
+    </div>
+    <div class="deg-panel hidden" id="degPanelMA" role="tabpanel" aria-labelledby="degTabMA">
+      <!-- TODO: verify current MBA specialization list + descriptions; card hrefs will point to degree sub-pages once they ship -->
+      <div class="programs-grid">
+        <a class="program" href="#form-section" data-program="MBA מנהל עסקים"><h3>מנהל עסקים MBA</h3><p>תואר שני בהתאמה אישית, בשנה אחת בלבד</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="MBA אסטרטגיה ופיתוח עסקי"><h3>MBA — אסטרטגיה ופיתוח עסקי</h3><p>התמחות באסטרטגיה, חדשנות וצמיחה עסקית</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="MBA ייעוץ וניהול ארגוני"><h3>MBA — ייעוץ וניהול ארגוני</h3><p>התמחות בייעוץ ארגוני וניהול שינוי</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="MBA דיני עסקים"><h3>MBA — דיני עסקים</h3><p>התמחות בדיני עסקים למנהלים</p><span class="tag">תואר שני בשנה</span></a>
+      </div>
+    </div>
+    <p class="programs-note">לא בטוחים מה מתאים לכם? <a href="#form-section" style="color:var(--blue);font-weight:800">דברו עם יועץ לימודים ›</a></p>
   </div>
 </section>
 
@@ -1072,6 +1092,30 @@ setTimeout(loadProdAnalytics, 5000);
   });
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') closeNav();
+  });
+
+  /* ---- Degree tabs: BA / MBA switcher ---- */
+  const degTabs = [document.getElementById('degTabBA'), document.getElementById('degTabMA')];
+  const degPanels = {degTabBA: document.getElementById('degPanelBA'), degTabMA: document.getElementById('degPanelMA')};
+  function selectDegTab(tab){
+    degTabs.forEach(function(t){
+      const active = t === tab;
+      t.classList.toggle('on', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+      degPanels[t.id].classList.toggle('hidden', !active);
+    });
+  }
+  degTabs.forEach(function(tab, i){
+    tab.addEventListener('click', function(){
+      selectDegTab(tab);
+      pushEvent('degree_tab_switch', {tab: tab.id === 'degTabBA' ? 'ba' : 'ma'});
+    });
+    /* standard tablist pattern: arrow keys move focus between tabs */
+    tab.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      degTabs[1 - i].focus();
+    });
   });
 
   /* ---- Certificates: expand/collapse the extra exec-ed cards ---- */
