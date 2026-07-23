@@ -67,6 +67,8 @@ section{padding-block:56px}
 .header-leave{background:var(--navy);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:10px;white-space:nowrap}
 .header-leave:hover{background:var(--navy-soft)}
 @media(max-width:767.98px){.header-phone{display:inline-flex;padding:9px 11px}.header-phone-num{display:none}}
+/* very small phones: icon-only brand + tighter spacing so nothing overlaps the logo */
+@media(max-width:479.98px){.brand{font-size:0;gap:0}.brand img{height:30px}.header .wrap{padding-inline:12px}.header-cta{gap:6px}.header-leave{padding:10px 12px}}
 /* ============ DEGREE NAV ============ */
 .nav-toggle{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:none;border:none;cursor:pointer;font-size:22px;color:var(--navy);font-family:var(--font)}
 @media(max-width:899.98px){
@@ -156,6 +158,8 @@ section{padding-block:56px}
 .benefit ul{list-style:none;font-size:14.5px;color:var(--ink)}
 .benefit li{padding-block:3px}
 .benefit li::before{content:"✓";color:var(--mint-dark);font-weight:900;margin-inline-end:8px}
+/* mobile: icon and title share one line */
+@media(max-width:639.98px){.benefit .b-icon,.benefit .b-logo{display:inline-flex;vertical-align:middle;margin-bottom:0;margin-inline-end:10px}.benefit h3{display:inline;vertical-align:middle}}
 @media(min-width:640px){.benefits-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:1000px){.benefits-grid{grid-template-columns:repeat(4,1fr)}}
 /* ============ MILUIM & MONEY BAND ============ */
@@ -312,24 +316,25 @@ body.cookie-on .sticky-bar{display:none!important}
       <div class="nav-item">
         <button class="nav-link" aria-expanded="false" aria-haspopup="true">תואר ראשון <span class="nav-caret" aria-hidden="true">▾</span></button>
         <div class="nav-drop">
-          <a href="#form-section" data-program="מנהל עסקים">מנהל עסקים</a>
-          <a href="#form-section" data-program="משפטים">משפטים</a>
-          <a href="#form-section" data-program="מדעי ההתנהגות">מדעי ההתנהגות</a>
-          <a href="#form-section" data-program="תקשורת">תקשורת</a>
-          <a href="#form-section" data-program="מערכות מידע ניהוליות">מערכות מידע ניהוליות</a>
-          <a href="#form-section" data-program="ניהול שירותי בריאות">ניהול שירותי בריאות</a>
-          <a href="#form-section" data-program="ניהול משאבי אנוש">ניהול משאבי אנוש</a>
-          <a href="#form-section" data-program="מדעי התזונה">מדעי התזונה</a>
+          <a href="#form-section" data-program="B.A מנהל עסקים">מנהל עסקים (B.A)</a>
+          <a href="#form-section" data-program="LL.B משפטים">משפטים (LL.B)</a>
+          <a href="#form-section" data-program="B.A מדעי ההתנהגות">מדעי ההתנהגות (B.A)</a>
+          <a href="#form-section" data-program="B.A תקשורת">תקשורת (B.A)</a>
+          <a href="#form-section" data-program="B.A מערכות מידע ניהוליות">מערכות מידע ניהוליות (B.A)</a>
+          <a href="#form-section" data-program="B.A מנהל מערכות בריאות">מנהל מערכות בריאות (B.A)</a>
+          <a href="#form-section" data-program="B.A ניהול משאבי אנוש">ניהול משאבי אנוש (B.A)</a>
+          <a href="#form-section" data-program="B.Sc מדעי התזונה">מדעי התזונה (B.Sc)</a>
         </div>
       </div>
       <div class="nav-item">
         <button class="nav-link" aria-expanded="false" aria-haspopup="true">תואר שני <span class="nav-caret" aria-hidden="true">▾</span></button>
         <div class="nav-drop">
-          <!-- TODO: verify current MBA specialization list -->
-          <a href="#form-section" data-program="MBA מנהל עסקים">מנהל עסקים MBA — בהתאמה אישית</a>
-          <a href="#form-section" data-program="MBA אסטרטגיה ופיתוח עסקי">MBA — אסטרטגיה ופיתוח עסקי</a>
-          <a href="#form-section" data-program="MBA ייעוץ וניהול ארגוני">MBA — ייעוץ וניהול ארגוני</a>
-          <a href="#form-section" data-program="MBA דיני עסקים">MBA — דיני עסקים</a>
+          <!-- names sourced from the pac.ac.il nav; links still pending degree sub-pages -->
+          <a href="#form-section" data-program="MBA מנהל עסקים">מנהל עסקים (MBA)</a>
+          <a href="#form-section" data-program="M.A פסיכולוגיה חינוכית">פסיכולוגיה חינוכית (M.A)</a>
+          <a href="#form-section" data-program="M.A ייעוץ ופיתוח ארגוני">ייעוץ ופיתוח ארגוני (M.A)</a>
+          <a href="#form-section" data-program="M.A ניהול משאבי אנוש">ניהול משאבי אנוש (M.A)</a>
+          <a href="#form-section" data-program="M.A משפטים">משפטים (M.A)</a>
         </div>
       </div>
     </nav>
@@ -426,7 +431,7 @@ body.cookie-on .sticky-bar{display:none!important}
 <section id="benefits">
   <div class="wrap">
     <h2 class="section-title">למה דווקא פרס?</h2>
-    <p class="section-sub">ארבע סיבות שהופכות את התואר למשתלם — כבר מהסמסטר הראשון</p>
+    <p class="section-sub">ארבע סיבות שהופכות את התואר למבוקש — כבר מהסמסטר הראשון</p>
     <div class="benefits-grid">
       <div class="benefit">
         <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
@@ -463,28 +468,6 @@ body.cookie-on .sticky-bar{display:none!important}
           <li>סייבר, AI, שיווק דיגיטלי ועוד</li>
           <li>יתרון אמיתי בראיונות עבודה</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= MILUIM & MONEY (critique: buried differentiator) ================= -->
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="miluim">
-      <div>
-        <span class="miluim-tag">מקום ראשון בתמיכה במילואימניקים</span>
-        <h2 style="margin-top:10px">במילואים? אנחנו עליכם.</h2>
-        <p style="color:rgba(255,255,255,.8);font-size:15px;margin-top:6px">אף סמסטר לא צריך להיתקע בגלל צו 8. הנה איך זה עובד אצלנו בפועל:</p>
-      </div>
-      <div>
-        <ul>
-          <li>הקלטות של כל שיעור — לצפות מתי שמשתחררים</li>
-          <li>דחיית מבחנים ומועדי הגשה בתקופות מילואים</li>
-          <li>מלווה אישי לכל סטודנט לאורך כל התואר</li>
-          <li>מענקים ומלגות ייעודיות למשרתי מילואים<!-- TODO: confirm current grant terms --></li>
-        </ul>
-        <p class="money">💰 <b>משלמים עם הפיקדון הצבאי?</b> נעזור לכם לממש אותו ולבנות תוכנית מימון שמתאימה לכם — כולל מלגות הצטיינות וסיוע.<!-- TODO: confirm pikadon mechanics with finance --></p>
       </div>
     </div>
   </div>
@@ -569,8 +552,31 @@ body.cookie-on .sticky-bar{display:none!important}
 <section class="mid-cta">
   <div class="wrap">
     <div class="mid-cta-inner">
-      <p>רוצים לדעת איזו תעודה מתאימה לכם?</p>
-      <a href="#form-section" class="btn btn-navy">קבעו שיחה עם יועץ ›</a>
+      <img src="images/logo_toar_plus.webp" alt="תואר פלוס" width="52" height="44" style="height:40px;width:auto;margin:0 auto 10px">
+      <p>תואר פלוס: יוצאים לשוק עם תואר אקדמי <b>ועם</b> תעודה מקצועית — ללא עלות נוספת</p>
+      <a href="#form-section" class="btn btn-navy">לפרטים נוספים קבעו פגישת ייעוץ ›</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MILUIM & MONEY (critique: buried differentiator) ================= -->
+<section>
+  <div class="wrap">
+    <div class="miluim">
+      <div>
+        <span class="miluim-tag">מקום ראשון בתמיכה במילואימניקים</span>
+        <h2 style="margin-top:10px">במילואים? אנחנו איתכם.</h2>
+        <p style="color:rgba(255,255,255,.8);font-size:15px;margin-top:6px">אף סמסטר לא צריך להיתקע בגלל צו 8. הנה איך זה עובד אצלנו בפועל:</p>
+      </div>
+      <div>
+        <ul>
+          <li>כל השיעורים משודרים בלייב בזום — לומדים מכל מקום</li>
+          <li>הקלטות של כל שיעור — לצפות מתי שמשתחררים</li>
+          <li>דחיית מבחנים ומועדי הגשה בתקופות מילואים</li>
+          <li>מלווה אישי לכל סטודנט לאורך כל התואר</li>
+        </ul>
+        <p class="money">💰 <b>משלמים עם הפיקדון הצבאי?</b> נעזור לכם לממש אותו ולבנות תוכנית מימון שמתאימה לכם — כולל מלגות הצטיינות וסיוע.<!-- TODO: confirm pikadon mechanics with finance --></p>
+      </div>
     </div>
   </div>
 </section>
@@ -638,28 +644,29 @@ body.cookie-on .sticky-bar{display:none!important}
     <h2 class="section-title">מה לומדים?</h2>
     <p class="section-sub">תארים מוכרים של המועצה להשכלה גבוהה — ראשון בשנתיים, שני בשנה<!-- TODO: verify current program list + link each card to its program page --></p>
     <div class="deg-tabs" role="tablist" aria-label="סוג התואר">
-      <button class="deg-tab on" id="degTabBA" role="tab" aria-selected="true" aria-controls="degPanelBA">תארים ראשונים</button>
-      <button class="deg-tab" id="degTabMA" role="tab" aria-selected="false" aria-controls="degPanelMA">תארים שניים</button>
+      <button class="deg-tab on" id="degTabBA" role="tab" aria-selected="true" aria-controls="degPanelBA">תואר ראשון</button>
+      <button class="deg-tab" id="degTabMA" role="tab" aria-selected="false" aria-controls="degPanelMA">תואר שני</button>
     </div>
     <div class="deg-panel" id="degPanelBA" role="tabpanel" aria-labelledby="degTabBA">
       <div class="programs-grid">
-        <a class="program" href="#form-section" data-program="מנהל עסקים"><h3>מנהל עסקים</h3><p>ניהול, שיווק ומימון — הכתובת לעולם העסקי</p><span class="tag">מסלול מקוצר</span></a>
-        <a class="program" href="#form-section" data-program="משפטים"><h3>משפטים</h3><p>LL.B עם התמחויות מסחריות ויישומיות</p><span class="tag">תכנית LEVEL UP</span></a>
-        <a class="program" href="#form-section" data-program="מדעי ההתנהגות"><h3>מדעי ההתנהגות</h3><p>שער לקריירה בפסיכולוגיה ארגונית ו-HR</p><span class="tag">היברידי</span></a>
-        <a class="program" href="#form-section" data-program="תקשורת"><h3>תקשורת</h3><p>מדיה, תוכן דיגיטלי ואסטרטגיית מותג</p><span class="tag">היברידי</span></a>
-        <a class="program" href="#form-section" data-program="מערכות מידע ניהוליות"><h3>מערכות מידע ניהוליות</h3><p>החיבור הישיר בין עסקים לטכנולוגיה</p><span class="tag">שער להייטק</span></a>
-        <a class="program" href="#form-section" data-program="ניהול שירותי בריאות"><h3>ניהול שירותי בריאות</h3><p>ניהול ומנהל במערכת הבריאות הצומחת</p><span class="tag">ביקוש גבוה</span></a>
-        <a class="program" href="#form-section" data-program="ניהול משאבי אנוש"><h3>ניהול משאבי אנוש</h3><p>ה-HR של העולם החדש — אנשים, דאטה וארגונים</p><span class="tag">ביקוש גבוה</span></a>
-        <a class="program" href="#form-section" data-program="מדעי התזונה"><h3>מדעי התזונה</h3><p>תואר אקדמי בעולמות הבריאות והתזונה</p><span class="tag">מסלול מקוצר</span></a>
+        <a class="program" href="#form-section" data-program="B.A מנהל עסקים"><h3>מנהל עסקים (B.A)</h3><p>ניהול, שיווק ומימון — הכתובת לעולם העסקי</p><span class="tag">מסלול מקוצר</span></a>
+        <a class="program" href="#form-section" data-program="LL.B משפטים"><h3>משפטים (LL.B)</h3><p>LL.B עם התמחויות מסחריות ויישומיות</p><span class="tag">תכנית LEVEL UP</span></a>
+        <a class="program" href="#form-section" data-program="B.A מדעי ההתנהגות"><h3>מדעי ההתנהגות (B.A)</h3><p>שער לקריירה בפסיכולוגיה ארגונית ו-HR</p><span class="tag">היברידי</span></a>
+        <a class="program" href="#form-section" data-program="B.A תקשורת"><h3>תקשורת (B.A)</h3><p>מדיה, תוכן דיגיטלי ואסטרטגיית מותג</p><span class="tag">היברידי</span></a>
+        <a class="program" href="#form-section" data-program="B.A מערכות מידע ניהוליות"><h3>מערכות מידע ניהוליות (B.A)</h3><p>החיבור הישיר בין עסקים לטכנולוגיה</p><span class="tag">שער להייטק</span></a>
+        <a class="program" href="#form-section" data-program="B.A מנהל מערכות בריאות"><h3>מנהל מערכות בריאות (B.A)</h3><p>ניהול ומנהל במערכת הבריאות הצומחת</p><span class="tag">ביקוש גבוה</span></a>
+        <a class="program" href="#form-section" data-program="B.A ניהול משאבי אנוש"><h3>ניהול משאבי אנוש (B.A)</h3><p>ה-HR של העולם החדש — אנשים, דאטה וארגונים</p><span class="tag">ביקוש גבוה</span></a>
+        <a class="program" href="#form-section" data-program="B.Sc מדעי התזונה"><h3>מדעי התזונה (B.Sc)</h3><p>תואר אקדמי בעולמות הבריאות והתזונה</p><span class="tag">מסלול מקוצר</span></a>
       </div>
     </div>
     <div class="deg-panel hidden" id="degPanelMA" role="tabpanel" aria-labelledby="degTabMA">
-      <!-- TODO: verify current MBA specialization list + descriptions; card hrefs will point to degree sub-pages once they ship -->
+      <!-- TODO: names sourced from the pac.ac.il nav; card hrefs will point to degree sub-pages once they ship -->
       <div class="programs-grid">
-        <a class="program" href="#form-section" data-program="MBA מנהל עסקים"><h3>מנהל עסקים MBA</h3><p>תואר שני בהתאמה אישית, בשנה אחת בלבד</p><span class="tag">תואר שני בשנה</span></a>
-        <a class="program" href="#form-section" data-program="MBA אסטרטגיה ופיתוח עסקי"><h3>MBA — אסטרטגיה ופיתוח עסקי</h3><p>התמחות באסטרטגיה, חדשנות וצמיחה עסקית</p><span class="tag">תואר שני בשנה</span></a>
-        <a class="program" href="#form-section" data-program="MBA ייעוץ וניהול ארגוני"><h3>MBA — ייעוץ וניהול ארגוני</h3><p>התמחות בייעוץ ארגוני וניהול שינוי</p><span class="tag">תואר שני בשנה</span></a>
-        <a class="program" href="#form-section" data-program="MBA דיני עסקים"><h3>MBA — דיני עסקים</h3><p>התמחות בדיני עסקים למנהלים</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="MBA מנהל עסקים"><h3>מנהל עסקים (MBA)</h3><p>התואר המוביל לתפקידי ניהול בכירים — בשנה אחת</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="M.A פסיכולוגיה חינוכית"><h3>פסיכולוגיה חינוכית (M.A)</h3><p>התמחות בפסיכולוגיה של הלמידה והחינוך</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="M.A ייעוץ ופיתוח ארגוני"><h3>ייעוץ ופיתוח ארגוני (M.A)</h3><p>כלים מעשיים לייעוץ ולהובלת שינוי ארגוני</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="M.A ניהול משאבי אנוש"><h3>ניהול משאבי אנוש (M.A)</h3><p>ה-HR האסטרטגי של העולם החדש</p><span class="tag">תואר שני בשנה</span></a>
+        <a class="program" href="#form-section" data-program="M.A משפטים"><h3>משפטים (M.A)</h3><p>העמקה משפטית לעורכי דין ולאנשי עסקים</p><span class="tag">תואר שני בשנה</span></a>
       </div>
     </div>
     <p class="programs-note">לא בטוחים מה מתאים לכם? <a href="#form-section" style="color:var(--blue);font-weight:800">דברו עם יועץ לימודים ›</a></p>

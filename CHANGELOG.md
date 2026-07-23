@@ -106,3 +106,13 @@ The programs section is now interactive: **תארים ראשונים** (8 BA car
 
 ## Round 6 — copy pivot: from fee-waiver hook to consultation-meeting funnel
 All "פטור מדמי רישום" framing removed. Every CTA now sells the meeting with an advisor who guides enrollment: hero/final/sticky CTAs → "קבעו שיחת ייעוץ", form card → "קבעו שיחת ייעוץ אישית" with advisor-guides-enrollment note, exit popup → "עוד לא דיברתם עם יועץ לימודים?", badge now counts down to registration close (was waiver deadline), title/meta/OG updated. 18 strings rewritten; zero "פטור" left on the page.
+
+---
+
+## Round 7 — real program names, תואר פלוס plug, miluim rewrite, layout fixes
+- Program names now match pac.ac.il's actual menu: BA cards/nav → מנהל עסקים (B.A), משפטים (LL.B), מדעי ההתנהגות (B.A), תקשורת (B.A), מערכות מידע ניהוליות (B.A), מנהל מערכות בריאות (B.A — fixes wrong "ניהול שירותי בריאות"), ניהול משאבי אנוש (B.A), מדעי התזונה (B.Sc). MA → the real 5: מנהל עסקים (MBA), פסיכולוגיה חינוכית (M.A), ייעוץ ופיתוח ארגוני (M.A), ניהול משאבי אנוש (M.A), משפטים (M.A). Replaces the 4 invented MBA tracks. data-program values updated everywhere (nav + cards, 13/13 match).
+- Degree tabs renamed תארים ראשונים/שניים → תואר ראשון/תואר שני.
+- Mid-page CTA is now a "תואר פלוס" plug (logo + "תואר אקדמי ועם תעודה מקצועית — ללא עלות נוספת" + "לפרטים נוספים קבעו פגישת ייעוץ").
+- Miluim band moved below the תואר פלוס block; copy rewritten: headline "במילואים? אנחנו איתכם." (old phrasing wasn't idiomatic), false "מלגות ייעודיות למשרתי מילואים" bullet removed, "כל השיעורים משודרים בלייב בזום" added.
+- Benefits sub: למשתלם → למבוקש.
+- Mobile: benefit icons now inline with card titles; small-phone header spacing fixed (brand text hidden ≤480px, SVG carries the wordmark) so the phone icon can't overlap the logo.
