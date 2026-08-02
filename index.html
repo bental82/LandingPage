@@ -199,10 +199,6 @@ section{padding-block:56px}
 @media(min-width:768px){.certs-grid{grid-template-columns:repeat(3,1fr)}}
 .cert-toggle{display:block;margin:18px auto 0;background:none;border:1.5px solid var(--line);color:var(--navy);font-family:var(--font);font-weight:800;font-size:15px;padding:11px 26px;border-radius:12px;cursor:pointer}
 .cert-toggle:hover{border-color:var(--mint)}
-/* ============ MID-PAGE CTA BAND ============ */
-.mid-cta{padding-block:0}
-.mid-cta-inner{background:linear-gradient(135deg,var(--mint) 0%,var(--mint-dark) 100%);border-radius:var(--r-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow)}
-.mid-cta-inner p{font-size:19px;font-weight:800;color:var(--mint-ink);margin-bottom:14px}
 /* ============ TESTIMONIALS ============ */
 .t-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .t-track::-webkit-scrollbar{display:none}
@@ -358,7 +354,7 @@ body.cookie-on .sticky-bar{display:none!important}
 
   <div class="wrap">
     <div class="hero-content-col" style="display:flex;flex-direction:column;gap:16px">
-      <span class="hero-badge"><span class="dot"></span> ההרשמה לסמסטר הקרוב בעיצומה · נסגרת ב-<span id="deadlineDate">31.8</span> · נותרו <b id="daysLeft">–</b> ימים</span>
+      <span class="hero-badge"><span class="dot"></span> ההרשמה לסמסטר הקרוב בעיצומה</span>
       <h1>תואר ראשון <em>בשנתיים.</em><br>בלי לפסוח על העבודה והחיים.</h1>
       <p class="hero-sub">מסלולים מואצים ולימודים היברידיים במרכז האקדמי פרס — המקום הראשון בתמיכה במילואימניקים. יוצאים עם תואר אקדמי ועם תעודות מקצועיות עוד במהלך הלימודים.</p>
 
@@ -545,17 +541,6 @@ body.cookie-on .sticky-bar{display:none!important}
       </div>
     </div>
     <button class="cert-toggle" id="certToggle" aria-expanded="false" aria-controls="certsGrid">כל התעודות (16) ▼</button>
-  </div>
-</section>
-
-<!-- ================= MID-PAGE CTA (conversion trigger at peak attention) ================= -->
-<section class="mid-cta">
-  <div class="wrap">
-    <div class="mid-cta-inner">
-      <img src="images/logo_toar_plus.webp" alt="תואר פלוס" width="52" height="44" style="height:40px;width:auto;margin:0 auto 10px">
-      <p>תואר פלוס: יוצאים לשוק עם תואר אקדמי <b>ועם</b> תעודה מקצועית — ללא עלות נוספת</p>
-      <a href="#form-section" class="btn btn-navy">לפרטים נוספים קבעו פגישת ייעוץ ›</a>
-    </div>
   </div>
 </section>
 
@@ -789,14 +774,19 @@ setTimeout(loadProdAnalytics, 5000);
 
   /* ---- Deadline countdown ---- */
   const days = Math.max(0, Math.ceil((DEADLINE - new Date()) / 86400000));
-  if (days <= 0) {
-    /* deadline passed: don't show a stale date (keep the pulsing dot) */
-    document.querySelector('.hero-badge').innerHTML =
-      '<span class="dot"></span> ההרשמה בעיצומה · קבעו שיחת ייעוץ אישית';
-  } else {
-    document.getElementById('daysLeft').textContent = days;
-    document.getElementById('deadlineDate').textContent =
-      DEADLINE.getDate() + '.' + (DEADLINE.getMonth() + 1);
+  const daysLeftEl = document.getElementById('daysLeft');
+  const deadlineDateEl = document.getElementById('deadlineDate');
+  /* countdown spans only exist when the badge shows the deadline (currently simplified to static text) */
+  if (daysLeftEl && deadlineDateEl) {
+    if (days <= 0) {
+      /* deadline passed: don't show a stale date (keep the pulsing dot) */
+      document.querySelector('.hero-badge').innerHTML =
+        '<span class="dot"></span> ההרשמה בעיצומה · קבעו שיחת ייעוץ אישית';
+    } else {
+      daysLeftEl.textContent = days;
+      deadlineDateEl.textContent =
+        DEADLINE.getDate() + '.' + (DEADLINE.getMonth() + 1);
+    }
   }
 
   /* ---- HubSpot embed with native fallback ---- */

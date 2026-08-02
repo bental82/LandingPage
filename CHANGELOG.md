@@ -122,3 +122,17 @@ All "פטור מדמי רישום" framing removed. Every CTA now sells the meet
 ## Round 8 — first degree sub-page prototype: `business.html` (B.A מנהל עסקים)
 Standalone degree page, content sourced from the old peres-pac.co.il/business2021 page, rebuilt on the v2 design system. Structure: hero (breadcrumb + degree H1 "אפשר גם בשנתיים" + degree stats + same HubSpot form) → employer trust bar → 11 scannable benefit cards distilled from the old page's long paragraphs (תואר בשנתיים, ראשון+שני ב-3 שנים, INFINITY, תואר פלוס+, היברידי, בוקר/ערב, LEVEL UP, AI BOOTCAMP, דו-חוגי, מרכז קריירה, מעונות) → תואר פלוס 4-certificate grid (נדל״ן, eCommerce, שיווק דיגיטלי AI, מגשר — real SVG icons) → 5 specializations as a native `<details>` accordion (zero-JS, keyboard/screen-reader accessible, full old-page texts preserved) → navy LEVEL UP band with logos + מסלול החברות chips (UMD לאומית, כללית, AYALON, קפלן, רן רהב) → mint mid-CTA → miluim band (old page's own bullet list) → 6 business-degree testimonials (3 with real photos: ביטון, לוין, ופנר; 3 with initial-fallback avatars, TODO-marked) → final CTA. All machinery identical to index.html: same HubSpot portal/form IDs, GTM×2 + GA4 deferred, Consent Mode v2 cookie bar, sticky mobile bar, exit popup, deadline countdown; `cta_click`/`generate_lead` events now carry `program: 'B.A מנהל עסקים'`. Added `Course` JSON-LD. index.html: header nav + program card for מנהל עסקים now link to `business.html` (other programs still scroll to the form — TODO as their pages ship).
 **TODOs:** real LEVEL UP participant logos (currently reused employer assets) · photos for תשובה/אביטל/גפנר · dedicated og share image.
+
+### Round 8a — card consolidation + תואר פלוס aligned to pac.ac.il/degree/ba-business
+- Benefit cards consolidated 11 → 6 (clean 3×2 grid), merged main-page style — umbrella brand cards, with degree-specifics folded in:
+  - "תואר בשנתיים" + "ראשון ושני בשלוש" + "דו-חוגי" → **מסלולים מקוצרים** (3 bullets)
+  - "היברידי" + "בוקר או ערב" → **למידה היברידית גמישה — בוקר או ערב**
+  - "AI BOOTCAMP" folded into the **INFINITY** card (third bullet)
+  - **תואר + תעודות מקצועיות** kept as a logo card, same pattern as the main page (card + full certs section below)
+  - "LEVEL UP" card removed — covered by the LEVEL UP navy band; קריירה and מעונות cards stay
+- תואר פלוס grid expanded 4 → 5 certs per the official degree page: eCommerce, נדל״ן וייעוץ משכנתאות, שיווק דיגיטלי AI, מגשר, **ניהול מוצר** (new; reuses the entrepreneurship lightbulb icon — TODO: proper product icon). Sub-lines rewritten from the official descriptions. Grid now 3-col on tablet / 5-col on desktop.
+- Note for content owner: the official page's carousel shows **7 התמחויות** (adds תכנון פיננסי הוליסטי CFP and יזמות) while its text still says 5 — we kept 5; verify before adding.
+
+### Round 8b — index.html tweaks
+- Hero badge simplified to static "ההרשמה לסמסטר הקרוב בעיצומה" (deadline countdown spans removed; countdown JS now no-ops unless the spans are re-added).
+- Mint mid-page תואר פלוס band removed (markup + CSS). תואר פלוס is still covered by the benefit card + the certificates grid.
