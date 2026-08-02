@@ -10,16 +10,16 @@ gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad
 <!-- Google Tag Manager — deferred: loads on first interaction or after 5s to protect TBT (live proven container) -->
 <script>function loadGTM(){if(window._gtmL)return;window._gtmL=1;var f=document.getElementsByTagName('script')[0],j=document.createElement('script');j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id=GTM-TV2SWLSL';f.parentNode.insertBefore(j,f);dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});}
 ['scroll','click','touchstart'].forEach(function(e){window.addEventListener(e,loadGTM,{once:true,passive:true});});setTimeout(loadGTM,5000);</script>
-<title>המרכז האקדמי פרס | תואר ראשון בשנתיים — קבעו שיחת ייעוץ</title>
-<meta name="description" content="מסלולים מואצים ולימודים היברידיים במרכז האקדמי פרס — המקום הראשון בתמיכה במילואימניקים. קבעו שיחת ייעוץ אישית עם יועץ לימודים — בלי התחייבות.">
+<title>תואר ראשון במנהל עסקים (B.A) — בשנתיים בלבד | המרכז האקדמי פרס</title>
+<meta name="description" content="תואר ראשון B.A במנהל עסקים במרכז האקדמי פרס: מסלול מקוצר של שנתיים, 5 התמחויות, תעודות מקצועיות במהלך התואר ותכנית ההתמחות LEVEL UP. קבעו שיחת ייעוץ אישית.">
 <!-- Open Graph (WhatsApp/social share previews) -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="תואר ראשון בשנתיים — המרכז האקדמי פרס">
-<meta property="og:description" content="לימודים היברידיים, מסלולים מקוצרים ותעודות הייטק במהלך התואר. קבעו שיחת ייעוץ אישית עם יועץ לימודים.">
+<meta property="og:title" content="תואר ראשון במנהל עסקים (B.A) — בשנתיים בלבד">
+<meta property="og:description" content="מסלול מקוצר, 5 התמחויות ותעודות מקצועיות במהלך התואר. קבעו שיחת ייעוץ אישית עם יועץ לימודים.">
 <meta property="og:image" content="https://peres-pac.co.il/images/mobile/caps-1-poster.webp"><!-- TODO: replace with a dedicated 1200x630 share image when available -->
-<meta property="og:url" content="https://peres-pac.co.il/">
+<meta property="og:url" content="https://peres-pac.co.il/business.html">
 <meta property="og:locale" content="he_IL">
-<link rel="canonical" href="https://peres-pac.co.il/">
+<link rel="canonical" href="https://peres-pac.co.il/business.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- LCP: preload the mobile hero poster -->
@@ -93,6 +93,7 @@ section{padding-block:56px}
   .nav-item:hover .nav-drop,.nav-item:focus-within .nav-drop,.nav-item.open .nav-drop{display:block}
   .nav-drop a{display:block;padding:10px 14px;font-size:14.5px;border-radius:var(--r-sm);color:var(--ink);white-space:nowrap}
   .nav-drop a:hover{background:var(--bg)}
+  .nav-drop a[aria-current="page"]{font-weight:800;color:var(--navy);background:rgba(47,227,155,.14)}
 }
 /* ============ HERO ============ */
 .hero{position:relative;padding:34px 0 44px;color:#fff;overflow:hidden;background:var(--navy-deep)}
@@ -106,6 +107,8 @@ section{padding-block:56px}
 @media(min-width:768px){.hero-badge{font-size:14px;padding:8px 16px}}
 .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--mint);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero-crumb{font-size:13px;font-weight:700;color:rgba(255,255,255,.75)}
+.hero-crumb a{color:var(--mint);font-weight:800}
 .hero h1{font-size:29px;font-weight:900;max-width:620px}
 .hero h1 em{font-style:normal;color:var(--mint)}
 .hero-sub{font-size:15.5px;color:rgba(255,255,255,.88);max-width:560px}
@@ -158,10 +161,30 @@ section{padding-block:56px}
 .benefit ul{list-style:none;font-size:14.5px;color:var(--ink)}
 .benefit li{padding-block:3px}
 .benefit li::before{content:"✓";color:var(--mint-dark);font-weight:900;margin-inline-end:8px}
+.benefit .b-note{font-size:12px;color:var(--muted);margin-top:8px}
 /* mobile: icon and title share one line */
 @media(max-width:639.98px){.benefit .b-icon,.benefit .b-logo{display:inline-flex;vertical-align:middle;margin-bottom:0;margin-inline-end:10px}.benefit h3{display:inline;vertical-align:middle}}
 @media(min-width:640px){.benefits-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:1000px){.benefits-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1000px){.benefits-grid{grid-template-columns:repeat(3,1fr)}}
+/* ============ CERTIFICATES (Degree+) ============ */
+.certs{background:#fff;border-block:1px solid var(--line)}
+.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cert{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.cert img{width:46px;height:46px;object-fit:contain}
+.cert h3{font-size:14.5px;color:var(--navy)}
+.cert span{font-size:12px;color:var(--muted)}
+@media(min-width:768px){.certs-grid{grid-template-columns:repeat(4,1fr)}}
+/* ============ SPECIALIZATIONS (accordion) ============ */
+.specs{max-width:820px;margin-inline:auto}
+.spec{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow)}
+.spec+.spec{margin-top:10px}
+.spec summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:17px 18px;font-weight:800;font-size:16px;color:var(--navy)}
+.spec summary::-webkit-details-marker{display:none}
+.spec summary::after{content:"▾";font-size:13px;color:var(--mint-dark);transition:transform .2s}
+.spec[open] summary::after{transform:rotate(180deg)}
+.spec summary:focus-visible{outline:2px solid var(--mint);outline-offset:-2px;border-radius:var(--r-md)}
+.spec p{padding:0 18px 17px;font-size:14.5px;color:var(--ink)}
+.specs-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px}
 /* ============ MILUIM & MONEY BAND ============ */
 .miluim{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;border-radius:var(--r-lg);padding:30px 24px;display:flex;flex-direction:column;gap:18px;box-shadow:var(--shadow)}
 .miluim-tag{display:inline-block;background:var(--mint);color:var(--mint-ink);font-weight:900;font-size:12.5px;padding:5px 14px;border-radius:999px;width:fit-content}
@@ -172,33 +195,17 @@ section{padding-block:56px}
 .miluim .money{font-size:14px;color:rgba(255,255,255,.8);border-top:1px dashed rgba(255,255,255,.25);padding-top:14px}
 .miluim .money b{color:var(--mint)}
 @media(min-width:900px){.miluim{flex-direction:row;align-items:center;padding:40px 44px}.miluim>div{flex:1}.miluim ul{grid-template-columns:1fr 1fr}}
-/* ============ PROGRAMS ============ */
-.programs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.program{background:var(--card);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 16px;transition:border-color .15s,transform .15s;display:flex;flex-direction:column;gap:6px}
-.program:hover{border-color:var(--mint);transform:translateY(-2px)}
-.program h3{font-size:15.5px;color:var(--navy)}
-.program p{font-size:13px;color:var(--muted);flex:1}
-.program .tag{font-size:11px;font-weight:800;color:var(--mint-ink);background:rgba(47,227,155,.14);padding:3px 10px;border-radius:999px;width:fit-content}
-@media(min-width:1000px){.programs-grid{grid-template-columns:repeat(4,1fr)}}
-.programs-note{text-align:center;font-size:13px;color:var(--muted);margin-top:16px}
-/* degree tabs (BA / MBA switcher) */
-.deg-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:22px}
-.deg-tab{font-family:var(--font);font-weight:800;font-size:15px;padding:11px 26px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--navy);cursor:pointer}
-.deg-tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
-@media(max-width:480px){.deg-tabs{padding-inline:0}.deg-tab{flex:1;padding:11px 10px}}
-/* ============ CERTIFICATES (Degree+) ============ */
-.certs{background:#fff;border-block:1px solid var(--line)}
-.certs-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cert{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);padding:18px 16px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
-.cert img{width:46px;height:46px;object-fit:contain}
-.cert h3{font-size:14.5px;color:var(--navy)}
-.cert span{font-size:12px;color:var(--muted)}
-/* extra (exec-ed) certificates: hidden until the toggle expands the grid */
-.cert-extra{display:none}
-.certs-grid.expanded .cert-extra{display:flex}
-@media(min-width:768px){.certs-grid{grid-template-columns:repeat(3,1fr)}}
-.cert-toggle{display:block;margin:18px auto 0;background:none;border:1.5px solid var(--line);color:var(--navy);font-family:var(--font);font-weight:800;font-size:15px;padding:11px 26px;border-radius:12px;cursor:pointer}
-.cert-toggle:hover{border-color:var(--mint)}
+/* ============ LEVEL UP / PARTNERS BAND ============ */
+.levelup{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff}
+.levelup h2{font-size:24px;text-align:center;margin-bottom:8px}
+.levelup .lvl-sub{text-align:center;color:rgba(255,255,255,.85);font-size:15.5px;max-width:640px;margin:0 auto 24px}
+.lvl-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:34px}
+.lvl-logos img{height:44px;width:auto;max-width:140px;object-fit:contain;background:#fff;border-radius:10px;padding:8px 16px;box-sizing:content-box;filter:grayscale(1) opacity(.9);transition:filter .2s}
+.lvl-logos img:hover{filter:none}
+.chips-title{text-align:center;font-weight:800;font-size:17px;margin-bottom:6px;color:var(--mint)}
+.chips-sub{text-align:center;font-size:14px;color:rgba(255,255,255,.75);max-width:560px;margin:0 auto 16px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 16px;font-size:13.5px;font-weight:700;color:#fff}
 /* ============ MID-PAGE CTA BAND ============ */
 .mid-cta{padding-block:0}
 .mid-cta-inner{background:linear-gradient(135deg,var(--mint) 0%,var(--mint-dark) 100%);border-radius:var(--r-lg);padding:28px 24px;text-align:center;box-shadow:var(--shadow)}
@@ -278,24 +285,24 @@ body.cookie-on .sticky-bar{display:none!important}
 .hidden{display:none!important}
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .marquee,.hero-badge .dot{animation:none} *{transition:none!important} }
 </style>
-<!-- Structured data: EducationalOrganization -->
+<!-- Structured data: Course -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "המרכז האקדמי פרס",
-  "alternateName": "Peres Academic Center",
-  "url": "https://peres-pac.co.il",
-  "telephone": "08-3006090",
-  "email": "pac@pac.ac.il",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "רחובות",
-    "addressCountry": "IL"
-  },
-  "sameAs": [
-    "https://www.pac.ac.il"
-  ]
+  "@type": "Course",
+  "name": "תואר ראשון במנהל עסקים (B.A)",
+  "description": "תואר ראשון B.A במנהל עסקים במרכז האקדמי פרס — מסלול מקוצר של שנתיים, 5 התמחויות ותעודות מקצועיות במהלך התואר.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "המרכז האקדמי פרס",
+    "sameAs": "https://www.pac.ac.il",
+    "telephone": "08-3006090",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "רחובות",
+      "addressCountry": "IL"
+    }
+  }
 }
 </script>
 </head>
@@ -309,32 +316,32 @@ body.cookie-on .sticky-bar{display:none!important}
 <!-- ================= HEADER ================= -->
 <header class="header">
   <div class="wrap">
-    <a class="brand" href="#hero" aria-label="המרכז האקדמי פרס">
+    <a class="brand" href="index.html" aria-label="המרכז האקדמי פרס — חזרה לעמוד הראשי">
       <img src="images/logos/logo-main.svg" alt="המרכז האקדמי פרס" width="207" height="43">
     </a>
     <nav class="main-nav" id="mainNav" aria-label="תפריט תארים">
       <div class="nav-item">
         <button class="nav-link" aria-expanded="false" aria-haspopup="true">תואר ראשון <span class="nav-caret" aria-hidden="true">▾</span></button>
         <div class="nav-drop">
-          <a href="business.html">מנהל עסקים (B.A)</a>
-          <a href="#form-section" data-program="LL.B משפטים">משפטים (LL.B)</a>
-          <a href="#form-section" data-program="B.A מדעי ההתנהגות">מדעי ההתנהגות (B.A)</a>
-          <a href="#form-section" data-program="B.A תקשורת">תקשורת (B.A)</a>
-          <a href="#form-section" data-program="B.A מערכות מידע ניהוליות">מערכות מידע ניהוליות (B.A)</a>
-          <a href="#form-section" data-program="B.A מנהל מערכות בריאות">מנהל מערכות בריאות (B.A)</a>
-          <a href="#form-section" data-program="B.A ניהול משאבי אנוש">ניהול משאבי אנוש (B.A)</a>
-          <a href="#form-section" data-program="B.Sc מדעי התזונה">מדעי התזונה (B.Sc)</a>
+          <a href="business.html" aria-current="page">מנהל עסקים (B.A)</a>
+          <!-- TODO: point each program at its own degree page as they ship -->
+          <a href="index.html#form-section">משפטים (LL.B)</a>
+          <a href="index.html#form-section">מדעי ההתנהגות (B.A)</a>
+          <a href="index.html#form-section">תקשורת (B.A)</a>
+          <a href="index.html#form-section">מערכות מידע ניהוליות (B.A)</a>
+          <a href="index.html#form-section">מנהל מערכות בריאות (B.A)</a>
+          <a href="index.html#form-section">ניהול משאבי אנוש (B.A)</a>
+          <a href="index.html#form-section">מדעי התזונה (B.Sc)</a>
         </div>
       </div>
       <div class="nav-item">
         <button class="nav-link" aria-expanded="false" aria-haspopup="true">תואר שני <span class="nav-caret" aria-hidden="true">▾</span></button>
         <div class="nav-drop">
-          <!-- names sourced from the pac.ac.il nav; links still pending degree sub-pages -->
-          <a href="#form-section" data-program="MBA מנהל עסקים">מנהל עסקים (MBA)</a>
-          <a href="#form-section" data-program="M.A פסיכולוגיה חינוכית">פסיכולוגיה חינוכית (M.A)</a>
-          <a href="#form-section" data-program="M.A ייעוץ ופיתוח ארגוני">ייעוץ ופיתוח ארגוני (M.A)</a>
-          <a href="#form-section" data-program="M.A ניהול משאבי אנוש">ניהול משאבי אנוש (M.A)</a>
-          <a href="#form-section" data-program="M.A משפטים">משפטים (M.A)</a>
+          <a href="index.html#form-section">מנהל עסקים (MBA)</a>
+          <a href="index.html#form-section">פסיכולוגיה חינוכית (M.A)</a>
+          <a href="index.html#form-section">ייעוץ ופיתוח ארגוני (M.A)</a>
+          <a href="index.html#form-section">ניהול משאבי אנוש (M.A)</a>
+          <a href="index.html#form-section">משפטים (M.A)</a>
         </div>
       </div>
     </nav>
@@ -359,33 +366,34 @@ body.cookie-on .sticky-bar{display:none!important}
   <div class="wrap">
     <div class="hero-content-col" style="display:flex;flex-direction:column;gap:16px">
       <span class="hero-badge"><span class="dot"></span> ההרשמה לסמסטר הקרוב בעיצומה · נסגרת ב-<span id="deadlineDate">31.8</span> · נותרו <b id="daysLeft">–</b> ימים</span>
-      <h1>תואר ראשון <em>בשנתיים.</em><br>בלי לפסוח על העבודה והחיים.</h1>
-      <p class="hero-sub">מסלולים מואצים ולימודים היברידיים במרכז האקדמי פרס — המקום הראשון בתמיכה במילואימניקים. יוצאים עם תואר אקדמי ועם תעודות מקצועיות עוד במהלך הלימודים.</p>
+      <p class="hero-crumb"><a href="index.html">כל התארים</a> › תואר ראשון › מנהל עסקים</p>
+      <h1>תואר ראשון <em>B.A</em> במנהל עסקים.<br>אפשר גם <em>בשנתיים.</em></h1>
+      <p class="hero-sub">בואו להתחיל את הקריירה שלכם בעולם העסקים: תכנית לימודים ייחודית עם אפשרות לתואר בשנתיים בלבד, לימודי תעודה במהלך התואר, 5 התמחויות ותכנית התמחות יוקרתית — שייתנו לכם יתרון בשוק העבודה.</p>
 
       <!-- FORM: on mobile this renders right here (above stats); on desktop it sits in the right grid cell -->
       <div class="hero-form-mobile" id="form-section-mobile"></div>
 
       <div class="hero-stats" role="list">
-        <div class="stat" role="listitem"><b>30,000+</b><span>בוגרים בתעשייה</span></div>
+        <div class="stat" role="listitem"><b>שנתיים</b><span>בלבד לתואר ראשון</span></div>
+        <div class="stat" role="listitem"><b>5</b><span>התמחויות לבחירה</span></div>
         <div class="stat" role="listitem"><b>#1</b><span>בשביעות רצון סטודנטים*</span></div>
-        <div class="stat" role="listitem"><b>93%</b><span>השמה בשוק העבודה</span></div>
       </div>
       <span class="stats-src">* מקום ראשון: על פי סקר שביעות רצון הסטודנטים הארצי (התאחדות הסטודנטים), 2024<!-- TODO: verify exact survey citation --></span>
 
       <div class="hero-ctas">
         <a href="#form-section" class="btn btn-mint" id="heroPrimaryCta">קבעו שיחת ייעוץ אישית ›</a>
         <!-- TODO: confirm WhatsApp business number; currently derived from the landline -->
-        <a href="https://wa.me/97283006090?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%9E%D7%95%D7%93%D7%99%D7%9D" target="_blank" rel="noopener" class="btn btn-wa">💬 דברו איתנו בוואטסאפ</a>
+        <a href="https://wa.me/97283006090?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%AA%D7%95%D7%90%D7%A8%20%D7%A8%D7%90%D7%A9%D7%95%D7%9F%20%D7%91%D7%9E%D7%A0%D7%94%D7%9C%20%D7%A2%D7%A1%D7%A7%D7%99%D7%9D" target="_blank" rel="noopener" class="btn btn-wa">💬 דברו איתנו בוואטסאפ</a>
       </div>
     </div>
 
     <!-- FORM CARD (desktop grid cell; moved here on load for mobile) -->
     <div class="hero-form-wrapper" id="form-section">
       <div class="lead-form">
-        <span class="form-badge">🎓 ייעוץ אישי — ללא עלות ובלי התחייבות</span>
+        <span class="form-badge">🎓 B.A מנהל עסקים — ייעוץ אישי ללא עלות</span>
         <h2>קבעו שיחת ייעוץ אישית</h2>
-        <p class="form-note">השאירו פרטים ויועץ לימודים יחזור אליכם לתאם שיחה — יבדוק איתכם את המסלול המתאים וילווה אתכם בהרשמה. תואר מוכר של המועצה להשכלה גבוהה.</p>
-        <!-- HubSpot form — SAME portal/form IDs as production, so all workflows keep working -->
+        <p class="form-note">השאירו פרטים ויועץ לימודים יחזור אליכם לתאם שיחה — יבדוק איתכם את המסלול וההתמחות המתאימים וילווה אתכם בהרשמה. תואר מוכר של המועצה להשכלה גבוהה.</p>
+        <!-- HubSpot form — SAME portal/form IDs as the main page, so all workflows keep working -->
         <div id="hs-lead-form"></div>
         <p class="form-alt">מעדיפים עכשיו? <a href="tel:08-3006090">חייגו 08-3006090</a> או <a href="https://wa.me/97283006090" target="_blank" rel="noopener">שלחו וואטסאפ</a></p>
         <p class="form-disclaimer">בשליחת הטופס אני מאשר/ת קבלת מידע מהמרכז האקדמי פרס. ניתן לבטל בכל עת.</p>
@@ -394,11 +402,10 @@ body.cookie-on .sticky-bar{display:none!important}
   </div>
 </section>
 
-<!-- ================= TRUST BAR (elevated social proof — Clarity #2) ================= -->
+<!-- ================= TRUST BAR ================= -->
 <div class="trustbar" aria-label="מעסיקי בוגרים">
-  <p>הבוגרים שלנו עובדים בחברות המובילות במשק</p>
+  <p>בוגרי מנהל עסקים שלנו עובדים בחברות המובילות במשק</p>
   <div class="marquee" id="marquee">
-    <!-- keep original asset filenames; text fallbacks shown if images missing -->
     <img src="images/לוגו_אסם.webp" alt="אסם" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>אסם</span>'">
     <img src="images/לוגו_שטראוס.webp" alt="שטראוס" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>שטראוס</span>'">
     <img src="images/לוגו_LOREAL.webp" alt="L'Oréal" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=logo-fallback>L’ORÉAL</span>'">
@@ -427,153 +434,225 @@ body.cookie-on .sticky-bar{display:none!important}
   </div>
 </div>
 
-<!-- ================= BENEFITS (punchy, scannable — Clarity #4) ================= -->
+<!-- ================= WHY THIS DEGREE (benefit cards, distilled from the old degree page) ================= -->
 <section id="benefits">
   <div class="wrap">
-    <h2 class="section-title">למה דווקא פרס?</h2>
-    <p class="section-sub">ארבע סיבות שהופכות את התואר למבוקש — כבר מהסמסטר הראשון</p>
+    <h2 class="section-title">למה ללמוד מנהל עסקים דווקא בפרס?</h2>
+    <p class="section-sub">כל היתרונות של התכנית — בקצרה</p>
     <div class="benefits-grid">
       <div class="benefit">
         <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h3>מסלולי לימוד מקוצרים</h3>
+        <h3>תואר בשנתיים בלבד!</h3>
         <ul>
-          <li>תואר ראשון בשנתיים בלבד</li>
-          <li>תואר שני בשנה אחת</li>
-          <li>מסלולים מואצים במגוון תחומים</li>
+          <li>חדש! מסלול מואץ לתואר ראשון בשנתיים</li>
+          <li>מרוויחים שנה שלמה</li>
+          <li>מתחילים את הקריירה לפני כולם</li>
+        </ul>
+      </div>
+      <div class="benefit">
+        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><path d="M4 19V7l8-4 8 4v12"/><path d="M4 19h16"/><path d="M9 19v-5h6v5"/></svg></div>
+        <h3>תואר ראשון ושני בשלוש שנים!</h3>
+        <ul>
+          <li>חדש! B.A + M.B.A במנהל עסקים ב-3 שנים</li>
+          <li>המסלול המהיר לקריירה מבטיחה</li>
+        </ul>
+        <p class="b-note">*לעומדים בתנאי הקבלה</p>
+      </div>
+      <div class="benefit">
+        <img class="b-logo" src="images/Logo_Infinity_vertical_blue.webp" alt="INFINITY" width="65" height="44" loading="lazy" decoding="async">
+        <h3>INFINITY — תואר שמתעדכן איתך לנצח!</h3>
+        <ul>
+          <li>פלטפורמת למידה דיגיטלית עם תכנים מתעדכנים</li>
+          <li>לימודי AI, שיווק דיגיטלי, ניהול אוטומציות ועוד</li>
+          <li>זמין רק לסטודנטים ולבוגרים שלנו — לנצח</li>
+        </ul>
+      </div>
+      <div class="benefit">
+        <img class="b-logo" src="images/logo_toar_plus.webp" alt="תואר פלוס" width="52" height="44" loading="lazy" decoding="async">
+        <h3>תואר פלוס+</h3>
+        <ul>
+          <li>לימודי תעודה מתקדמים במהלך התואר</li>
+          <li>נדל״ן, eCommerce, שיווק דיגיטלי AI ועוד</li>
+          <li>ללא עלות נוספת</li>
         </ul>
       </div>
       <div class="benefit">
         <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="4" width="13" height="11" rx="1.5"/><rect x="17" y="9" width="5" height="11" rx="1.2"/><path d="M8 20h8"/></svg></div>
         <h3>למידה היברידית גמישה</h3>
         <ul>
-          <li>לומדים מתי ואיפה שנוח לכם</li>
-          <li>שילוב פרונטלי ומקוון</li>
-          <li>מתאים לעובדים במשרה מלאה</li>
+          <li>לומדים גם מהקמפוס וגם מהבית</li>
+          <li>שיעורים בלייב ומוקלטים לצפייה חוזרת</li>
+          <li>קשר ישיר למרצים וליווי צמוד של אנשי מקצוע</li>
         </ul>
       </div>
       <div class="benefit">
-        <img class="b-logo" src="images/Logo_Infinity_vertical_blue.webp" alt="INFINITY" width="65" height="44" loading="lazy" decoding="async">
-        <h3>תואר שמתעדכן לנצח</h3>
+        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></div>
+        <h3>לימודי בוקר או ערב — לבחירתכם</h3>
         <ul>
-          <li>גישה לקורסים חדשים גם אחרי הסיום</li>
-          <li>ללא תשלום נוסף, לכל החיים</li>
-          <li>תמיד רלוונטיים לשוק העבודה</li>
+          <li>מסלולים המותאמים לשילוב עם עבודה</li>
+          <li>אפשרות לתואר ראשון בשנתיים</li>
+          <li>או ראשון + שני בשלוש שנים בלבד</li>
         </ul>
       </div>
       <div class="benefit">
-        <img class="b-logo" src="images/logo_toar_plus.webp" alt="תואר פלוס" width="52" height="44" loading="lazy" decoding="async">
-        <h3>תואר + תעודות מקצועיות</h3>
+        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><path d="M12 3l2.2 5.4L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.8-.6z"/></svg></div>
+        <h3>תכנית ההתמחות LEVEL UP</h3>
         <ul>
-          <li>תעודות מתקדמות כבר במהלך התואר</li>
-          <li>סייבר, AI, שיווק דיגיטלי ועוד</li>
-          <li>יתרון אמיתי בראיונות עבודה</li>
+          <li>התנסות מעשית בארגונים מובילים כבר בלימודים</li>
+          <li>יצירת קשרים עם בכירים בתעשייה</li>
+          <li>היכרות מקרוב עם עולם התעסוקה</li>
+        </ul>
+      </div>
+      <div class="benefit">
+        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9z"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+        <h3>AI BOOTCAMP</h3>
+        <ul>
+          <li>סדרת הרצאות וסדנאות על עולם הבינה המלאכותית</li>
+          <li>איך להישאר רלוונטיים בשוק העבודה</li>
+          <li>תעודה מקצועית ב-AI למשתתפים</li>
+        </ul>
+      </div>
+      <div class="benefit">
+        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1.5 1.5"/><path d="M14 10a5 5 0 00-7 0l-3 3a5 5 0 007 7l1.5-1.5"/></svg></div>
+        <h3>אפשרות לתואר דו-חוגי</h3>
+        <ul>
+          <li>שילוב עם מערכות מידע ניהוליות</li>
+          <li>שילוב עם מדעי ההתנהגות</li>
+          <li>חדש! שילוב עם תקשורת</li>
+        </ul>
+      </div>
+      <div class="benefit">
+        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></div>
+        <h3>המרכז לפיתוח קריירה</h3>
+        <ul>
+          <li>סדנאות וייעוץ תעסוקתי אישי</li>
+          <li>מפגשי זרקור וליווי התמחות</li>
+          <li>מאגר משרות איכותי לסטודנטים ובוגרים</li>
+        </ul>
+      </div>
+      <div class="benefit">
+        <div class="b-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1fc582" stroke-width="2.2" stroke-linecap="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <h3>חדש! מעונות סטודנטים</h3>
+        <ul>
+          <li>WEME — מתחם מגורים חדשני, 10 צעדים מהקמפוס</li>
+          <li>חדר כושר, מרפסת לאירועים ומסעדות</li>
+          <li>חניון תת-קרקעי ושירותי אבטחה</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= CERTIFICATES mini-grid (Clarity #3: 18% of clicks were carousel arrows → surface them) ================= -->
+<!-- ================= תואר פלוס CERTIFICATES (from the old degree page) ================= -->
 <section class="certs" id="certificates">
   <div class="wrap">
-    <h2 class="section-title">תואר פלוס: תעודות מקצועיות כבר במהלך התואר</h2>
-    <p class="section-sub">יוצאים לשוק עם תואר אקדמי <b>ועם</b> תעודה שהמעסיקים מחפשים</p>
-    <div class="certs-grid" id="certsGrid">
+    <h2 class="section-title">תואר פלוס+: תעודות מקצועיות במהלך התואר</h2>
+    <p class="section-sub">לימודי תעודה מתקדמים לשילוב עם התואר — <b>ללא עלות נוספת</b></p>
+    <div class="certs-grid">
       <div class="cert">
-        <img src="images/certificates/cyber-security.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>סייבר ואבטחת מידע</h3><span>התחום הכי חם בהייטק</span>
-      </div>
-      <div class="cert">
-        <img src="images/certificates/digital-marketing.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>שיווק דיגיטלי</h3><span>קמפיינים, דאטה וגדילה</span>
-      </div>
-      <div class="cert">
-        <img src="images/certificates/tech-entrepreneurship.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>יזמות טכנולוגית</h3><span>מרעיון לסטארט-אפ</span>
+        <img src="images/certificates/real-estate.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>תעודת נדל״ן ויעוץ משכנתאות</h3><span>השקעות ומימון נדל״ן</span>
       </div>
       <div class="cert">
         <img src="images/certificates/ecommerce.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>ניהול eCommerce</h3><span>חנויות, פלטפורמות ומכירות אונליין</span>
+        <h3>תעודת ניהול eCommerce</h3><span>חנויות, פלטפורמות ומכירות אונליין</span>
       </div>
       <div class="cert">
-        <img src="images/certificates/hr-management.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>ניהול משאבי אנוש</h3><span>ה-HR של העולם החדש</span>
+        <img src="images/certificates/digital-marketing.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
+        <h3>תעודת שיווק דיגיטלי AI</h3><span>שיווק דיגיטלי מבוסס בינה מלאכותית</span>
       </div>
       <div class="cert">
-        <img src="images/certificates/sales-b2b.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>מנהלי מכירות B2B</h3><span>המיומנות שמכניסה שכר גבוה</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/senior-marketing.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>ניהול שיווק בכיר</h3><span>למנהלים שרוצים צעד קדימה</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/directors.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>דירקטורים</h3><span>הכשרה לדירקטוריומים</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/real-estate.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>נדל״ן ויעוץ משכנתאות</h3><span>השקעות ומימון נדל״ן</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/business-coaching.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>אימון עסקי למנהלים</h3><span>כלים פרקטיים לניהול</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/org-development.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>שינוי ופיתוח ארגוני</h3><span>הובלת שינוי בארגונים</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/crisis-management.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>ניהול משברים</h3><span>מוכנות ותקשורת משבר</span>
-      </div>
-      <div class="cert cert-extra">
         <img src="images/certificates/mediator.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>מגשר</h3><span>יישוב סכסוכים מחוץ לבית המשפט</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/group-facilitation.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>הנחיית קבוצות</h3><span>מיומנות ניהולית מבוקשת</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/biofeedback.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>ביופידבק</h3><span>טכנולוגיות רפואה משלימה</span>
-      </div>
-      <div class="cert cert-extra">
-        <img src="images/certificates/human-capital.svg" alt="" width="46" height="46" loading="lazy" decoding="async">
-        <h3>תכנון הון אנושי</h3><span>אסטרטגיית כוח אדם</span>
+        <h3>תעודת מגשר</h3><span>יישוב סכסוכים מחוץ לבית המשפט</span>
       </div>
     </div>
-    <button class="cert-toggle" id="certToggle" aria-expanded="false" aria-controls="certsGrid">כל התעודות (16) ▼</button>
   </div>
 </section>
 
-<!-- ================= MID-PAGE CTA (conversion trigger at peak attention) ================= -->
+<!-- ================= SPECIALIZATIONS (accordion — texts from the old degree page) ================= -->
+<section id="specializations">
+  <div class="wrap">
+    <h2 class="section-title">מגוון התמחויות לבחירתכם</h2>
+    <p class="section-sub">יתרון בתחומי התעסוקה המבוקשים ביותר</p>
+    <div class="specs">
+      <details class="spec">
+        <summary>התמחות בשיווק</summary>
+        <p>ההתמחות בשיווק תעסוק בהעמקת הידע עם דגש על יישומים עדכניים ורלוונטיים לעולם העסקים המודרני. מגוון הקורסים בתחום זה כולל קורסים בהתנהגות צרכנים, תקשורת שיווקית, יזמות, שיווק דיגיטלי, ניהול מותגים, ניהול מכירות, מסחר אלקטרוני ועוד.</p>
+      </details>
+      <details class="spec">
+        <summary>התמחות במימון וחשבונאות</summary>
+        <p>ההתמחות מקנה לסטודנט הבנה של מבנה החברה, של פעילות מימון הפירמה ומנגנון שוקי ההון, ובנוסף מציעה מגוון כלים פרקטיים להתמודדות עם סוגיות פיננסיות העומדות בפני החברה.</p>
+      </details>
+      <details class="spec">
+        <summary>התמחות בניהול מערכות מידע</summary>
+        <p>ההתמחות כוללת 4 קורסים בהם לומדים הסטודנטים כיצד פועלת מערכת מידע וכיצד ניתן לרתום אותה לתועלת הארגון. הסטודנטים ילמדו לתכנת, לנהל נתונים, לפתח מערכת מידע מודרנית בסביבת Web ולהפיק דו״חות ניהוליים בכלי ויזואליזציה מתקדמים.</p>
+      </details>
+      <details class="spec">
+        <summary>התמחות בנדל״ן</summary>
+        <p>במסגרת ההתמחות נלמד על ניהול פיננסי בעולם הנדל״ן, יזמות ושיווק פרויקטים נדל״ניים, וכן דיני קניין-מקרקעין ועל הליכי התכנון והבניה במדינת ישראל.</p>
+      </details>
+      <details class="spec">
+        <summary>התמחות במשאבי אנוש</summary>
+        <p>במסגרת ההתמחות תחשפו לתיאוריות ואסטרטגיות בתחומי ההדרכה, הגיוס, הניהול והארגון. בנוסף, תלמדו מגוון רחב של קורסים כמו: התנהגות ארגונית, יסודות הניהול, ניהול משאבי אנוש, למידה והדרכה, גישור, ניהול קריירות ועוד.</p>
+      </details>
+    </div>
+    <p class="specs-note">* תעודת ההתמחות הינה בנוסף לתעודת בוגר/ת התואר</p>
+  </div>
+</section>
+
+<!-- ================= LEVEL UP + מסלול החברות (navy band) ================= -->
+<section class="levelup" id="levelup">
+  <div class="wrap">
+    <h2>תכנית ההתמחות LEVEL UP</h2>
+    <p class="lvl-sub">התנסות מעשית בארגונים המובילים בתעשייה כבר במהלך הלימודים — להכיר מקרוב את עולם התעסוקה, ליצור קשרים עם בכירים ולהתנסות בעבודה מעשית.</p>
+    <!-- TODO: replace with the real LEVEL UP participant logos (currently reusing employer assets) -->
+    <div class="lvl-logos">
+      <img src="images/employers/unilever.webp" alt="Unilever" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=chip>Unilever</span>'">
+      <img src="images/tnuva-optimized.webp" alt="תנובה" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=chip>תנובה</span>'">
+      <img src="images/mizrahi-tefahot-optimized.webp" alt="מזרחי טפחות" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=chip>מזרחי טפחות</span>'">
+      <img src="images/israel-electric-optimized.webp" alt="חברת החשמל" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=chip>חברת החשמל</span>'">
+      <img src="images/לוגו_DHL.webp" alt="DHL" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=chip>DHL</span>'">
+      <img src="images/בית_חולים_איכילוב.webp" alt="איכילוב" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=chip>איכילוב</span>'">
+    </div>
+    <h3 class="chips-title">מסלול הַחֲבָרוֹת — עם בכירי החברות המובילות במשק</h3>
+    <p class="chips-sub">קורסים ייחודיים המועברים על ידי בכירי החברות המובילות ומעניקים חיבור ישיר לעולם התעסוקה העכשווי:</p>
+    <div class="chips">
+      <span class="chip">UMD לאומית</span>
+      <span class="chip">כללית</span>
+      <span class="chip">AYALON ביטוח</span>
+      <span class="chip">בי״ח קפלן</span>
+      <span class="chip">רן רהב תקשורת ויחסי ציבור</span>
+      <span class="chip">ועוד…</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MID-PAGE CTA ================= -->
 <section class="mid-cta">
   <div class="wrap">
     <div class="mid-cta-inner">
       <img src="images/logo_toar_plus.webp" alt="תואר פלוס" width="52" height="44" style="height:40px;width:auto;margin:0 auto 10px">
-      <p>תואר פלוס: יוצאים לשוק עם תואר אקדמי <b>ועם</b> תעודה מקצועית — ללא עלות נוספת</p>
-      <a href="#form-section" class="btn btn-navy">לפרטים נוספים קבעו פגישת ייעוץ ›</a>
+      <p>לא בטוחים איזו התמחות מתאימה לכם? יועץ לימודים יעזור לכם לבחור</p>
+      <a href="#form-section" class="btn btn-navy">קבעו פגישת ייעוץ ›</a>
     </div>
   </div>
 </section>
 
-<!-- ================= MILUIM & MONEY (critique: buried differentiator) ================= -->
+<!-- ================= MILUIM BAND ================= -->
 <section>
   <div class="wrap">
     <div class="miluim">
       <div>
-        <span class="miluim-tag">מקום ראשון בתמיכה במילואימניקים</span>
+        <span class="miluim-tag">מקום ראשון בישראל בתמיכה במילואימניקים</span>
         <h2 style="margin-top:10px">במילואים? אנחנו איתכם.</h2>
-        <p style="color:rgba(255,255,255,.8);font-size:15px;margin-top:6px">אף סמסטר לא צריך להיתקע בגלל צו 8. הנה איך זה עובד אצלנו בפועל:</p>
+        <p style="color:rgba(255,255,255,.8);font-size:15px;margin-top:6px">על פי סקר התאחדות הסטודנטים הארצית. גיבשנו תכנית הקלות למשרתי מילואים, לסטודנטים מכוחות הביטחון ולתושבי העוטף:</p>
       </div>
       <div>
         <ul>
-          <li>כל השיעורים משודרים בלייב בזום — לומדים מכל מקום</li>
-          <li>הקלטות של כל שיעור — לצפות מתי שמשתחררים</li>
-          <li>דחיית מבחנים ומועדי הגשה בתקופות מילואים</li>
-          <li>מלווה אישי לכל סטודנט לאורך כל התואר</li>
+          <li>למידה היברידית גמישה עם הרצאות מוקלטות</li>
+          <li>מלגות ואפשרויות תשלום מגוונות</li>
+          <li>חומרי לימוד מקיפים ומעטפת תמיכה אישית</li>
+          <li>סיוע רגשי ופרטני להתמודדות עם אתגרים</li>
         </ul>
         <p class="money">💰 <b>משלמים עם הפיקדון הצבאי?</b> נעזור לכם לממש אותו ולבנות תוכנית מימון שמתאימה לכם — כולל מלגות הצטיינות וסיוע.<!-- TODO: confirm pikadon mechanics with finance --></p>
       </div>
@@ -581,33 +660,26 @@ body.cookie-on .sticky-bar{display:none!important}
   </div>
 </section>
 
-<!-- ================= TESTIMONIALS (elevated — Clarity #2; + young peer voices — critique) ================= -->
+<!-- ================= TESTIMONIALS (business-degree voices from the old page) ================= -->
 <section id="testimonials">
   <div class="wrap">
-    <h2 class="section-title">הבוגרים שלנו מספרים</h2>
-    <p class="section-sub">אנשים שעמדו בדיוק איפה שאתם עומדים עכשיו</p>
+    <h2 class="section-title">הסטודנטים והבוגרים שלנו</h2>
+    <p class="section-sub">אנשים שלמדו מנהל עסקים בפרס — ומספרים איך זה מבפנים</p>
     <div class="t-wrap">
       <button class="t-arrow prev" id="tPrev" aria-label="המלצה קודמת">›</button>
-      <div class="t-track" id="tTrack" tabindex="0" role="region" aria-label="המלצות בוגרים">
+      <div class="t-track" id="tTrack" tabindex="0" role="region" aria-label="המלצות סטודנטים ובוגרים">
       <div class="t-card">
-        <blockquote>"המרכז האקדמי פרס מעניק תחושה ייחודית של מוסד לימודים בוטיק ומהווה עבורי בית אקדמי."</blockquote>
+        <blockquote>"תכנית הלימודים נתנה לי אפשרות לשלב לימודי תואר ראשון במנהל עסקים עם עבודה, חברים ופנאי. המרצים וצוות המכללה הם הטובים בתחומם."</blockquote>
         <div class="t-person">
-          <img class="t-avatar" src="images/testimonials/ido-einbinder.webp" alt="עידו איינבינדר" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ע</span>'">
-          <div><b>עידו איינבינדר</b><span>סמנכ״ל משאבי אנוש ומטה, חדשות 13</span></div>
+          <img class="t-avatar" src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ד</span>'">
+          <div><b>דניאל ביטון</b><span>מנכ״לית משותפת, E.D.I Energy</span></div>
         </div>
       </div>
       <div class="t-card">
-        <blockquote>"הלימודים נתנו לי פרספקטיבה רחבה וכלים לעולם העבודה החדש — יתרון ממשי בקריירה."</blockquote>
+        <blockquote>"תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים."</blockquote>
         <div class="t-person">
-          <img class="t-avatar" src="images/testimonials/hava-atias.webp" alt="חוה אטיאס" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ח</span>'">
-          <div><b>חוה אטיאס</b><span>סמנכ״לית משאבי אנוש, ארגון ״מסע״</span></div>
-        </div>
-      </div>
-      <div class="t-card">
-        <blockquote>"הקורסים בתואר נגעו במגוון רחב של תחומים בעולם ההייטק ואפשרו לי להבין במה ארצה להתמקד."</blockquote>
-        <div class="t-person">
-          <img class="t-avatar" src="images/testimonials/kobi-kanti.webp" alt="קובי קנטי" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ק</span>'">
-          <div><b>קובי קנטי</b><span>Product Manager, Commit</span></div>
+          <img class="t-avatar" src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>נ</span>'">
+          <div><b>ניצן לוין</b><span>מנהלת שיווק פנים ומיתוג מעסיק, סומך חייקין KPMG</span></div>
         </div>
       </div>
       <div class="t-card">
@@ -617,18 +689,26 @@ body.cookie-on .sticky-bar{display:none!important}
           <div><b>עידו ופנר</b><span>סמנכ״ל וחבר הנהלה, Kyndryl</span></div>
         </div>
       </div>
+      <!-- TODO: 3 cards below have no photo asset yet — initial-based fallback avatars in use -->
       <div class="t-card">
-        <blockquote>"תואר פלוס נתן לי ראייה רחבה על התחום שלי ויתרון בשוק העבודה על פני מועמדים אחרים."</blockquote>
+        <blockquote>"תואר פלוס עזר לי להתקדם במהירות במקום העבודה שלי ונתן לי נקודת פתיחה מעולה לקריירה."</blockquote>
         <div class="t-person">
-          <img class="t-avatar" src="images/testimonials/nitzan-levin.webp" alt="ניצן לוין" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>נ</span>'">
-          <div><b>ניצן לוין</b><span>מנהלת שיווק, סומך חייקין KPMG</span></div>
+          <span class="t-avatar-fallback">נ</span>
+          <div><b>נופר תשובה</b><span>מנהלת אוטומציה, UM Digital</span></div>
         </div>
       </div>
       <div class="t-card">
-        <blockquote>"תכנית הלימודים אפשרה לי לשלב תואר ראשון עם עבודה, חברים ופנאי. והמרצים — מדהימים."</blockquote>
+        <blockquote>"זה תואר ראשון עם המסלול המקיף ביותר בשיווק דיגיטלי והכי חשוב? יש גם השמה מובטחת בהייטק."</blockquote>
         <div class="t-person">
-          <img class="t-avatar" src="images/testimonials/daniel-biton.webp" alt="דניאל ביטון" width="52" height="52" loading="lazy" decoding="async" onerror="this.outerHTML='<span class=t-avatar-fallback>ד</span>'">
-          <div><b>דניאל ביטון</b><span>מנכ״לית משותפת, E.D.I Energy</span></div>
+          <span class="t-avatar-fallback">א</span>
+          <div><b>אביתר אביטל</b><span>סטודנט לתואר ראשון במנהל עסקים</span></div>
+        </div>
+      </div>
+      <div class="t-card">
+        <blockquote>"החוויה שלי מלמידה היברידית מאד חיובית! השיעורים מועברים בצורה חוויתית והמרצים עושים הכל כדי שנצא מוכנים לקריירה."</blockquote>
+        <div class="t-person">
+          <span class="t-avatar-fallback">ק</span>
+          <div><b>קורל גפנר</b><span>סטודנטית לתואר ראשון במנהל עסקים</span></div>
         </div>
       </div>
     </div>
@@ -638,46 +718,11 @@ body.cookie-on .sticky-bar{display:none!important}
   </div>
 </section>
 
-<!-- ================= PROGRAMS: tabbed degree explorer (BA / MBA) ================= -->
-<section id="programs">
-  <div class="wrap">
-    <h2 class="section-title">מה לומדים?</h2>
-    <p class="section-sub">תארים מוכרים של המועצה להשכלה גבוהה — ראשון בשנתיים, שני בשנה<!-- TODO: verify current program list + link each card to its program page --></p>
-    <div class="deg-tabs" role="tablist" aria-label="סוג התואר">
-      <button class="deg-tab on" id="degTabBA" role="tab" aria-selected="true" aria-controls="degPanelBA">תואר ראשון</button>
-      <button class="deg-tab" id="degTabMA" role="tab" aria-selected="false" aria-controls="degPanelMA">תואר שני</button>
-    </div>
-    <div class="deg-panel" id="degPanelBA" role="tabpanel" aria-labelledby="degTabBA">
-      <div class="programs-grid">
-        <a class="program" href="business.html"><h3>מנהל עסקים (B.A)</h3><p>ניהול, שיווק ומימון — הכתובת לעולם העסקי</p><span class="tag">מסלול מקוצר</span></a>
-        <a class="program" href="#form-section" data-program="LL.B משפטים"><h3>משפטים (LL.B)</h3><p>LL.B עם התמחויות מסחריות ויישומיות</p><span class="tag">תכנית LEVEL UP</span></a>
-        <a class="program" href="#form-section" data-program="B.A מדעי ההתנהגות"><h3>מדעי ההתנהגות (B.A)</h3><p>שער לקריירה בפסיכולוגיה ארגונית ו-HR</p><span class="tag">היברידי</span></a>
-        <a class="program" href="#form-section" data-program="B.A תקשורת"><h3>תקשורת (B.A)</h3><p>מדיה, תוכן דיגיטלי ואסטרטגיית מותג</p><span class="tag">היברידי</span></a>
-        <a class="program" href="#form-section" data-program="B.A מערכות מידע ניהוליות"><h3>מערכות מידע ניהוליות (B.A)</h3><p>החיבור הישיר בין עסקים לטכנולוגיה</p><span class="tag">שער להייטק</span></a>
-        <a class="program" href="#form-section" data-program="B.A מנהל מערכות בריאות"><h3>מנהל מערכות בריאות (B.A)</h3><p>ניהול ומנהל במערכת הבריאות הצומחת</p><span class="tag">ביקוש גבוה</span></a>
-        <a class="program" href="#form-section" data-program="B.A ניהול משאבי אנוש"><h3>ניהול משאבי אנוש (B.A)</h3><p>ה-HR של העולם החדש — אנשים, דאטה וארגונים</p><span class="tag">ביקוש גבוה</span></a>
-        <a class="program" href="#form-section" data-program="B.Sc מדעי התזונה"><h3>מדעי התזונה (B.Sc)</h3><p>תואר אקדמי בעולמות הבריאות והתזונה</p><span class="tag">מסלול מקוצר</span></a>
-      </div>
-    </div>
-    <div class="deg-panel hidden" id="degPanelMA" role="tabpanel" aria-labelledby="degTabMA">
-      <!-- TODO: names sourced from the pac.ac.il nav; card hrefs will point to degree sub-pages once they ship -->
-      <div class="programs-grid">
-        <a class="program" href="#form-section" data-program="MBA מנהל עסקים"><h3>מנהל עסקים (MBA)</h3><p>התואר המוביל לתפקידי ניהול בכירים — בשנה אחת</p><span class="tag">תואר שני בשנה</span></a>
-        <a class="program" href="#form-section" data-program="M.A פסיכולוגיה חינוכית"><h3>פסיכולוגיה חינוכית (M.A)</h3><p>התמחות בפסיכולוגיה של הלמידה והחינוך</p><span class="tag">תואר שני בשנה</span></a>
-        <a class="program" href="#form-section" data-program="M.A ייעוץ ופיתוח ארגוני"><h3>ייעוץ ופיתוח ארגוני (M.A)</h3><p>כלים מעשיים לייעוץ ולהובלת שינוי ארגוני</p><span class="tag">תואר שני בשנה</span></a>
-        <a class="program" href="#form-section" data-program="M.A ניהול משאבי אנוש"><h3>ניהול משאבי אנוש (M.A)</h3><p>ה-HR האסטרטגי של העולם החדש</p><span class="tag">תואר שני בשנה</span></a>
-        <a class="program" href="#form-section" data-program="M.A משפטים"><h3>משפטים (M.A)</h3><p>העמקה משפטית לעורכי דין ולאנשי עסקים</p><span class="tag">תואר שני בשנה</span></a>
-      </div>
-    </div>
-    <p class="programs-note">לא בטוחים מה מתאים לכם? <a href="#form-section" style="color:var(--blue);font-weight:800">דברו עם יועץ לימודים ›</a></p>
-  </div>
-</section>
-
 <!-- ================= FINAL CTA ================= -->
 <section class="final-cta" id="final-cta">
   <div class="wrap">
-    <h2>מוכנים להתחיל?</h2>
-    <p>קבעו שיחת ייעוץ אישית ונבדוק יחד איזה מסלול מתאים לכם — או דברו איתנו עכשיו, באיזה ערוץ שנוח לכם.</p>
+    <h2>מוכנים להתחיל קריירה בעולם העסקים?</h2>
+    <p>קבעו שיחת ייעוץ אישית ונבדוק יחד איזה מסלול והתמחות מתאימים לכם — או דברו איתנו עכשיו, באיזה ערוץ שנוח לכם.</p>
     <div class="btns">
       <a href="#form-section" class="btn btn-mint">קבעו שיחת ייעוץ ›</a>
       <a href="https://wa.me/97283006090" target="_blank" rel="noopener" class="btn btn-wa">💬 וואטסאפ</a>
@@ -700,14 +745,14 @@ body.cookie-on .sticky-bar{display:none!important}
   </div>
 </footer>
 
-<!-- ================= STICKY MOBILE BAR (Clarity #6: mid-page capture) ================= -->
+<!-- ================= STICKY MOBILE BAR ================= -->
 <div class="sticky-bar" id="stickyBar" role="complementary" aria-label="פעולות מהירות">
   <a href="#form-section" class="btn btn-navy">קבעו ייעוץ</a>
   <a href="tel:08-3006090" class="btn btn-mint">☎ התקשרו עכשיו</a>
   <a href="https://wa.me/97283006090" target="_blank" rel="noopener" class="btn btn-wa">💬 וואטסאפ</a>
 </div>
 
-<!-- ================= COOKIE BAR (Clarity #1: slim + delayed, never covers the form) ================= -->
+<!-- ================= COOKIE BAR ================= -->
 <div class="cookie-bar" id="cookieBar" role="dialog" aria-label="הודעת Cookies">
   <p>אנחנו משתמשים בעוגיות כדי לשפר את החוויה ולמדוד תוצאות. <a href="privacy.html" style="color:var(--blue)">מדיניות פרטיות</a></p>
   <div class="c-btns">
@@ -727,8 +772,8 @@ body.cookie-on .sticky-bar{display:none!important}
   <div class="exit-card">
     <button class="exit-close" id="exitClose" aria-label="סגירה">✕</button>
     <div id="exitMain">
-      <h3>עוד לא דיברתם עם יועץ לימודים?</h3>
-      <p>שיחה קצרה ואישית — נבדוק יחד איזה מסלול מתאים לכם ואיך נרשמים. בלי התחייבות.</p>
+      <h3>מתלבטים אם מנהל עסקים זה לכם?</h3>
+      <p>שיחה קצרה עם יועץ לימודים תעזור לכם להחליט — נבדוק יחד מסלולים, התמחויות ואפשרויות מימון. בלי התחייבות.</p>
       <!-- posts to the SAME HubSpot endpoint as the hero form, so leads land in the same pipeline -->
       <form class="exit-form" id="exitForm" novalidate>
         <label class="sr-only" for="exitName">שם מלא</label>
@@ -749,8 +794,6 @@ body.cookie-on .sticky-bar{display:none!important}
 </div>
 
 <!-- ================= ANALYTICS — preserved IDs from production, deferred + consent-aware ================= -->
-<!-- Production GTM container + GA4 property, loaded on first interaction (same trigger as the head GTM).
-     Consent Mode v2 defaults (denied) are set in <head>; the cookie bar updates them on choice. -->
 <script>
 function loadProdAnalytics(){
   if (window._prodL) return; window._prodL = 1;
@@ -774,7 +817,8 @@ setTimeout(loadProdAnalytics, 5000);
 
 <script>
 /* ============================================================
-   PAC LP v2 — behavioral layer
+   PAC degree page — business.html (B.A מנהל עסקים)
+   Behavioral layer mirrors index.html (same events & components)
    ============================================================ */
 (function(){
   'use strict';
@@ -784,6 +828,7 @@ setTimeout(loadProdAnalytics, 5000);
   const HS_PORTAL = '143688847';
   const HS_FORM   = '5acc9316-e04d-4d87-a352-f7cf317c9b62';
   const HS_REGION = 'eu1';
+  const PROGRAM   = 'B.A מנהל עסקים';
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -808,8 +853,8 @@ setTimeout(loadProdAnalytics, 5000);
       hbspt.forms.create({
         portalId: HS_PORTAL, formId: HS_FORM, region: HS_REGION,
         target: '#hs-lead-form',
-        onFormReady: function(){ pushEvent('form_view', {form:'lead'}); },
-        onFormSubmitted: function(){ pushEvent('generate_lead', {form:'lead'}); }
+        onFormReady: function(){ pushEvent('form_view', {form:'lead', program:PROGRAM}); },
+        onFormSubmitted: function(){ pushEvent('generate_lead', {form:'lead', program:PROGRAM}); }
       });
     } else {
       /* fallback: plain form posting to the same HS endpoint (keeps leads flowing) */
@@ -829,7 +874,7 @@ setTimeout(loadProdAnalytics, 5000);
         e.preventDefault();
         const f = e.target;
         fetch(f.action, {method:'POST', body:new FormData(f), mode:'no-cors'}).catch(function(){});
-        pushEvent('generate_lead', {form:'lead_fallback'});
+        pushEvent('generate_lead', {form:'lead_fallback', program:PROGRAM});
         wrap.innerHTML = '<p style="color:var(--navy);font-weight:800;text-align:center">תודה! הפרטים התקבלו. יועץ לימודים יחזור אליכם בהקדם.</p>';
       });
     }
@@ -856,7 +901,7 @@ setTimeout(loadProdAnalytics, 5000);
     if (heroImg && heroImg.dataset.src) heroImg.src = heroImg.dataset.src;
   }
 
-  /* ---- Mobile hero reorder: form right after the sub-headline (Clarity: 23% mobile drop-off in hero) ---- */
+  /* ---- Mobile hero reorder: form right after the sub-headline ---- */
   const mq = matchMedia('(max-width:899.98px)');
   const formWrap = document.getElementById('form-section');
   const mobileSlot = document.getElementById('form-section-mobile');
@@ -875,7 +920,7 @@ setTimeout(loadProdAnalytics, 5000);
         const inp = formWrap.querySelector('input[name="full_name_he"], input[type="text"]');
         if (inp) inp.focus({preventScroll:true});
       }, 650);
-      pushEvent('cta_click', {location:a.id || a.textContent.trim().slice(0,20), program:a.dataset.program || undefined});
+      pushEvent('cta_click', {location:a.id || a.textContent.trim().slice(0,20), program:PROGRAM});
     });
   });
 
@@ -934,7 +979,7 @@ setTimeout(loadProdAnalytics, 5000);
     bar.classList.toggle('show', depth > .2 && !formVisible && !finalVisible);
   }, {passive:true});
 
-  /* ---- Cookie bar: slim + delayed until engagement (Clarity: 23% of first interactions wasted on it) ---- */
+  /* ---- Cookie bar: slim + delayed until engagement ---- */
   const cookieBar = document.getElementById('cookieBar');
   const CONSENT_KEY = 'pac_consent_v2';
   const prefAnalytics = document.getElementById('prefAnalytics');
@@ -1057,7 +1102,7 @@ setTimeout(loadProdAnalytics, 5000);
     fetch('https://forms-eu1.hsforms.com/submissions/v3/public/submit/formsnext/multipart/' + HS_PORTAL + '/' + HS_FORM, {
       method: 'POST', body: data, mode: 'no-cors'
     }).catch(function(){ /* no-cors: response is opaque; lead is sent either way */ });
-    pushEvent('generate_lead', {form:'exit_popup'});
+    pushEvent('generate_lead', {form:'exit_popup', program:PROGRAM});
     document.getElementById('exitMain').classList.add('hidden');
     document.getElementById('exitSuccess').classList.remove('hidden');
     setTimeout(function(){ exitPopup.classList.remove('show'); }, 3000);
@@ -1093,46 +1138,11 @@ setTimeout(loadProdAnalytics, 5000);
       btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
     });
   });
-  /* the shared a[href="#form-section"] handler does scroll/focus/cta_click; just close the menu */
   mainNav.querySelectorAll('.nav-drop a').forEach(function(a){
     a.addEventListener('click', closeNav);
   });
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape') closeNav();
-  });
-
-  /* ---- Degree tabs: BA / MBA switcher ---- */
-  const degTabs = [document.getElementById('degTabBA'), document.getElementById('degTabMA')];
-  const degPanels = {degTabBA: document.getElementById('degPanelBA'), degTabMA: document.getElementById('degPanelMA')};
-  function selectDegTab(tab){
-    degTabs.forEach(function(t){
-      const active = t === tab;
-      t.classList.toggle('on', active);
-      t.setAttribute('aria-selected', active ? 'true' : 'false');
-      degPanels[t.id].classList.toggle('hidden', !active);
-    });
-  }
-  degTabs.forEach(function(tab, i){
-    tab.addEventListener('click', function(){
-      selectDegTab(tab);
-      pushEvent('degree_tab_switch', {tab: tab.id === 'degTabBA' ? 'ba' : 'ma'});
-    });
-    /* standard tablist pattern: arrow keys move focus between tabs */
-    tab.addEventListener('keydown', function(e){
-      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
-      e.preventDefault();
-      degTabs[1 - i].focus();
-    });
-  });
-
-  /* ---- Certificates: expand/collapse the extra exec-ed cards ---- */
-  const certsGrid = document.getElementById('certsGrid');
-  const certToggle = document.getElementById('certToggle');
-  certToggle.addEventListener('click', function(){
-    const expanded = certsGrid.classList.toggle('expanded');
-    certToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    certToggle.textContent = expanded ? 'הצג פחות ▲' : 'כל התעודות (16) ▼';
-    pushEvent('cert_grid_toggle', {state: expanded ? 'expand' : 'collapse'});
   });
 })();
 </script>
